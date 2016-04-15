@@ -1,24 +1,30 @@
 .button {
   display: inline-block;
   box-sizing: border-box;
-  height: 50px;
-  color: #4940e4;
-  background-color: #BCD2EE;
-  border: 2px outset #6495ED;
+  height: 40px;
+  color: #FFFFFF;
+  background-color: #00C7FF;
+  border: 2px outset #00A9FF;
   border-radius: 5px;
   font-family: "Droid Sans", sans-serif;
-  line-height: 36px;
+  line-height: 26px;
   text-align: center;
   padding: 5px 5px;
 }
 
+.button:hover {
+  background-color: #00A9FF;
+}
+
+.button:active {
+  background-color: #0029FF;
+}
+
 a:link {
   text-decoration: none;
-  height: 50px;
 }
 
 button {
   font-size: 1em;
-  height: 50px;
 }
 
