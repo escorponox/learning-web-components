@@ -25,7 +25,8 @@ button {
 }
 
 .button:active {
-  background-color: #0029FF;
+  background-color: #0069FF;
+  border-color: #0069FF;
 }
 
 .button-sm {
