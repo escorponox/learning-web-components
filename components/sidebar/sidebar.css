@@ -1,20 +1,18 @@
 .container {
-  width: 30%;
-}
-
-* {
-  box-sizing: border-box;
+  /*width: 30%;*/
 }
 
 .sidebar {
-  background-color: #E3FBFF;
-  padding: 1% 4% 1% 2%;
-  border: 2px solid #008EA3;
+  background-color: #F6F6F6;
+  padding: 5%;
+  border: 2px solid #4D4E7F;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  color: #FF5A58;
   font-size: 16px;
-  font-family: "Droid Sans", "Lora", sans-serif;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 .content {
@@ -22,17 +20,7 @@
 }
 
 h1 {
-  color: #008EA3;
-  font-size: 2em;
-  line-height: 35px;
-  margin: 5px;
-}
-
-h3 {
-  color: #008EA3;
-  font-size: 1.5em;
-  line-height: 35px;
-  margin: 10px ;
+  margin: 5px 0;
 }
 
 .name {
@@ -40,16 +28,18 @@ h3 {
 }
 
 img {
+  box-sizing: border-box;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
 .img-border {
-  border: 1px solid #008EA3;
+  border: 2px solid #4D4E7F;
 }
 
 .photo {
+  box-sizing: border-box;
   float: left;
   width: 40%;
   padding: 5px;
@@ -58,12 +48,44 @@ img {
 .main-photo {
   width: 60%;
 }
+.clear {
+  clear: both;
+}
 
 hr.hr-sidebar {
-  clear: both;
-  height: 1px;
+  height: 2px;
   width: 90%;
   border: 0;
-  background-color: #008EA3;
+  background-color: #4D4E7F;
+}
 
+a:link {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 26px;
+  color: #FFFFFF;
+  background-color: #4D4E7F;
+  border: 2px outset #343698;
+  border-radius: 5px;
+  padding: 5px 5px;
+  font-family: "Droid Sans", sans-serif;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #343698;
+}
+
+.button:active {
+  background-color: #1A1DB2;
+  border-color: #1A1DB2;
+}
+
+.paragraph {
+  color: #000000;
 }
