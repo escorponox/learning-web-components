@@ -16,27 +16,38 @@
   border-radius: 5px;
   background-color: #BFF1FF;
   padding: 3% 5%;
-  color: #005EFF;
   box-sizing: border-box;
-  font: 16px/24px "Droid Sans", sans-serif;
+}
+
+.coves-label {
+  color: #005EFF;
+  font: bold 16px/24px "Droid Sans", sans-serif;
 }
 
 .coves-input {
   width: 100%;
   padding: 6px 10px 6px 36px;
-  margin: 8px 0;
+  margin: 10px 0;
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
   font: 16px/24px "Droid Sans", sans-serif;
 }
 
-.coves-input:focus {
+.coves-input:hover {
   border: 1px solid #00A9FF;
 }
 
-.coves-signup-form input#first-name, .coves-signup-form input#last-name {
+.coves-input:focus {
+  border: 1px solid #005EFF;
+}
+
+.coves-signup-form input#username {
   background: #fff url('images/user-24.png') 6px 6px no-repeat;
+}
+
+.coves-signup-form input#first-name, .coves-signup-form input#last-name {
+  background: #fff url('images/compose-24.png') 6px 6px no-repeat;
 }
 
 .coves-signup-form input#email {
