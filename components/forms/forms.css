@@ -4,12 +4,12 @@
 
 ::-moz-placeholder {
   color: #40D5FF;
-  font: 1em/24px "Droid Sans", sans-serif;
+  font: 16px/24px "Droid Sans", sans-serif;
 }
 
 ::-webkit-input-placeholder {
   color: #40D5FF;
-  font: 1em/24px "Droid Sans", sans-serif;
+  font: 16px/24px "Droid Sans", sans-serif;
 }
 
 .coves-signup-form {
@@ -18,24 +18,20 @@
   padding: 3% 5%;
   color: #005EFF;
   box-sizing: border-box;
-  font: 1em/24px "Droid Sans", sans-serif;
+  font: 16px/24px "Droid Sans", sans-serif;
 }
 
-input {
+.coves-input {
   width: 100%;
   padding: 6px 10px 6px 36px;
   margin: 8px 0;
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
-  font: 1em/24px "Droid Sans", sans-serif;
+  font: 16px/24px "Droid Sans", sans-serif;
 }
 
-input[type=date] {
-  display: inline;
-}
-
-input:focus {
+.coves-input:focus {
   border: 1px solid #00A9FF;
 }
 
