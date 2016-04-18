@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="components/forms/forms.css"/>
+  <meta charset="UTF-8">
+  <title>Signup Form</title>
+</head>
+<body>
+<h1>Signup</h1>
+<div class="form-wrapper">
+  <form method="post" action="#">
+    <label for="first-name">First Name</label>
+      <input id="first-name" type="text" name="firstname" required placeholder="Your first name" tabindex="1">
+    <label for="last-name">Last Name</label>
+      <input id="last-name" type="text" name="lastname" placeholder="Your last name" tabindex="2">
+    <label for="email">Email Address</label>
+      <input id="email" type="email" name="email" placeholder="Your e-mail address" tabindex="3">
+    <label for="birth">Date of Birth</label>
+      <input id="birth" type="date" name="birth" min="1920-01-01" max="2040-12-31" value="1990-01-01" tabindex="4">
+    <label for="pass">Password</label>
+      <input id="pass" type="password" name="pass" tabindex="5">
+    <label for="pass-repeat">Repeat Password</label>
+      <input id="pass-repeat" type="password" name="pass-repeat" tabindex="6">
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
