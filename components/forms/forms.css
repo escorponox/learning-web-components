@@ -1,3 +1,56 @@
-.form-wrapper {
+*:focus {
+  outline: none;
+}
 
+::-moz-placeholder {
+  color: #40D5FF;
+  font: 1em/24px "Droid Sans", sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: #40D5FF;
+  font: 1em/24px "Droid Sans", sans-serif;
+}
+
+.coves-signup-form {
+  border-radius: 5px;
+  background-color: #BFF1FF;
+  padding: 3% 5%;
+  color: #005EFF;
+  box-sizing: border-box;
+  font: 1em/24px "Droid Sans", sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 6px 10px 6px 36px;
+  margin: 8px 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font: 1em/24px "Droid Sans", sans-serif;
+}
+
+input[type=date] {
+  display: inline;
+}
+
+input:focus {
+  border: 1px solid #00A9FF;
+}
+
+.coves-signup-form input#first-name, .coves-signup-form input#last-name {
+  background: #fff url('images/user-24.png') 6px 6px no-repeat;
+}
+
+.coves-signup-form input#email {
+  background: #fff url('images/mail-24.png') 6px 6px no-repeat;
+}
+
+.coves-signup-form input#birth {
+  background: #fff url('images/calendar-24.png') 6px 6px no-repeat;
+}
+
+.coves-signup-form input#pass, .coves-signup-form input#pass-repeat {
+  background: #fff url('images/key-24.png') 6px 6px no-repeat;
 }
