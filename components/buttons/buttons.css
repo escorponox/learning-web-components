@@ -2,10 +2,6 @@ a:link {
   text-decoration: none;
 }
 
-button {
-  font-size: 1em;
-}
-
 .button {
   display: inline-block;
   box-sizing: border-box;
@@ -17,6 +13,7 @@ button {
   border-radius: 5px;
   padding: 5px 5px;
   font-family: "Droid Sans", sans-serif;
+  font-size: 1em;
   text-align: center;
 }
 
