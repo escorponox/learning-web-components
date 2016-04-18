@@ -6,13 +6,12 @@ a:link {
   display: inline-block;
   box-sizing: border-box;
   height: 40px;
-  line-height: 26px;
   color: #FFFFFF;
   background-color: #00C7FF;
   border: 2px outset #00A9FF;
   border-radius: 5px;
-  padding: 5px 5px;
-  font-family: "Droid Sans", sans-serif;
+  padding: 5px;
+  font: 100%/26px "Droid Sans", sans-serif;
   font-size: 1em;
   text-align: center;
 }
