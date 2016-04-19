@@ -15,11 +15,12 @@
   background-color: #BFF1FF;
   padding: 3% 5%;
   box-sizing: border-box;
+  font: 16px/1.5em "Droid Sans", sans-serif;
 }
 
 .coves-label {
   color: #005EFF;
-  font: bold 16px/24px "Droid Sans", sans-serif;
+  font-weight: bold;
 }
 
 .center-label {
@@ -40,12 +41,12 @@
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
-  font: 16px/24px "Droid Sans", sans-serif;
+  font: 1em/1.5em "Droid Sans", sans-serif;
 }
 
 .coves-input-lg {
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 .coves-input:hover {
@@ -54,6 +55,10 @@
 
 .coves-input:focus {
   border: 1px solid #005EFF;
+}
+
+.coves-select {
+  cursor: pointer;
 }
 
 .coves-select:invalid {
@@ -66,4 +71,27 @@
 
 .coves-select option[value=""] {
   color: #40D5FF;
+}
+
+.coves-radio {
+  line-height: 2em;
+  margin: 5px 0;
+}
+
+.label-radio {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.coves-input-radio {
+  cursor: pointer;
+}
+
+.coves-radio-text {
+  padding: 1px 5px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font: 1em/1.5em "Droid Sans", sans-serif;
 }
