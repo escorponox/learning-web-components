@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="forms.css"/>
+  <link rel="stylesheet" type="text/css" href="icons.css"/>
+  <link rel="stylesheet" type="text/css" href="../buttons/buttons.css"/>
+  <meta charset="UTF-8">
+  <title>Search Form</title>
+</head>
+<body>
+<div class="coves-signup-form">
+  <form method="post" action="#" novalidate>
+    <label for="search" class="coves-label center-label label-lg">Search</label>
+    <input id="search" class="coves-input icon-search-lg" type="text" name="search" required placeholder="Search..."
+           tabindex="1">
+    <select id="categories" class="coves-select icon-category" name="category" required tabindex="2">
+      <option class="select-default" selected value="">Select a Category</option>
+      <option value="movie">Movies</option>
+      <option value="game">Games</option>
+      <option value="sport">Sports</option>
+      <option value="health">Health</option>
+      <option value="financial">Financial</option>
+      <option value="computer">Computers</option>
+    </select>
+
+    <input type="submit" class="button button-center" value="Search" tabindex="3">
+  </form>
+</div>
+</body>
+</html>
