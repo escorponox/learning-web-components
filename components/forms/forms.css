@@ -1,5 +1,5 @@
 *:focus {
-  outline: none;
+  outline: none !important;
 }
 
 ::-moz-placeholder {
@@ -33,6 +33,7 @@
 }
 
 .coves-input {
+  -moz-appearance: none;
   width: 100%;
   padding: 6px 10px;
   margin: 10px 0;
@@ -43,8 +44,8 @@
 }
 
 .coves-input-lg {
-  font-size: 36px;
-  line-height: 24px;
+  font-size: 24px;
+  line-height: 36px;
 }
 
 .coves-input:hover {
@@ -53,19 +54,6 @@
 
 .coves-input:focus {
   border: 1px solid #005EFF;
-}
-
-.coves-select {
-  -moz-appearance: none;
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font: 16px "Droid Sans", sans-serif;
-  color: #000000;
-  background-color: #FFFFFF;
 }
 
 .coves-select:invalid {
