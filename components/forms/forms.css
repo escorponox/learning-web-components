@@ -4,12 +4,10 @@
 
 ::-moz-placeholder {
   color: #40D5FF;
-  font: 16px/24px "Droid Sans", sans-serif;
 }
 
 ::-webkit-input-placeholder {
   color: #40D5FF;
-  font: 16px/24px "Droid Sans", sans-serif;
 }
 
 .coves-signup-form {
@@ -24,14 +22,29 @@
   font: bold 16px/24px "Droid Sans", sans-serif;
 }
 
+.center-label {
+  display: block;
+  text-align: center;
+}
+
+.label-lg {
+  font-size: 2em;
+  line-height: 2em;
+}
+
 .coves-input {
   width: 100%;
-  padding: 6px 10px 6px 36px;
+  padding: 6px 10px;
   margin: 10px 0;
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
   font: 16px/24px "Droid Sans", sans-serif;
+}
+
+.coves-input-lg {
+  font-size: 36px;
+  line-height: 24px;
 }
 
 .coves-input:hover {
@@ -42,22 +55,27 @@
   border: 1px solid #005EFF;
 }
 
-.coves-signup-form input#username {
-  background: #fff url('images/user-24.png') 6px 6px no-repeat;
+.coves-select {
+  -moz-appearance: none;
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font: 16px "Droid Sans", sans-serif;
+  color: #000000;
+  background-color: #FFFFFF;
 }
 
-.coves-signup-form input#first-name, .coves-signup-form input#last-name {
-  background: #fff url('images/compose-24.png') 6px 6px no-repeat;
+.coves-select:invalid {
+  color: #40D5FF;
 }
 
-.coves-signup-form input#email {
-  background: #fff url('images/mail-24.png') 6px 6px no-repeat;
+.coves-select option {
+  color: #000000;
 }
 
-.coves-signup-form input#birth {
-  background: #fff url('images/calendar-24.png') 6px 6px no-repeat;
-}
-
-.coves-signup-form input#pass, .coves-signup-form input#pass-repeat {
-  background: #fff url('images/key-24.png') 6px 6px no-repeat;
+.coves-select option[value=""] {
+  color: #40D5FF;
 }

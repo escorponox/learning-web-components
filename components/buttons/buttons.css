@@ -6,6 +6,7 @@ a:link {
   display: inline-block;
   box-sizing: border-box;
   height: 40px;
+  margin: 10px 0;
   color: #FFFFFF;
   background-color: #00C7FF;
   border: 2px outset #00A9FF;
@@ -41,4 +42,10 @@ a:link {
   line-height: 36px;
   padding: 10px 10px;
   font-size: 1.5em;
+}
+
+.button-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
