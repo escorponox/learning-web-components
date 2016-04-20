@@ -1,0 +1,44 @@
+.icon-user {
+  background: #fff url('../forms/images/user-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-name {
+  background: #fff url('../forms/images/compose-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-email {
+  background: #fff url('../forms/images/mail-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-date {
+  background: #fff url('../forms/images/calendar-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-pass {
+  background: #fff url('../forms/images/key-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-search {
+  background: #fff url('../forms/images/magnifyingglass-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-movie {
+  background: #fff url('../forms/images/video-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-category {
+  background: #fff url('../forms/images/category.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-search-lg {
+  background: #fff url('../forms/images/magnifyingglass-32.png') 7px 7px no-repeat;
+  padding-left: 50px;
+}
