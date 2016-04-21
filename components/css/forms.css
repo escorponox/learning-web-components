@@ -18,6 +18,14 @@
   font: 16px/1.5em "Droid Sans", sans-serif;
 }
 
+.coves-form-section {
+  margin-bottom: 3%;
+}
+
+.coves-heading {
+  color: #005EFF;
+}
+
 .coves-label {
   color: #005EFF;
   font-weight: bold;
@@ -45,6 +53,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
+  background-color: #FFFFFF;
 }
 
 .coves-input-lg {
@@ -70,6 +79,7 @@
 
 .coves-select option {
   color: #000000;
+  background-color: #FFFFFF;
 }
 
 .coves-select option[value=""] {
@@ -104,8 +114,11 @@
 
 .coves-checkbox {
   line-height: 2em;
-  text-align: center;
   margin: 10px 0;
+}
+
+.coves-align-center {
+  text-align: center;
 }
 
 .coves-checkbox input[type=checkbox] {
@@ -115,19 +128,16 @@
 .fake-checkbox {
   display: inline-block;
   margin-right: 6px;
-  position: relative;
-  top: 3px;
   cursor: pointer;
   width: 1.5em;
-  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
   border: 1px solid transparent;
   border-radius: 5px;
   background: #FFFFFF;
 }
 
 .fake-checkbox .fa-check {
-  position: relative;
-  bottom: 4px;
   color: #005EFF;
   opacity: 0;
 }
