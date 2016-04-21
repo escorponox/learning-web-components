@@ -1,0 +1,89 @@
+@font-face {
+  font-family: calculator;
+  src: url(../fonts/digital-7.mono.ttf);
+}
+
+.calculator {
+  background: #66DDFF;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font: bold 16px "Droid Sans";
+  overflow: auto;
+  padding: 10px;
+  width: 295px;
+}
+
+.screen-input {
+  background-color: #ffffff;
+  border: 2px solid #00B3E5;
+  border-radius: 5px;
+  color: #000000;
+  font: 32px calculator;
+  margin: 5px;
+  padding: 3px;
+  text-align: right;
+  width: 255px;
+}
+
+.button {
+  border: 2px solid;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 35px;
+  margin: 5px;
+  padding: 6px;
+  text-align: center;
+}
+
+.b40 {
+  float: left;
+  width: 100px;
+}
+
+.b20 {
+  float: left;
+  width: 45px;
+}
+
+.equal {
+  background-color: #91FF66;
+  border-color: #40E500;
+  color: #007400;
+  float: right;
+  height: 80px;
+  vertical-align: middle;
+}
+
+.equal:active {
+  border-color: #EDFFE5;
+}
+
+.clear-del {
+  background-color: #FF6691;
+  border-color: #E50040;
+  color: #69001D;
+}
+
+.clear-del:active {
+  border-color: #FFE5ED;
+}
+
+.number {
+  background-color: #6691FF;
+  border-color: #0040E5;
+  color: #001E74;
+}
+
+.number:active {
+  border-color: #E5EDFF;
+}
+
+.sign {
+  background-color: #FF66DD;
+  border-color: #E500B3;
+  color: #6C0058;
+}
+
+.sign:active {
+  border-color: #FFE5F9;
+}
