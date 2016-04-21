@@ -27,6 +27,7 @@
 }
 
 .coves-label {
+  display: inline-block;
   color: #005EFF;
   font-weight: bold;
   padding: 5px;
@@ -37,6 +38,11 @@
 .center-label {
   display: block;
   text-align: center;
+}
+
+.label-right {
+  width: 15%;
+  text-align: right;
 }
 
 .label-lg {
@@ -54,6 +60,10 @@
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
   background-color: #FFFFFF;
+}
+
+.input-inline {
+  width: auto;
 }
 
 .coves-input-lg {
@@ -163,4 +173,12 @@
   margin: 10px 0;
   width: 100%;
   resize: vertical;
+}
+
+.hover-show {
+  display:none;
+}
+
+.hover-show-trigger:hover + .hover-show {
+  display: inline-block;
 }
