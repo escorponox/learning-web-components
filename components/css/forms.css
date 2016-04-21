@@ -149,5 +149,18 @@
 .coves-textarea {
   font: 1em "Droid Sans", sans-serif;
   border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 6px 10px;
+  box-sizing: border-box;
+}
+
+.textarea-noresize {
   resize: none;
+}
+
+.textarea-block {
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+  resize: vertical;
 }
