@@ -139,4 +139,5 @@
 .coves-textarea {
   font: 1em "Droid Sans", sans-serif;
   border: 1px solid transparent;
+  resize: none;
 }
