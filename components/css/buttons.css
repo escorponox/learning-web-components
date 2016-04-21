@@ -26,15 +26,10 @@ a:link {
   border-color: #0069FF;
 }
 
-.button-sm {
-  height: 32px;
-  line-height: 20px;
-}
-
-.button-md {
-  height: 50px;
-  line-height: 34px;
-  font-size: 1.25em;
+.button-center {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .button-lg {
@@ -44,8 +39,13 @@ a:link {
   font-size: 1.5em;
 }
 
-.button-center {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
+.button-md {
+  height: 50px;
+  line-height: 34px;
+  font-size: 1.25em;
+}
+
+.button-sm {
+  height: 32px;
+  line-height: 20px;
 }

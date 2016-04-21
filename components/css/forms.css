@@ -10,12 +10,16 @@
   color: #40D5FF;
 }
 
+.coves-align-center-container {
+  text-align: center;
+}
+
 .coves-form {
-  border-radius: 5px;
   background-color: #BFF1FF;
-  padding: 3% 5%;
+  border-radius: 5px;
   box-sizing: border-box;
   font: 16px/1.5em "Droid Sans", sans-serif;
+  padding: 3% 5%;
 }
 
 .coves-form-section {
@@ -27,42 +31,50 @@
 }
 
 .coves-label {
-  display: inline-block;
-  color: #005EFF;
-  font-weight: bold;
-  padding: 5px;
   border: 1px solid transparent;
   border-radius: 5px;
+  color: #005EFF;
+  display: inline-block;
+  font-weight: bold;
+  padding: 5px;
 }
 
-.center-label {
+.coves-label-normal {
+  font-weight: normal;
+}
+
+.coves-label-center {
   display: block;
   text-align: center;
 }
 
-.label-right {
-  width: 15%;
+.coves-label-right {
   text-align: right;
+  width: 15%;
 }
 
-.label-lg {
+.coves-label-lg {
   font-size: 2em;
   line-height: 2em;
 }
 
+.coves-label-pointer {
+  cursor: pointer;
+}
+
 .coves-input {
-  -moz-appearance: none;
-  width: 100%;
-  padding: 6px 10px;
-  margin: 10px 0;
+  background-color: #FFFFFF;
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
-  background-color: #FFFFFF;
+  margin: 10px 0;
+  padding: 6px 10px;
+  width: 100%;
+  -moz-appearance: none;
 }
 
-.input-inline {
+.coves-input-inline {
   width: auto;
 }
 
@@ -71,11 +83,11 @@
   line-height: 1.5em;
 }
 
-.input-hover:hover {
+.coves-input-hover:hover {
   border: 1px solid #00A9FF;
 }
 
-.input-focus:focus {
+.coves-input-focus:focus {
   border: 1px solid #005EFF;
 }
 
@@ -88,97 +100,85 @@
 }
 
 .coves-select option {
-  color: #000000;
   background-color: #FFFFFF;
+  color: #000000;
 }
 
 .coves-select option[value=""] {
   color: #40D5FF;
 }
 
-.coves-radio {
+.coves-radio-container {
   line-height: 2em;
   margin: 5px 0;
 }
 
-.label-normal {
-  font-weight: normal;
-}
-
-.label-pointer {
-  cursor: pointer;
-}
-
-.coves-input-radio {
+.coves-radio-input {
   cursor: pointer;
 }
 
 .coves-radio-text {
-  padding: 1px 5px;
-  margin-left: 10px;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
+  margin-left: 10px;
+  padding: 1px 5px;
 }
 
-.coves-checkbox {
+.coves-checkbox-container {
   line-height: 2em;
   margin: 10px 0;
 }
 
-.coves-align-center {
-  text-align: center;
-}
-
-.coves-checkbox input[type=checkbox] {
+.coves-checkbox-container input[type=checkbox] {
   display: none;
 }
 
-.fake-checkbox {
-  display: inline-block;
-  margin-right: 6px;
-  cursor: pointer;
-  width: 1.5em;
-  line-height: 1.5em;
-  text-align: center;
+.coves-checkbox-fake {
+  background: #FFFFFF;
   border: 1px solid transparent;
   border-radius: 5px;
-  background: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5em;
+  margin-right: 6px;
+  text-align: center;
+  width: 1.5em;
 }
 
-.fake-checkbox .fa-check {
+.coves-checkbox-fake .fa-check {
   color: #005EFF;
   opacity: 0;
 }
 
-.coves-checkbox input[type=checkbox]:checked + .fake-checkbox .fa-check {
+.coves-checkbox-container input[type=checkbox]:checked + .coves-checkbox-fake .fa-check {
   opacity: 1;
 }
 
 .coves-textarea {
-  font: 1em "Droid Sans", sans-serif;
   border: 1px solid transparent;
   border-radius: 5px;
-  padding: 6px 10px;
   box-sizing: border-box;
+  font: 1em "Droid Sans", sans-serif;
+  padding: 6px 10px;
 }
 
-.textarea-noresize {
+.coves-textarea-noresize {
   resize: none;
 }
 
-.textarea-block {
+.coves-textarea-block {
   display: block;
   margin: 10px 0;
-  width: 100%;
   resize: vertical;
+  width: 100%;
 }
 
-.hover-show {
-  display:none;
+.coves-hover-show {
+  display: none;
 }
 
-.hover-show-trigger:hover + .hover-show {
+.coves-hover-show-trigger:hover + .coves-hover-show {
   display: inline-block;
 }

@@ -11,13 +11,13 @@
   <form method="post" action="#" novalidate>
     <h3 class="coves-heading">Schedule Appointment</h3>
     <label for="date" class="coves-label">Date</label>
-    <input id="date" class="coves-input input-focus input-hover" type="text" name="date" placeholder="MM/DD/YYYY"
+    <input id="date" class="coves-input coves-input-focus coves-input-hover" type="text" name="date" placeholder="MM/DD/YYYY"
            tabindex="1">
     <label for="time" class="coves-label">Time</label>
-    <input id="time" class="coves-input input-focus input-hover" type="text" name="time" placeholder="HH:MM"
+    <input id="time" class="coves-input coves-input-focus coves-input-hover" type="text" name="time" placeholder="HH:MM"
            tabindex="2">
     <label for="timezone" class="coves-label">Timezone</label>
-    <select id="timezone" class="coves-input coves-select input-hover input-focus" name="timezone" required
+    <select id="timezone" class="coves-input coves-select coves-input-hover coves-input-focus" name="timezone" required
             tabindex="3">
       <option class="select-default" selected value="">Select a Timezone</option>
       <option value="-12">(GMT-12:00) International Date Line West</option>
@@ -104,13 +104,13 @@
       <option value="13">(GMT+13:00) Nuku'alofa</option>
     </select>
     <label for="message" class="coves-label">Message</label>
-    <textarea id="message" name="message" class="coves-textarea textarea-block input-hover input-focus" rows="5"
+    <textarea id="message" name="message" class="coves-textarea coves-textarea-block coves-input-hover coves-input-focus" rows="5"
               placeholder="Appointment Message" tabindex="4"></textarea>
     <label for="contact" class="coves-label">Contact Number</label>
-    <input id="contact" class="coves-input input-hover input-focus icon-name" type="text" name="contact"
+    <input id="contact" class="coves-input coves-input-hover coves-input-focus icon-name" type="text" name="contact"
            placeholder="Contact Number" tabindex="5">
     <label for="email" class="coves-label">Email Address</label>
-    <input id="email" class="coves-input input-hover input-focus" type="email" name="email"
+    <input id="email" class="coves-input coves-input-hover coves-input-focus" type="email" name="email"
            placeholder="E-mail address" tabindex="6">
     <input type="submit" class="button" value="Submit" tabindex="7">
   </form>

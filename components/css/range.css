@@ -6,15 +6,15 @@
   width: 75px;
 }
 
-.coves-input-range {
+.input-range-coves {
   -webkit-appearance: none;
   height: 6px;
   margin: 15px 0;
 }
-.coves-input-range:focus {
+.input-range-coves:focus {
   outline: none;
 }
-.coves-input-range::-webkit-slider-runnable-track {
+.input-range-coves::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -22,7 +22,7 @@
   border-radius: 3px;
   border: 1px solid #0069ff;
 }
-.coves-input-range::-webkit-slider-thumb {
+.input-range-coves::-webkit-slider-thumb {
   border: 1px solid #0069ff;
   height: 24px;
   width: 24px;
@@ -32,11 +32,11 @@
   -webkit-appearance: none;
   margin-top: -10px;
 }
-.coves-input-range:focus::-webkit-slider-runnable-track {
+.input-range-coves:focus::-webkit-slider-runnable-track {
   background: #ffffff;
 }
 
-.coves-input-range::-moz-range-track {
+.input-range-coves::-moz-range-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -44,7 +44,7 @@
   border-radius: 3px;
   border: 1px solid #0069ff;
 }
-.coves-input-range::-moz-range-thumb {
+.input-range-coves::-moz-range-thumb {
   border: 1px solid #0069ff;
   height: 12px;
   width: 12px;
@@ -52,7 +52,7 @@
   background: #00a9ff;
   cursor: pointer;
 }
-.coves-input-range::-ms-track {
+.input-range-coves::-ms-track {
   width: 100%;
   height: 6px;
   cursor: pointer;
@@ -60,17 +60,17 @@
   border-color: transparent;
   color: transparent;
 }
-.coves-input-range::-ms-fill-lower {
+.input-range-coves::-ms-fill-lower {
   background: #ffffff;
   border: 1px solid #0069ff;
   border-radius: 6px;
 }
-.coves-input-range::-ms-fill-upper {
+.input-range-coves::-ms-fill-upper {
   background: #ffffff;
   border: 1px solid #0069ff;
   border-radius: 6px;
 }
-.coves-input-range::-ms-thumb {
+.input-range-coves::-ms-thumb {
   border: 1px solid #0069ff;
   height: 24px;
   width: 24px;
@@ -78,9 +78,9 @@
   background: #00a9ff;
   cursor: pointer;
 }
-.coves-input-range:focus::-ms-fill-lower {
+.input-range-coves:focus::-ms-fill-lower {
   background: #ffffff;
 }
-.coves-input-range:focus::-ms-fill-upper {
+.input-range-coves:focus::-ms-fill-upper {
   background: #ffffff;
 }
