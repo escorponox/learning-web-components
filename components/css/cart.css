@@ -9,6 +9,8 @@
   padding: 0.5em 0.5em 0.5em 3.5em;
   position: fixed;
   width: 100%;
+  transition: width 2s;
+  transition-timing-function: ease-out;
 }
 
 .fa {
