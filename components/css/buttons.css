@@ -26,12 +26,6 @@ a:link {
   border-color: #0069FF;
 }
 
-.button-center {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .button-lg {
   height: 60px;
   line-height: 36px;

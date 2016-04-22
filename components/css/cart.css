@@ -1,0 +1,39 @@
+.cart {
+  background-color: #FFBFF9;
+  bottom: 0;
+  clear: both;
+  font: 16px "Droid Sans", sans-serif;
+  height: 3em;
+  left: 0;
+  overflow: auto;
+  padding: 0.5em 0.5em 0.5em 3.5em;
+  position: fixed;
+  width: 100%;
+}
+
+.fa {
+  color: #0069FF;
+}
+
+.coves-checkbox-fake .fa-angle-double-up,
+.expand-checkbox:checked + .coves-checkbox-fake .fa-angle-double-down {
+  display: inline;
+}
+
+.expand-checkbox,
+.coves-checkbox-fake .fa-angle-double-down,
+.expand-checkbox:checked + .coves-checkbox-fake .fa-angle-double-up {
+  display: none;
+}
+
+.coves-checkbox-fake {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  z-index: 2;
+}
+
+.expand-checkbox:checked ~ .cart {
+  background-color: #FF00E8;
+  height: 30em;
+}

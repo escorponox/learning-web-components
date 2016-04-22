@@ -1,0 +1,57 @@
+.listing-container {
+  background-color: #BFFFC5;
+  font: 16px "Droid Sans", sans-serif;
+  overflow: auto;
+  padding: 1.5em;
+}
+
+.listing-heading {
+  color: #00800B;
+  font-size: 3em;
+}
+
+.article-container {
+  background-color: #FFE5BF;
+  border: 2px solid #FF9600;
+  border-radius: 5px;
+  float: left;
+  height: 24em;
+  margin: 1px;
+  padding: 1em 1.5em;
+  width: 10em;
+}
+
+.article-heading {
+  color: #FF5600;
+  height: 1.25em;
+  margin: 0.5em 0;
+  overflow: hidden;
+}
+
+
+.article-photo {
+  border-radius: 5px;
+  height: auto;
+  max-width: 100%;
+}
+
+.description {
+  height: 2.5em;
+  line-height: 1.25em;
+  overflow: hidden;
+}
+
+.price {
+  color: #FF5600;
+  font-size: 1.5em;
+  font-weight: bold;
+  height: 1em;
+  margin: 0.5em 0;
+}
+
+.input-quantity {
+  border-color: #00A9FF;
+  display: inline-block;
+  text-align: center;
+  width: 2.5em;
+}

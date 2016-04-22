@@ -11,9 +11,11 @@
 <div class="coves-form">
   <form method="post" action="#" novalidate autocomplete="off">
     <label for="search" class="coves-label coves-label-center coves-label-lg">Search</label>
-    <input id="search" class="coves-input coves-input-lg coves-input-hover coves-input-focus icon-search-lg" type="text" name="search" required placeholder="Search..."
+    <input id="search" class="coves-input coves-input-lg coves-input-hover coves-input-focus icon-search-lg" type="text"
+           name="search" required placeholder="Search..."
            tabindex="1">
-    <select id="categories" class="coves-input coves-select coves-input-hover coves-input-focus icon-category" name="category" required tabindex="2">
+    <select id="categories" class="coves-input coves-select coves-input-hover coves-input-focus icon-category"
+            name="category" required tabindex="2">
       <option class="select-default" selected value="">Select a Category</option>
       <option value="movie">Movies</option>
       <option value="game">Games</option>
@@ -23,7 +25,9 @@
       <option value="computer">Computers</option>
     </select>
 
-    <input type="submit" class="button button-center" value="Search" tabindex="3">
+    <div class="align-center-container">
+      <input type="submit" class="button" value="Search" tabindex="3">
+    </div>
   </form>
 </div>
 </body>
