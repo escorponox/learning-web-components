@@ -139,9 +139,10 @@
   background: #FFFFFF;
   border: 1px solid transparent;
   border-radius: 5px;
+  box-sizing: border-box;
   cursor: pointer;
   display: inline-block;
-  line-height: 1.5em;
+  line-height: 1.375em;
   margin-right: 6px;
   text-align: center;
   width: 1.5em;

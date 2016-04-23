@@ -1,15 +1,16 @@
 .cart {
   background-color: #FFBFF9;
   bottom: 0;
+  box-sizing: border-box;
   clear: both;
   font: 16px "Droid Sans", sans-serif;
-  height: 3em;
+  height: 3.5em;
   left: 0;
   overflow: auto;
-  padding: 0.5em 0.5em 0.5em 3.5em;
+  padding: 1em 1em 1em 3.5em;
   position: fixed;
   width: 100%;
-  transition: width 2s;
+  transition: height 1s;
   transition-timing-function: ease-out;
 }
 
@@ -33,9 +34,14 @@
   bottom: 1em;
   left: 1em;
   z-index: 2;
+  transition: bottom 1s;
+  transition-timing-function: ease-out;
 }
 
 .expand-checkbox:checked ~ .cart {
-  background-color: #FF00E8;
-  height: 30em;
+  height: 15em;
+}
+
+.expand-checkbox:checked + .coves-checkbox-fake {
+  bottom: 12.5em;
 }
