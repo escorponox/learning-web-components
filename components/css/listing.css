@@ -96,18 +96,19 @@ body {
 }
 
 .expand-checkbox:checked ~ .cart {
-  height: 9.5em;
+  height: 12.5em;
 }
 
 .expand-checkbox:checked + .coves-checkbox-fake {
-  bottom: 7em;
+  bottom: 5.5em;
 }
 
 .expand-checkbox:checked ~ .listing-container {
-  margin-bottom: 9.5em;
+  margin-bottom: 12.5em;
 }
 
-.expand-checkbox:checked ~ .cart .cart-list {
+.expand-checkbox:checked ~ .cart .cart-list,
+.expand-checkbox:checked ~ .cart .promo-code{
   display:block;
 }
 
@@ -172,4 +173,15 @@ body {
 .item-quantity {
   text-align: right;
   width: 10%;
+}
+
+.promo-code {
+  margin-top: 0.5em;
+  float: right;
+  display: none;
+}
+
+.promo-code .coves-input {
+  border-color: #00A9FF;
+  margin: 0;
 }
