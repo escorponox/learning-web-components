@@ -14,6 +14,10 @@
   text-align: center;
 }
 
+.coves-form .button {
+  margin: 0.5em 0;
+}
+
 .coves-form {
   background-color: #BFF1FF;
   border-radius: 5px;
@@ -36,7 +40,7 @@
   color: #005EFF;
   display: inline-block;
   font-weight: bold;
-  padding: 5px;
+  padding: .25em;
 }
 
 .coves-label-normal {
@@ -68,8 +72,8 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
-  margin: 10px 0;
-  padding: 6px 10px;
+  margin: 0.5em 0;
+  padding: 0.375em 0.625em;
   width: 100%;
   -moz-appearance: none;
 }
@@ -110,7 +114,7 @@
 
 .coves-radio-container {
   line-height: 2em;
-  margin: 5px 0;
+  margin: 0.25em 0;
 }
 
 .coves-radio-input {
@@ -122,13 +126,13 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
-  margin-left: 10px;
-  padding: 1px 5px;
+  margin-left: 0.5em;
+  padding: 0.25em;
 }
 
 .coves-checkbox-container {
   line-height: 2em;
-  margin: 10px 0;
+  margin: 0.5em 0;
 }
 
 .coves-checkbox-container input[type=checkbox] {
@@ -143,7 +147,7 @@
   cursor: pointer;
   display: inline-block;
   line-height: 1.375em;
-  margin-right: 6px;
+  margin-right: 0.5em;
   text-align: center;
   width: 1.5em;
 }
@@ -162,7 +166,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em "Droid Sans", sans-serif;
-  padding: 6px 10px;
+  padding: 0.5em;
 }
 
 .coves-textarea-noresize {
@@ -171,7 +175,7 @@
 
 .coves-textarea-block {
   display: block;
-  margin: 10px 0;
+  margin: 0.5em 0;
   resize: vertical;
   width: 100%;
 }

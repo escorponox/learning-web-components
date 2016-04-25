@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .listing-container {
   background-color: #BFFFC5;
   font: 16px "Droid Sans", sans-serif;
@@ -59,22 +63,6 @@
   width: 2.5em;
 }
 
-.cart {
-  background-color: #FFBFF9;
-  bottom: 0;
-  box-sizing: border-box;
-  clear: both;
-  font: 16px "Droid Sans", sans-serif;
-  height: 3.5em;
-  left: 0;
-  overflow: auto;
-  padding: 1em 1em 1em 3.5em;
-  position: fixed;
-  width: 100%;
-  transition: height 0.5s;
-  transition-timing-function: ease-out;
-}
-
 .fa {
   color: #0069FF;
 }
@@ -99,14 +87,89 @@
   transition-timing-function: ease-out;
 }
 
+.coves-checkbox-fake:hover {
+  border-color: #0069FF;
+}
+
+.coves-checkbox-fake:active {
+  background-color: #A7CBFF;
+}
+
 .expand-checkbox:checked ~ .cart {
-  height: 15em;
+  height: 9.5em;
 }
 
 .expand-checkbox:checked + .coves-checkbox-fake {
-  bottom: 12.5em;
+  bottom: 7em;
 }
 
 .expand-checkbox:checked ~ .listing-container {
-  margin-bottom: 15em;
+  margin-bottom: 9.5em;
+}
+
+.expand-checkbox:checked ~ .cart .cart-list {
+  display:block;
+}
+
+.cart {
+  background-color: #FFBFF9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  bottom: 0;
+  box-sizing: border-box;
+  clear: both;
+  font: 16px "Droid Sans", sans-serif;
+  height: 3.5em;
+  left: 0;
+  padding: 1em 1em 1em 3.5em;
+  position: fixed;
+  width: 100%;
+  transition: height 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.cart-heading {
+  line-height: 1.5em;
+}
+
+.cart-list {
+  display: none;
+  margin-top: 1em;
+  height: 4.875em;
+  overflow-y: auto;
+}
+
+.cart-item {
+  height: 2.25em;
+  margin: 0.125em 0;
+}
+
+#chekout-button {
+  float: right;
+  position: relative;
+  bottom: 0.375em;
+}
+
+.item-span {
+  color: #743E71;
+  line-height: 2.25em;
+  margin-right: 1em;
+}
+
+.item-left {
+  float:left;
+}
+
+.item-right {
+  float: right;
+}
+
+.item-total {
+  text-align: right;
+  width: 15%;
+}
+
+.item-quantity {
+  text-align: right;
+  width: 10%;
 }

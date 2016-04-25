@@ -4,16 +4,12 @@ a:link {
 
 .button {
   display: inline-block;
-  box-sizing: border-box;
-  height: 40px;
-  margin: 10px 0;
   color: #FFFFFF;
   background-color: #00C7FF;
   border: 2px outset #00A9FF;
   border-radius: 5px;
-  padding: 5px;
-  font: 16px/26px "Droid Sans", sans-serif;
-  font-size: 1em;
+  padding: 0.5em;
+  font: 16px/1.5em "Droid Sans", sans-serif;
   text-align: center;
 }
 
@@ -27,19 +23,13 @@ a:link {
 }
 
 .button-lg {
-  height: 60px;
-  line-height: 36px;
-  padding: 10px 10px;
   font-size: 1.5em;
 }
 
 .button-md {
-  height: 50px;
-  line-height: 34px;
   font-size: 1.25em;
 }
 
 .button-sm {
-  height: 32px;
-  line-height: 20px;
+  line-height: 1em;
 }
