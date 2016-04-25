@@ -3,6 +3,9 @@
   font: 16px "Droid Sans", sans-serif;
   overflow: auto;
   padding: 1.5em;
+  margin-bottom: 3.5em;
+  transition: margin-bottom 0.5s;
+  transition-timing-function: ease-out;
 }
 
 .listing-heading {
@@ -54,4 +57,56 @@
   display: inline-block;
   text-align: center;
   width: 2.5em;
+}
+
+.cart {
+  background-color: #FFBFF9;
+  bottom: 0;
+  box-sizing: border-box;
+  clear: both;
+  font: 16px "Droid Sans", sans-serif;
+  height: 3.5em;
+  left: 0;
+  overflow: auto;
+  padding: 1em 1em 1em 3.5em;
+  position: fixed;
+  width: 100%;
+  transition: height 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.fa {
+  color: #0069FF;
+}
+
+.coves-checkbox-fake .fa-angle-double-up,
+.expand-checkbox:checked + .coves-checkbox-fake .fa-angle-double-down {
+  display: inline;
+}
+
+.expand-checkbox,
+.coves-checkbox-fake .fa-angle-double-down,
+.expand-checkbox:checked + .coves-checkbox-fake .fa-angle-double-up {
+  display: none;
+}
+
+.coves-checkbox-fake {
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  z-index: 2;
+  transition: bottom 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.expand-checkbox:checked ~ .cart {
+  height: 15em;
+}
+
+.expand-checkbox:checked + .coves-checkbox-fake {
+  bottom: 12.5em;
+}
+
+.expand-checkbox:checked ~ .listing-container {
+  margin-bottom: 15em;
 }
