@@ -1,14 +1,14 @@
 .sidebar {
   background-color: #F6F6F6;
-  padding: 1.5em;
   border: 2px solid #4D4E7F;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
   border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   color: #FF5A58;
   font: 16px "Roboto", sans-serif;
   max-width: 525px;
   min-width: 225px;
+  padding: 1.5em;
 }
 
 .sidebar__heading {
@@ -20,10 +20,10 @@
 }
 
 .sidebar__img {
-  box-sizing: border-box;
-  max-width: 100%;
-  height: auto;
   border-radius: 5px;
+  box-sizing: border-box;
+  height: auto;
+  max-width: 100%;
 }
 
 .sidebar__img--border {
@@ -33,22 +33,23 @@
 .sidebar__photo-container {
   box-sizing: border-box;
   float: left;
-  width: 40%;
   padding: 5px;
+  width: 40%;
 }
 
 .sidebar__photo-container--main {
   width: 60%;
 }
+
 .clear-both {
   clear: both;
 }
 
 .sidebar__hr {
+  background-color: #4D4E7F;
+  border: 0;
   height: 2px;
   width: 90%;
-  border: 0;
-  background-color: #4D4E7F;
 }
 
 .sidebar__link {
@@ -56,13 +57,13 @@
 }
 
 .sidebar__button {
-  display: inline-block;
-  color: #FFFFFF;
   background-color: #4D4E7F;
   border: 2px outset #343698;
   border-radius: 5px;
-  padding: 0.5em;
+  color: #FFFFFF;
+  display: inline-block;
   font: 1em/1.5em "Droid Sans", sans-serif;
+  padding: 0.5em;
   text-align: center;
 }
 

@@ -23,9 +23,9 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 16px/1.5em "Droid Sans", sans-serif;
-  padding: 1.5em 2em;
-  min-width: 350px;
   max-width: 700px;
+  min-width: 350px;
+  padding: 1.5em 2em;
 }
 
 .coves-form__section {

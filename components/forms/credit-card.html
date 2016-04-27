@@ -1,73 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="../../css/forms.css"/>
-  <link rel="stylesheet" type="text/css" href="../../css/buttons.css"/>
+  <link rel="stylesheet" href="../../css/forms.css"/>
+  <link rel="stylesheet" href="../../css/buttons.css"/>
+  <link rel="stylesheet" href="../../css/home.css"/>
   <meta charset="UTF-8">
   <title>Credit Card Form</title>
 </head>
 <body>
-<div class="coves-form">
-  <form method="post" action="#" novalidate>
-    <h1 class="coves-form__heading">Credit Card</h1>
-    <div>
-      <label for="full-name" class="coves-form__label coves-form__label--right">Card Name</label>
-      <input id="full-name" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover" type="text" name="full-name"
-             placeholder="Cardholder's Full Name" tabindex="1">
-    </div>
-    <div>
-      <label for="card-number" class="coves-form__label coves-form__label--right">Card Number</label>
-      <input id="card-number" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover" type="text" name="card-number"
-             placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" tabindex="2">
-    </div>
-    <div>
-      <label for="csv" class="coves-form__label coves-form__label--right">CSV</label>
-      <input id="csv" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover coves-hover-show-trigger" type="text" name="csv"
-             maxlength="3"
-             tabindex="3">
-      <label class="coves-form__label coves-form__label--normal coves-form__hover-show">Three-digit security code on the back of the card</label>
-    </div>
-    <div>
-      <label class="coves-form__label coves-form__label--right">Expiration Date</label>
-      <select id="month" class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus" name="month" required
-              tabindex="4">
-        <option class="select-default" selected value="">Month</option>
-        <option value="1">01</option>
-        <option value="2">02</option>
-        <option value="3">03</option>
-        <option value="4">04</option>
-        <option value="5">05</option>
-        <option value="6">06</option>
-        <option value="7">07</option>
-        <option value="8">08</option>
-        <option value="9">09</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-      </select>
-      <select id="year" class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus" name="year" required
-              tabindex="5">
-        <option class="select-default" selected value="">Year</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-        <option value="2025">2025</option>
-        <option value="2026">2026</option>
-        <option value="2027">2027</option>
-        <option value="2028">2028</option>
-        <option value="2029">2029</option>
-        <option value="2030">2030</option>
-      </select>
-    </div>
-
-    <input type="submit" class="button" value="Submit" tabindex="8">
-  </form>
+<div class="menu">
+  <a href="../../index.html" class="button button--green">Back to Home</a>
+  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
+</div>
+<div class="content">
+  <div class="coves-form">
+    <form method="post" action="#" novalidate>
+      <h1 class="coves-form__heading">Credit Card</h1>
+      <div>
+        <label for="full-name" class="coves-form__label coves-form__label--right">Card Name</label>
+        <input id="full-name"
+               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
+               type="text" name="full-name"
+               placeholder="Cardholder's Full Name" tabindex="1">
+      </div>
+      <div>
+        <label for="card-number" class="coves-form__label coves-form__label--right">Card Number</label>
+        <input id="card-number"
+               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
+               type="text" name="card-number"
+               placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" tabindex="2">
+      </div>
+      <div>
+        <label for="csv" class="coves-form__label coves-form__label--right">CSV</label>
+        <input id="csv"
+               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover coves-hover-show-trigger"
+               type="text" name="csv"
+               maxlength="3"
+               tabindex="3">
+        <label class="coves-form__label coves-form__label--normal coves-form__hover-show">Three-digit security code on
+          the back of the card</label>
+      </div>
+      <div>
+        <label class="coves-form__label coves-form__label--right">Expiration Date</label>
+        <select id="month"
+                class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus"
+                name="month" required
+                tabindex="4">
+          <option class="select-default" selected value="">Month</option>
+          <option value="1">01</option>
+          <option value="2">02</option>
+          <option value="3">03</option>
+          <option value="4">04</option>
+          <option value="5">05</option>
+          <option value="6">06</option>
+          <option value="7">07</option>
+          <option value="8">08</option>
+          <option value="9">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select id="year"
+                class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus"
+                name="year" required
+                tabindex="5">
+          <option class="select-default" selected value="">Year</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+        </select>
+      </div>
+      <input type="submit" class="button" value="Submit" tabindex="8">
+    </form>
+  </div>
 </div>
 </body>
 </html>
