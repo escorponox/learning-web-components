@@ -1,85 +1,80 @@
 .sidebar {
   background-color: #F6F6F6;
-  padding: 5%;
+  padding: 1.5em;
   border: 2px solid #4D4E7F;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   color: #FF5A58;
   font: 16px "Roboto", sans-serif;
-
+  max-width: 525px;
+  min-width: 225px;
 }
 
-.sidebar-content {
-  width: 90%;
-}
-
-.sidebar-heading {
+.sidebar__heading {
   margin: 5px 0;
 }
 
-.sidebar-name {
+.sidebar__heading--name {
   font-weight: normal;
 }
 
-.sidebar-img {
+.sidebar__img {
   box-sizing: border-box;
   max-width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
-.sidebar-img-border {
+.sidebar__img--border {
   border: 2px solid #4D4E7F;
 }
 
-.sidebar-photo-container {
+.sidebar__photo-container {
   box-sizing: border-box;
   float: left;
   width: 40%;
   padding: 5px;
 }
 
-.sidebar-main-photo-container {
+.sidebar__photo-container--main {
   width: 60%;
 }
 .clear-both {
   clear: both;
 }
 
-.sidebar-hr {
+.sidebar__hr {
   height: 2px;
   width: 90%;
   border: 0;
   background-color: #4D4E7F;
 }
 
-a:link.sidebar-link {
+.sidebar__link {
   text-decoration: none;
 }
 
-.sidebar-button {
+.sidebar__button {
   display: inline-block;
-  box-sizing: border-box;
-  height: 40px;
   color: #FFFFFF;
   background-color: #4D4E7F;
   border: 2px outset #343698;
   border-radius: 5px;
-  padding: 5px;
-  font: 100%/26px "Droid Sans", sans-serif;
+  padding: 0.5em;
+  font: 1em/1.5em "Droid Sans", sans-serif;
   text-align: center;
 }
 
-.sidebar-button:hover {
+.sidebar__button:hover {
   background-color: #343698;
 }
 
-.sidebar-button:active {
+.sidebar__button:active {
   background-color: #1A1DB2;
   border-color: #1A1DB2;
 }
 
-.sidebar-paragraph {
+.sidebar__paragraph {
   color: #000000;
 }

@@ -10,22 +10,22 @@
 <body>
 <div class="coves-form">
   <form method="post" action="#" novalidate>
-    <section id="shipping" class="coves-form-section">
-      <h2 class="coves-heading">Shipping Address</h2>
-      <label for="first-name" class="coves-label">First Name</label>
-      <input id="first-name" class="coves-input coves-input-hover coves-input-focus" type="text" name="firstname"
+    <section id="shipping" class="coves-form__section">
+      <h2 class="coves-form__heading">Shipping Address</h2>
+      <label for="first-name" class="coves-form__label">First Name</label>
+      <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="firstname"
              placeholder="Your first name" tabindex="1">
-      <label for="last-name" class="coves-label">Last Name</label>
-      <input id="last-name" class="coves-input coves-input-hover coves-input-focus" type="text" name="lastname"
+      <label for="last-name" class="coves-form__label">Last Name</label>
+      <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="lastname"
              placeholder="Your last name" tabindex="2">
-      <label for="address" class="coves-label">Address</label>
-      <input id="address" class="coves-input coves-input-hover coves-input-focus" type="text" name="address"
+      <label for="address" class="coves-form__label">Address</label>
+      <input id="address" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="address"
              placeholder="Your shipping address" tabindex="3">
-      <label for="city" class="coves-label">City</label>
-      <input id="city" class="coves-input coves-input-hover coves-input-focus" type="text" name="city"
+      <label for="city" class="coves-form__label">City</label>
+      <input id="city" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="city"
              placeholder="Shipping city" tabindex="4">
-      <label for="country" class="coves-label">Country</label>
-      <select id="country" class="coves-input coves-select coves-input-hover coves-input-focus" name="country" required
+      <label for="country" class="coves-form__label">Country</label>
+      <select id="country" class="coves-form__input coves-form__select coves-form__input--hover coves-form__input--focus" name="country" required
               tabindex="5">
         <option class="select-default" selected value="">Select a Country</option>
         <option value="AF">Afghanistan</option>
@@ -279,28 +279,28 @@
         <option value="ZW">Zimbabwe</option>
       </select>
     </section>
-    <section id="billing" class="coves-form-section">
-      <h2 class="coves-heading">Billing Address</h2>
-      <div class="coves-checkbox-container">
+    <section id="billing" class="coves-form__section">
+      <h2 class="coves-form__heading">Billing Address</h2>
+      <div class="coves-form__checkbox-container">
         <input id="same" type="checkbox" name="same" value="1" tabindex="6">
-        <label for="same" class="coves-checkbox-fake coves-input-hover"><span class="fa fa-check fa-lg"
-                                                                              aria-hidden="true"></span></label>
-        <label for="same" class="coves-label coves-label-pointer coves-input-hover">Same as Shipping Address</label>
+        <label for="same" class="coves-form__checkbox-container__fake-label coves-form__input--hover"><span class="fa fa-check fa-lg"
+                                                                                                            aria-hidden="true"></span></label>
+        <label for="same" class="coves-form__label coves-form__label--pointer coves-form__input--hover">Same as Shipping Address</label>
       </div>
-      <label for="billing-first-name" class="coves-label">First Name</label>
-      <input id="billing-first-name" class="coves-input coves-input-hover coves-input-focus" type="text" name="billing-firstname"
+      <label for="billing-first-name" class="coves-form__label">First Name</label>
+      <input id="billing-first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="billing-firstname"
              placeholder="Your first name" tabindex="7">
-      <label for="billing-last-name" class="coves-label">Last Name</label>
-      <input id="billing-last-name" class="coves-input coves-input-hover coves-input-focus" type="text" name="billing-lastname"
+      <label for="billing-last-name" class="coves-form__label">Last Name</label>
+      <input id="billing-last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="billing-lastname"
              placeholder="Your last name" tabindex="8">
-      <label for="billing-address" class="coves-label">Address</label>
-      <input id="billing-address" class="coves-input coves-input-hover coves-input-focus" type="text" name="address"
+      <label for="billing-address" class="coves-form__label">Address</label>
+      <input id="billing-address" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="address"
              placeholder="Your billing address" tabindex="9">
-      <label for="billing-city" class="coves-label">City</label>
-      <input id="billing-city" class="coves-input coves-input-hover coves-input-focus" type="text" name="billing-city"
+      <label for="billing-city" class="coves-form__label">City</label>
+      <input id="billing-city" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text" name="billing-city"
              placeholder="Billing city" tabindex="10">
-      <label for="billing-country" class="coves-label">Country</label>
-      <select id="billing-country" class="coves-input coves-select coves-input-hover coves-input-focus" name="billing-country"
+      <label for="billing-country" class="coves-form__label">Country</label>
+      <select id="billing-country" class="coves-form__input coves-form__select coves-form__input--hover coves-form__input--focus" name="billing-country"
               required tabindex="11">
         <option class="select-default" selected value="">Select a Country</option>
         <option value="AF">Afghanistan</option>
@@ -554,7 +554,7 @@
         <option value="ZW">Zimbabwe</option>
       </select>
     </section>
-    <input type="submit" class="button button-md" value="Submit" tabindex="">
+    <input type="submit" class="button button--md" value="Submit" tabindex="">
   </form>
 </div>
 </body>

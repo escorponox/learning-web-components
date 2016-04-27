@@ -9,27 +9,27 @@
 <body>
 <div class="coves-form">
   <form method="post" action="#" novalidate>
-    <h1 class="coves-heading">Credit Card</h1>
+    <h1 class="coves-form__heading">Credit Card</h1>
     <div>
-      <label for="full-name" class="coves-label coves-label-right">Card Name</label>
-      <input id="full-name" class="coves-input coves-input-inline coves-input-focus coves-input-hover" type="text" name="full-name"
+      <label for="full-name" class="coves-form__label coves-form__label--right">Card Name</label>
+      <input id="full-name" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover" type="text" name="full-name"
              placeholder="Cardholder's Full Name" tabindex="1">
     </div>
     <div>
-      <label for="card-number" class="coves-label coves-label-right">Card Number</label>
-      <input id="card-number" class="coves-input coves-input-inline coves-input-focus coves-input-hover" type="text" name="card-number"
+      <label for="card-number" class="coves-form__label coves-form__label--right">Card Number</label>
+      <input id="card-number" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover" type="text" name="card-number"
              placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" tabindex="2">
     </div>
     <div>
-      <label for="csv" class="coves-label coves-label-right">CSV</label>
-      <input id="csv" class="coves-input coves-input-inline coves-input-focus coves-input-hover coves-hover-show-trigger" type="text" name="csv"
+      <label for="csv" class="coves-form__label coves-form__label--right">CSV</label>
+      <input id="csv" class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover coves-hover-show-trigger" type="text" name="csv"
              maxlength="3"
              tabindex="3">
-      <label class="coves-label coves-label-normal coves-hover-show">Three-digit security code on the back of the card</label>
+      <label class="coves-form__label coves-form__label--normal coves-form__hover-show">Three-digit security code on the back of the card</label>
     </div>
     <div>
-      <label class="coves-label coves-label-right">Expiration Date</label>
-      <select id="month" class="coves-input coves-input-inline coves-select coves-input-hover coves-input-focus" name="month" required
+      <label class="coves-form__label coves-form__label--right">Expiration Date</label>
+      <select id="month" class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus" name="month" required
               tabindex="4">
         <option class="select-default" selected value="">Month</option>
         <option value="1">01</option>
@@ -45,7 +45,7 @@
         <option value="11">11</option>
         <option value="12">12</option>
       </select>
-      <select id="year" class="coves-input coves-input-inline coves-select coves-input-hover coves-input-focus" name="year" required
+      <select id="year" class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus" name="year" required
               tabindex="5">
         <option class="select-default" selected value="">Year</option>
         <option value="2016">2016</option>
