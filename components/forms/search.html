@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../../css/forms.css"/>
+  <link rel="stylesheet" href="../../css/icons.css"/>
+  <link rel="stylesheet" href="../../css/buttons.css"/>
+  <link rel="stylesheet" href="../../css/home.css"/>
+  <meta charset="UTF-8">
+  <title>Search Form</title>
+</head>
+<body>
+<div class="menu">
+  <a href="../../index.html" class="button button--green">Back to Home</a>
+  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
+</div>
+<div class="content">
+  <div class="coves-form">
+    <form method="post" action="#" novalidate autocomplete="off">
+      <label for="search" class="coves-form__label coves-form__label--center coves-form__label--lg">Search</label>
+      <input id="search"
+             class="coves-form__input coves-form__input--lg coves-form__input--hover coves-form__input--focus icon-search-lg"
+             type="text"
+             name="search" required placeholder="Search..."
+             tabindex="1">
+      <select id="categories"
+              class="coves-form__input coves-form__select coves-form__input--hover coves-form__input--focus icon-category"
+              name="category" required tabindex="2">
+        <option class="select-default" selected value="">Select a Category</option>
+        <option value="movie">Movies</option>
+        <option value="game">Games</option>
+        <option value="sport">Sports</option>
+        <option value="health">Health</option>
+        <option value="financial">Financial</option>
+        <option value="computer">Computers</option>
+      </select>
+
+      <div class="align-center-container">
+        <input type="submit" class="button" value="Search" tabindex="3">
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+.icon-user {
+  background: #fff url('../images/user-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-name {
+  background: #fff url('../images/compose-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-email {
+  background: #fff url('../images/mail-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-date {
+  background: #fff url('../images/calendar-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-pass {
+  background: #fff url('../images/key-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-search {
+  background: #fff url('../images/magnifyingglass-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-movie {
+  background: #fff url('../images/video-24.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-category {
+  background: #fff url('../images/category.png') 6px 6px no-repeat;
+  padding-left: 36px;
+}
+
+.icon-search-lg {
+  background: #fff url('../images/magnifyingglass-32.png') 7px 7px no-repeat;
+  padding-left: 50px;
+}
