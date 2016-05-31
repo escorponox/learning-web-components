@@ -1,44 +1,64 @@
-.icon-user {
-  background: #fff url('../images/user-24.png') 6px 6px no-repeat;
+.coves-form__icon-input-container {
+  position: relative;
+}
+
+.coves-form__icon-input-container--inline {
+  display: inline-block;
+  width: auto;
+}
+
+.coves-form__icon-input-container .icon {
+  position: absolute;
+  top: 15px;
+  left: 7px;
+}
+
+.coves-form__icon-input-container .icon--lg {
+  position: absolute;
+  top: 23px;
+  left: 11px;
+}
+
+.coves-form__icon-input-container .coves-form__input {
   padding-left: 36px;
+}
+
+.coves-form__icon-input-container .coves-form__input--lg {
+  padding-left: 50px;
+}
+
+.icon-user {
+  content: url('../images/user-24.png');
 }
 
 .icon-name {
-  background: #fff url('../images/compose-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/compose-24.png');
 }
 
 .icon-email {
-  background: #fff url('../images/mail-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/mail-24.png');
 }
 
 .icon-date {
-  background: #fff url('../images/calendar-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/calendar-24.png');
 }
 
 .icon-pass {
-  background: #fff url('../images/key-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/key-24.png');
 }
 
 .icon-search {
-  background: #fff url('../images/magnifyingglass-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/magnifyingglass-24.png');
 }
 
 .icon-movie {
-  background: #fff url('../images/video-24.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/video-24.png');
 }
 
 .icon-category {
-  background: #fff url('../images/category.png') 6px 6px no-repeat;
-  padding-left: 36px;
+  content:url('../images/category.png');
 }
 
 .icon-search-lg {
-  background: #fff url('../images/magnifyingglass-32.png') 7px 7px no-repeat;
-  padding-left: 50px;
+  content:url('../images/magnifyingglass-32.png');
 }
