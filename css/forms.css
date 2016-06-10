@@ -10,10 +10,6 @@
   color: #40D5FF;
 }
 
-.align-center-container {
-  text-align: center;
-}
-
 .coves-form .button {
   margin: 0.5em 0;
 }
@@ -36,6 +32,14 @@
   color: #005EFF;
 }
 
+.coves-form__input-container {
+  margin: 0.5em 0;
+}
+
+.coves-form__input-container--align-center {
+  text-align: center;
+}
+
 .coves-form__label {
   border: 1px solid transparent;
   border-radius: 5px;
@@ -56,7 +60,7 @@
 
 .coves-form__label--right {
   text-align: right;
-  width: 15%;
+  width: 125px;
 }
 
 .coves-form__label--lg {
@@ -74,7 +78,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
-  margin: 0.5em 0;
+  /*margin: 0.5em 0;*/
   padding: 0.375em 0.625em;
   width: 100%;
   -moz-appearance: none;
@@ -82,6 +86,10 @@
 
 .coves-form__input--inline {
   width: auto;
+}
+
+.coves-form__input--inline-small {
+  width: 70px;
 }
 
 .coves-form__input--lg {
@@ -97,12 +105,35 @@
   border: 1px solid #005EFF;
 }
 
-.coves-form__select {
-  cursor: pointer;
+.coves-form__input:focus:invalid {
+  background-color: #FFFFFF;
+  border: 1px solid #FF2100;
 }
 
-.coves-form__select:invalid {
-  color: #40D5FF;
+.coves-form__input:invalid {
+  background-color: #FFBFD1;
+  border: 1px solid #FF2100;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0
+}
+
+.coves-form__error {
+  border: 1px solid #FF2100;
+  border-top-color: transparent;
+  border-radius: 0 0 5px 5px;
+  background-color: #FFBFD1;
+  color: #FF2100;
+  display: none;
+  font-weight: 500;
+  padding: .25em;
+}
+
+.coves-form__input:invalid + .coves-form__error {
+  display: block;
+}
+
+.coves-form__select {
+  cursor: pointer;
 }
 
 .coves-form__select option {

@@ -16,43 +16,66 @@
 <div class="content">
   <div class="coves-form">
     <form method="post" action="#" novalidate>
-      <label for="username" class="coves-form__label">Username</label>
-      <div class="coves-form__icon-input-container">
-        <div class="icon icon-user"></div>
-        <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="text" name="username" placeholder="Your username" tabindex="1">
+      <div class="coves-form__input-container">
+        <label for="username" class="coves-form__label">Username</label>
+        <div class="coves-form__icon-input-container">
+          <div class="icon icon-user"></div>
+          <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="text" name="username" placeholder="Your username" tabindex="1">
+          <span id="username__error" class="coves-form__error" aria-live="polite"></span>
+        </div>
       </div>
-      <label for="first-name" class="coves-form__label">First Name</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-name"></span>
-        <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="text" name="firstname" placeholder="Your first name" tabindex="2"></div>
-      <label for="last-name" class="coves-form__label">Last Name</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-name"></span>
-        <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="text" name="lastname" placeholder="Your last name" tabindex="3"></div>
-      <label for="email" class="coves-form__label">Email Address</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-email"></span>
-        <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="email" name="email" placeholder="Your e-mail address" tabindex="4"></div>
-      <label for="birth" class="coves-form__label">Date of Birth</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-date"></span>
-        <input id="birth" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="text" name="birth" placeholder="Your date of birth" tabindex="5"></div>
-      <label for="pass" class="coves-form__label">Password</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-pass"></span>
-        <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="password" name="pass" tabindex="6"></div>
-      <label for="pass-repeat" class="coves-form__label">Repeat Password</label>
-      <div class="coves-form__icon-input-container">
-        <span class="icon icon-pass"></span>
-        <input id="pass-repeat" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-               type="password" name="pass-repeat" tabindex="7"></div>
-      <input type="submit" class="button" value="Submit" tabindex="8">
+      <div class="coves-form__input-container">
+        <label for="first-name" class="coves-form__label">First Name</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-name"></span>
+          <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="text" name="firstname" placeholder="Your first name" tabindex="2">
+        </div>
+      </div>
+      <div class="coves-form__input-container">
+        <label for="last-name" class="coves-form__label">Last Name</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-name"></span>
+          <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="text" name="lastname" placeholder="Your last name" tabindex="3">
+        </div>
+      </div>
+      <div class="coves-form__input-container">
+        <label for="email" class="coves-form__label">Email Address</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-email"></span>
+          <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="email" name="email" placeholder="Your e-mail address" tabindex="4">
+        </div>
+      </div>
+      <div class="coves-form__input-container">
+        <label for="birth" class="coves-form__label">Date of Birth</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-date"></span>
+          <input id="birth" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="text" name="birth" placeholder="Your date of birth" tabindex="5">
+        </div>
+      </div>
+      <div class="coves-form__input-container">
+        <label for="pass" class="coves-form__label">Password</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-pass"></span>
+          <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="password" name="pass" tabindex="6">
+        </div>
+      </div>
+      <div class="coves-form__input-container">
+        <label for="pass-repeat" class="coves-form__label">Repeat Password</label>
+        <div class="coves-form__icon-input-container">
+          <span class="icon icon-pass"></span>
+          <input id="pass-repeat" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+                 type="password" name="pass-repeat" tabindex="7">
+        </div>
+      </div>
+      <div class="coves-form__input-container coves-form__input-container--align-center">
+        <input type="submit" class="button" value="Submit" tabindex="8">
+      </div>
     </form>
   </div>
 </div>
