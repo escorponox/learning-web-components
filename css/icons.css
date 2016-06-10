@@ -10,13 +10,13 @@
 .coves-form__icon-input-container .icon {
   left: 7px;
   position: absolute;
-  top: 7px;
+  top: 3px;
 }
 
 .coves-form__icon-input-container .icon--lg {
   left: 11px;
   position: absolute;
-  top: 12px;
+  top: 6px;
 }
 
 .coves-form__icon-input-container .coves-form__input {

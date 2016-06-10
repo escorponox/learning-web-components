@@ -31,6 +31,7 @@
           <span class="icon icon-name"></span>
           <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="text" name="firstname" placeholder="Your first name" tabindex="2">
+          <span id="first-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container">
@@ -39,6 +40,7 @@
           <span class="icon icon-name"></span>
           <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="text" name="lastname" placeholder="Your last name" tabindex="3">
+          <span id="last-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container">
@@ -47,6 +49,7 @@
           <span class="icon icon-email"></span>
           <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="email" name="email" placeholder="Your e-mail address" tabindex="4">
+          <span id="email__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container">
@@ -55,6 +58,7 @@
           <span class="icon icon-date"></span>
           <input id="birth" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="text" name="birth" placeholder="Your date of birth" tabindex="5">
+          <span id="birth__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container">
@@ -63,6 +67,7 @@
           <span class="icon icon-pass"></span>
           <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="password" name="pass" tabindex="6">
+          <span id="pass__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container">
@@ -71,6 +76,7 @@
           <span class="icon icon-pass"></span>
           <input id="pass-repeat" class="coves-form__input coves-form__input--hover coves-form__input--focus"
                  type="password" name="pass-repeat" tabindex="7">
+          <span id="pass-repeat__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container coves-form__input-container--align-center">
@@ -79,5 +85,7 @@
     </form>
   </div>
 </div>
+<script src="../../js/validators.js"></script>
+<script src="../../js/signup-form.js"></script>
 </body>
 </html>
