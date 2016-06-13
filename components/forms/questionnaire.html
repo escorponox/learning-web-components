@@ -15,40 +15,48 @@
 </div>
 <div class="content">
   <div class="coves-form">
-    <form method="post" action="#" novalidate>
+    <form id="questionnaire-form" method="post" action="#" novalidate>
       <label class="coves-form__label">How did you find this page?</label>
-      <div class="coves-form__radio-container">
-        <input id="magazine" class="coves-form__radio-container__input" type="radio" name="find" value="magazine"
-               tabindex="1">
-        <label for="magazine"
-               class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Magazine</label>
-      </div>
-      <div class="coves-form__radio-container">
-        <input id="tv" class="coves-form__radio-container__input" type="radio" name="find" value="tv">
-        <label for="tv"
-               class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">TV</label>
-      </div>
-      <div class="coves-form__radio-container">
-        <input id="google" class="coves-form__radio-container__input" type="radio" name="find" value="google">
-        <label for="google"
-               class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Google
-          Ad</label>
-      </div>
-      <div class="coves-form__radio-container">
-        <input id="friend" class="coves-form__radio-container__input" type="radio" name="find" value="friend">
-        <label for="friend"
-               class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Friend</label>
-      </div>
-      <div class="coves-form__radio-container">
-        <input id="other" class="coves-form__radio-container__input" type="radio" name="find" value="other">
-        <label for="other"
-               class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Other</label>
-        <input id="other-text" class="coves-form__radio-container__text" type="text" name="other-text"
-               placeholder="Other media" tabindex="2">
+      <div class="coves-form__radio-set">
+        <div class="coves-form__radio-container">
+          <input id="magazine" class="coves-form__radio-container__input" type="radio" name="find" value="magazine"
+                 tabindex="1">
+          <label for="magazine"
+                 class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Magazine</label>
+        </div>
+        <div class="coves-form__radio-container">
+          <input id="tv" class="coves-form__radio-container__input" type="radio" name="find" value="tv">
+          <label for="tv"
+                 class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">TV</label>
+        </div>
+        <div class="coves-form__radio-container">
+          <input id="google" class="coves-form__radio-container__input" type="radio" name="find" value="google">
+          <label for="google"
+                 class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Google
+            Ad</label>
+        </div>
+        <div class="coves-form__radio-container">
+          <input id="friend" class="coves-form__radio-container__input" type="radio" name="find" value="friend">
+          <label for="friend"
+                 class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Friend</label>
+        </div>
+        <div class="coves-form__radio-container">
+          <input id="other" class="coves-form__radio-container__input" type="radio" name="find" value="other">
+          <label for="other"
+                 class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Other</label>
+        </div>
+        <div class="coves-form__input-container coves-form__input-container--inline">
+          <input id="other-text" class="coves-form__input coves-form__input--inline coves-form__radio-container__text"
+                 type="text" name="other-text" disabled placeholder="Other media" tabindex="2">
+          <span id="other-text__error" class="coves-form__error--inline" aria-live="polite"></span>
+        </div>
       </div>
       <input type="submit" class="button" value="Submit" tabindex="3">
+      <div id="coves-form__error-box">All inputs are required</div>
     </form>
   </div>
 </div>
+<script src="../../js/validators.js"></script>
+<script src="../../js/questionnaire.js"></script>
 </body>
 </html>

@@ -36,6 +36,12 @@
   margin: 0.25em 0;
 }
 
+.coves-form__input-container--inline {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .coves-form__input-container--align-center {
   text-align: center;
 }
@@ -47,7 +53,7 @@
   display: inline-block;
   font-weight: 600;
   line-height: 20px;
-  padding: 2px;
+  padding: 2px 6px;
 }
 
 .coves-form__label--normal {
@@ -117,6 +123,14 @@
   border-bottom-right-radius: 0
 }
 
+.coves-form__input--inline:invalid {
+  border-radius: 5px 0 0 5px;
+}
+
+.coves-form__input--inline:disabled {
+  background-color: #DEDEDE;
+}
+
 .coves-form__error {
   background-color: #FFBFD1;
   border: 1px solid #FF2100;
@@ -134,7 +148,20 @@
   white-space: nowrap;
 }
 
-.coves-form__input:invalid + .coves-form__error {
+.coves-form__error--inline {
+  background-color: #FFBFD1;
+  border: 1px solid #FF2100;
+  border-left: 0 solid;
+  border-radius: 0 5px 5px 0;
+  color: #FF2100;
+  display: inline-block;
+  padding: 2px 6px;
+  width: auto;
+  visibility: hidden;
+}
+
+.coves-form__input:invalid + .coves-form__error,
+.coves-form__input:invalid + .coves-form__error--inline {
   visibility: visible;
 }
 
@@ -152,8 +179,8 @@
 }
 
 .coves-form__select {
-  height: 30px;
   cursor: pointer;
+  height: 30px;
 }
 
 .coves-form__select option {
@@ -165,22 +192,33 @@
   color: #40D5FF;
 }
 
+.coves-form__radio-set {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+
+}
+
 .coves-form__radio-container {
-  line-height: 2em;
-  margin: 0.25em 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  flex-basis: 32px;
 }
 
 .coves-form__radio-container__input {
+  flex-basis: 20px;
   cursor: pointer;
 }
 
 .coves-form__radio-container__text {
-  border: none;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font: 1em/1.5em "Droid Sans", sans-serif;
-  margin-left: 0.5em;
-  padding: 0.25em;
+  padding: 2px 6px;
+  margin-left: 20px;
 }
 
 .coves-form__checkbox-container {

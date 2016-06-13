@@ -94,6 +94,10 @@
     })
   };
 
+  validator.isOneOf = function (input, strings) {
+    return strings.indexOf(input) > -1;
+  };
+
   validator.isLength = function (input, n) {
     return input.length <= n;
   };
@@ -168,6 +172,21 @@
         return curr !== ' ' || arr[index - 1] !== ' ';
       });
   };
+
+  validator.addValidation = function(selector, event, validation, msg) {
+    [].forEach.call(document.querySelectorAll(selector), function (input) {
+      input.addEventListener(event, function () {
+        if (validation(input)) {
+          input.nextElementSibling.innerHTML = msg;
+          input.setCustomValidity(msg);
+        }
+        else {
+          input.setCustomValidity('');
+        }
+      });
+    });
+  };
+
 
   window.validator = validator;
 
