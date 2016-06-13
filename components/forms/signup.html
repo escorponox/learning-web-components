@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
   <link rel="stylesheet" href="../../css/forms.css"/>
   <link rel="stylesheet" href="../../css/icons.css"/>
   <link rel="stylesheet" href="../../css/buttons.css"/>
@@ -20,7 +21,7 @@
         <label for="username" class="coves-form__label">Username</label>
         <div class="coves-form__icon-input-container">
           <div class="icon icon-user"></div>
-          <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+          <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
                  type="text" name="username" placeholder="Your username" tabindex="1">
           <span id="username__error" class="coves-form__error" aria-live="polite"></span>
         </div>
@@ -29,8 +30,8 @@
         <label for="first-name" class="coves-form__label">First Name</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-name"></span>
-          <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-                 type="text" name="firstname" placeholder="Your first name" tabindex="2">
+          <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+                 type="text" name="firstname" maxlength="50" placeholder="Your first name" tabindex="2">
           <span id="first-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
@@ -38,8 +39,8 @@
         <label for="last-name" class="coves-form__label">Last Name</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-name"></span>
-          <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-                 type="text" name="lastname" placeholder="Your last name" tabindex="3">
+          <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+                 type="text" name="lastname" maxlength="50" placeholder="Your last name" tabindex="3">
           <span id="last-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
@@ -47,8 +48,8 @@
         <label for="email" class="coves-form__label">Email Address</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-email"></span>
-          <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus"
-                 type="email" name="email" placeholder="Your e-mail address" tabindex="4">
+          <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+                 type="text" name="email" placeholder="Your e-mail address" tabindex="4">
           <span id="email__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
@@ -56,7 +57,7 @@
         <label for="birth" class="coves-form__label">Date of Birth</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-date"></span>
-          <input id="birth" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+          <input id="birth" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
                  type="text" name="birth" placeholder="Your date of birth" tabindex="5">
           <span id="birth__error" class="coves-form__error" aria-live="polite"></span>
         </div>
@@ -65,7 +66,7 @@
         <label for="pass" class="coves-form__label">Password</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-pass"></span>
-          <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+          <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
                  type="password" name="pass" tabindex="6">
           <span id="pass__error" class="coves-form__error" aria-live="polite"></span>
         </div>
@@ -74,13 +75,16 @@
         <label for="pass-repeat" class="coves-form__label">Repeat Password</label>
         <div class="coves-form__icon-input-container">
           <span class="icon icon-pass"></span>
-          <input id="pass-repeat" class="coves-form__input coves-form__input--hover coves-form__input--focus"
+          <input id="pass-repeat" class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
                  type="password" name="pass-repeat" tabindex="7">
           <span id="pass-repeat__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container coves-form__input-container--align-center">
         <input type="submit" class="button" value="Submit" tabindex="8">
+      </div>
+      <div class="coves-form__input-container--align-center">
+        <div id="coves-form__error-box">All inputs are required</div>
       </div>
     </form>
   </div>

@@ -138,6 +138,19 @@
   visibility: visible;
 }
 
+#coves-form__error-box {
+  background-color: #FFBFD1;
+  border: 1px solid #FF2100;
+  border-radius: 5px;
+  color: #FF2100;
+  display: none;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+}
+
 .coves-form__select {
   height: 30px;
   cursor: pointer;
