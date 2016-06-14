@@ -24,6 +24,7 @@
           <div class="icon icon-user"></div>
           <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus icon-user"
                  type="text" name="username" maxlength="20" tabindex="1">
+          <span id="username__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container--column">
@@ -32,6 +33,7 @@
           <div class="icon icon-pass"></div>
           <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus icon-pass"
                  type="password" name="pass" tabindex="2">
+          <span id="pass__error" class="coves-form__error" aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
@@ -51,5 +53,7 @@
   </div>
 </div>
 <script src="../../js/coves-select.js"></script>
+<script src="../../js/validators.js"></script>
+<script src="../../js/login-form.js"></script>
 </body>
 </html>
