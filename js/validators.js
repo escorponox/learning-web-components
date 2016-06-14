@@ -173,16 +173,28 @@
       });
   };
 
-  validator.addValidation = function(selector, event, validation, msg) {
+  validator.addValidation = function (selector, events, validation, msg) {
     [].forEach.call(document.querySelectorAll(selector), function (input) {
-      input.addEventListener(event, function () {
-        if (validation(input)) {
-          input.nextElementSibling.innerHTML = msg;
-          input.setCustomValidity(msg);
-        }
-        else {
-          input.setCustomValidity('');
-        }
+      events.forEach(function (event) {
+        input.addEventListener(event, function () {
+          if (validation(input)) {
+            input.nextElementSibling.innerHTML = msg;
+            input.setCustomValidity(msg);
+          }
+          else {
+            input.setCustomValidity('');
+          }
+        });
+      });
+    });
+  };
+
+  validator.addOK = function (selector, events, show) {
+    [].forEach.call(document.querySelectorAll(selector), function (input) {
+      events.forEach(function (event) {
+        input.addEventListener(event, function () {
+          input.previousElementSibling.style.display = show(input) ? 'inline-block' : 'none';
+        });
       });
     });
   };

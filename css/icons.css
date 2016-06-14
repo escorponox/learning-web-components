@@ -1,4 +1,10 @@
 .coves-form__icon-input-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
   position: relative;
 }
 

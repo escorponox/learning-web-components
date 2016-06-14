@@ -18,7 +18,7 @@
 <div class="content">
   <div class="coves-form">
     <form id="login-form" method="post" action="#" novalidate>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="username" class="coves-form__label">Username</label>
         <div class="coves-form__icon-input-container">
           <div class="icon icon-user"></div>
@@ -26,7 +26,7 @@
                  type="text" name="username" maxlength="20" tabindex="1">
         </div>
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="pass" class="coves-form__label">Password</label>
         <div class="coves-form__icon-input-container">
           <div class="icon icon-pass"></div>
@@ -34,7 +34,7 @@
                  type="password" name="pass" tabindex="2">
         </div>
       </div>
-      <div class="coves-form__input-container coves-form__input-container--align-center">
+      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
         <div class="coves-form__checkbox-container">
           <input id="remember" type="checkbox" name="remember" value="1" tabindex="3">
           <label for="remember" class="coves-form__checkbox-container__fake-label coves-form__input--hover"><span
@@ -44,7 +44,7 @@
             me</label>
         </div>
       </div>
-      <div class="coves-form__input-container coves-form__input-container--align-center">
+      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
         <input type="submit" class="button button--md" value="Login" tabindex="4">
       </div>
     </form>

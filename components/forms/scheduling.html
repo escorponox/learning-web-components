@@ -17,19 +17,19 @@
   <div class="coves-form">
     <form method="post" action="#" novalidate>
       <h3 class="coves-form__heading">Schedule Appointment</h3>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="date" class="coves-form__label">Date</label>
         <input id="date" class="coves-form__input coves-form__input--focus coves-form__input--hover" type="text"
                name="date" placeholder="MM/DD/YYYY"
                tabindex="1">
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="time" class="coves-form__label">Time</label>
         <input id="time" class="coves-form__input coves-form__input--focus coves-form__input--hover" type="text"
                name="time" placeholder="HH:MM"
                tabindex="2">
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="timezone" class="coves-form__label">Timezone</label>
         <select id="timezone"
                 class="coves-form__input coves-form__select coves-form__input--hover coves-form__input--focus"
@@ -119,26 +119,26 @@
           <option value="13">(GMT+13:00) Nuku'alofa</option>
         </select>
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="message" class="coves-form__label">Message</label>
           <textarea id="message" name="message"
                     class="coves-form__textarea coves-form__textarea--block coves-form__input--hover coves-form__input--focus"
                     rows="5"
                     placeholder="Appointment Message" tabindex="4"></textarea>
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="contact" class="coves-form__label">Contact Number</label>
         <input id="contact" class="coves-form__input coves-form__input--hover coves-form__input--focus icon-name"
                type="text" name="contact"
                placeholder="Contact Number" tabindex="5">
       </div>
-      <div class="coves-form__input-container">
+      <div class="coves-form__input-container--column">
         <label for="email" class="coves-form__label">Email Address</label>
         <input id="email" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="email"
                name="email"
                placeholder="E-mail address" tabindex="6">
       </div>
-      <div class="coves-form__input-container coves-form__input-container--align-center">
+      <div class="coves-form__input-container--column coves-form__input-container--center-flex-direction">
         <input type="submit" class="button" value="Submit" tabindex="7">
       </div>
     </form>

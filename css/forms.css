@@ -18,6 +18,12 @@
   background-color: #BFF1FF;
   border-radius: 5px;
   box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
   font: 16px/1.5em "Droid Sans", sans-serif;
   max-width: 700px;
   min-width: 350px;
@@ -32,18 +38,42 @@
   color: #005EFF;
 }
 
-.coves-form__input-container {
-  margin: 0.25em 0;
-}
-
-.coves-form__input-container--inline {
+.coves-form__input-container--column {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  margin: 0.25em 0;
+  flex-basis: 100%;
 }
 
-.coves-form__input-container--align-center {
-  text-align: center;
+.coves-form__input-container--row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  margin: 0.25em 0;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+  -webkit-align-items: center
+}
+
+.coves-form__input-container--row select:not(:nth-of-type(1)) {
+  margin-left: 6px;
+}
+
+.coves-form__input-container--center {
+  align-items: center;
+  -webkit-align-items: center
+}
+
+.coves-form__input-container--center-flex-direction {
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center
 }
 
 .coves-form__label {
@@ -60,14 +90,10 @@
   font-weight: 400;
 }
 
-.coves-form__label--center {
-  display: block;
-  text-align: center;
-}
-
 .coves-form__label--right {
+  min-width: 125px;
   text-align: right;
-  width: 125px;
+  flex-basis: 125px
 }
 
 .coves-form__label--lg {
@@ -86,7 +112,6 @@
   box-sizing: border-box;
   font: 1em/1.5em "Droid Sans", sans-serif;
   padding: 0.125em 0.625em;
-  width: 100%;
   -moz-appearance: none;
 }
 
@@ -101,6 +126,8 @@
 .coves-form__input--lg {
   font-size: 1.5em;
   line-height: 1.5em;
+  min-width: 500px;
+  margin-bottom: 8px;
 }
 
 .coves-form__input--hover:hover {
@@ -156,8 +183,8 @@
   color: #FF2100;
   display: inline-block;
   padding: 2px 6px;
-  width: auto;
   visibility: hidden;
+  width: auto;
 }
 
 .coves-form__input:invalid + .coves-form__error,
@@ -176,6 +203,18 @@
   padding: 10px;
   text-align: center;
   width: auto;
+}
+
+.coves-form-ok {
+  color: #005EFF;
+  display: none;
+  position: absolute;
+  right: 7px;
+  top: 7px
+}
+
+.coves-form-ok ~ .coves-form__input {
+  padding-right: 30px;
 }
 
 .coves-form__select {
@@ -212,18 +251,24 @@
 }
 
 .coves-form__radio-container__input {
-  flex-basis: 20px;
   cursor: pointer;
+  flex-basis: 20px;
 }
 
 .coves-form__radio-container__text {
-  padding: 2px 6px;
   margin-left: 20px;
+  padding: 2px 6px;
 }
 
 .coves-form__checkbox-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
   line-height: 2em;
   margin: 0.5em 0;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .coves-form__checkbox-container input[type=checkbox] {

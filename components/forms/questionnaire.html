@@ -45,14 +45,18 @@
           <label for="other"
                  class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Other</label>
         </div>
-        <div class="coves-form__input-container coves-form__input-container--inline">
+        <div class="coves-form__input-container--row">
           <input id="other-text" class="coves-form__input coves-form__input--inline coves-form__radio-container__text"
                  type="text" name="other-text" disabled placeholder="Other media" tabindex="2">
           <span id="other-text__error" class="coves-form__error--inline" aria-live="polite"></span>
         </div>
       </div>
-      <input type="submit" class="button" value="Submit" tabindex="3">
-      <div id="coves-form__error-box">All inputs are required</div>
+      <div class="coves-form__input-container--row">
+        <input type="submit" class="button" value="Submit" tabindex="3">
+      </div>
+      <div class="coves-form__input-container--row">
+        <div id="coves-form__error-box">All inputs are required</div>
+      </div>
     </form>
   </div>
 </div>

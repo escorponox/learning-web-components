@@ -1,9 +1,7 @@
 /*partially generated with range.css - http://danielstern.ca/range.css/#/*/
 
 .label-range {
-  display: inline-block;
-  float: left;
-  width: 75px;
+  min-width: 75px;
 }
 
 .input-range-coves {
@@ -52,10 +50,10 @@
 .input-range-coves::-moz-range-thumb {
   background: #00a9ff;
   border: 1px solid #0069ff;
-  border-radius: 6px;
+  border-radius: 12px;
   cursor: pointer;
-  height: 12px;
-  width: 12px;
+  height: 24px;
+  width: 24px;
 }
 
 .input-range-coves::-ms-track {
