@@ -2,6 +2,7 @@
 
 .label-range {
   min-width: 75px;
+  text-align: end;
 }
 
 .input-range-coves {
