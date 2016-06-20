@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
   <link rel="stylesheet" href="../../css/forms.css"/>
   <link rel="stylesheet" href="../../css/icons.css"/>
@@ -15,21 +16,18 @@
   <a href="index.html" class="button button--green">Back to Forms Showcase</a>
 </div>
 <div class="content">
-  <div class="coves-form">
+  <div class="coves-form coves-form--center">
     <form method="post" action="#" novalidate>
-      <div class="coves-form__input-container--column coves-form__input-container--center">
-        <label for="search" class="coves-form__label coves-form__label--lg">Search</label>
-        <div class="coves-form__icon-input-container">
-          <span class="icon--lg icon-search-lg"></span>
-          <input id="search"
-                 class="coves-form__input coves-form__input--lg coves-form__input--hover coves-form__input--focus"
-                 type="text" name="search" placeholder="Search..." tabindex="1">
-        </div>
+      <label for="search" class="coves-form__label coves-form__label--lg">Search</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon--lg icon-search-lg"></span>
+        <input id="search"
+               class="coves-form__input coves-form__input--lg coves-form__input--hover coves-form__input--focus"
+               type="text" name="search" placeholder="Search..." tabindex="1">
       </div>
-      <div
-          class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
+      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
         <label for="categories" class="coves-form__label">Categories</label>
-        <div class="coves-form__icon-input-container coves-form__icon-input-container--inline">
+        <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
           <span class="icon icon-category"></span>
           <select id="categories"
                   class="coves-form__input coves-form__input--inline

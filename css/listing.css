@@ -4,7 +4,7 @@ body {
 
 .listing-container {
   background-color: #BFFFC5;
-  font: 16px "Droid Sans", sans-serif;
+  font: 16px "Open Sans", sans-serif;
   margin-bottom: 3em;
   overflow: auto;
   padding: 1.5em;
@@ -111,7 +111,7 @@ body {
   bottom: 0;
   box-sizing: border-box;
   clear: both;
-  font: 16px "Droid Sans", sans-serif;
+  font: 16px "Open Sans", sans-serif;
   height: 3.5em;
   left: 0;
   padding: 1em 1em 1em 3.5em;

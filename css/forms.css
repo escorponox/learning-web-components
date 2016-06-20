@@ -24,10 +24,29 @@
   flex-direction: column;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
-  font: 16px/1.5em "Droid Sans", sans-serif;
+  font: 16px/1.5em "Open Sans", sans-serif;
   max-width: 700px;
   min-width: 350px;
   padding: 1.5em 2em;
+}
+
+.coves-form--center {
+  align-items: center;
+  -webkit-align-items: center
+}
+
+.coves-form form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+.coves-form--center form {
+  align-items: center;
+  -webkit-align-items: center
 }
 
 .coves-form__section {
@@ -45,8 +64,9 @@
   flex-direction: column;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
-  margin: 0.25em 0;
+  margin-bottom: 4px;
   flex-basis: 100%;
+  position: relative;
 }
 
 .coves-form__input-container--row {
@@ -58,7 +78,8 @@
   -webkit-justify-content: flex-start;
   justify-content: flex-start;
   align-items: center;
-  -webkit-align-items: center
+  -webkit-align-items: center;
+  position: relative;
 }
 
 .coves-form__input-container--row select:not(:nth-of-type(1)) {
@@ -80,7 +101,6 @@
   border: 1px solid transparent;
   border-radius: 5px;
   color: #005EFF;
-  display: inline-block;
   font-weight: 600;
   line-height: 20px;
   padding: 2px 6px;
@@ -110,7 +130,7 @@
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
-  font: 1em/1.5em "Droid Sans", sans-serif;
+  font: 1em/1.5em "Open Sans", sans-serif;
   padding: 0.125em 0.625em;
   -moz-appearance: none;
 }
@@ -165,14 +185,18 @@
   border-top-color: transparent;
   color: #FF2100;
   display: block;
-  font-size: 14px;
-  font-weight: 400;
-  height: 18px;
-  line-height: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  height: 14px;
+  line-height: 14px;
   overflow: hidden;
-  padding: 1px 10px;
+  padding: 0 10px;
   visibility: hidden;
   white-space: nowrap;
+}
+
+.coves-form__input-container--column .coves-form__input:last-child {
+  margin-bottom: 16px;
 }
 
 .coves-form__error--inline {
@@ -281,7 +305,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   cursor: pointer;
-  display: inline-block;
+  /*display: inline-block;*/
   line-height: 1.375em;
   margin-right: 0.5em;
   text-align: center;
@@ -301,7 +325,7 @@
   border: 1px solid transparent;
   border-radius: 5px;
   box-sizing: border-box;
-  font: 1em "Droid Sans", sans-serif;
+  font: 1em "Open Sans", sans-serif;
   padding: 0.5em;
 }
 

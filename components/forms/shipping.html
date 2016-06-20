@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../css/forms.css"/>
   <link rel="stylesheet" href="../../css/buttons.css"/>
   <link rel="stylesheet" href="../../css/home.css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <meta charset="UTF-8">
   <title>Shipping Form</title>
 </head>
@@ -19,20 +20,25 @@
     <form method="post" action="#" novalidate>
       <section id="shipping" class="coves-form__section">
         <h2 class="coves-form__heading">Shipping Address</h2>
+        <label for="first-name" class="coves-form__label">First Name</label>
         <div class="coves-form__input-container--column">
-          <label for="first-name" class="coves-form__label">First Name</label>
+          <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
           <input id="first-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text"
                  name="firstname"
                  placeholder="Your first name" tabindex="1">
+          <span id="first-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
+        <label for="last-name" class="coves-form__label">Last Name</label>
         <div class="coves-form__input-container--column">
-          <label for="last-name" class="coves-form__label">Last Name</label>
+          <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
           <input id="last-name" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text"
                  name="lastname"
                  placeholder="Your last name" tabindex="2">
+          <span id="last-name__error" class="coves-form__error" aria-live="polite"></span>
         </div>
+        <label for="address" class="coves-form__label">Address</label>
         <div class="coves-form__input-container--column">
-          <label for="address" class="coves-form__label">Address</label>
+          <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
           <input id="address" class="coves-form__input coves-form__input--hover coves-form__input--focus" type="text"
                  name="address"
                  placeholder="Your shipping address" tabindex="3">
@@ -605,5 +611,7 @@
   </div>
 </div>
 <script src="../../js/coves-select.js"></script>
+<script src="../../js/validators.js"></script>
+<script src="../../js/shipping-form.js"></script>
 </body>
 </html>

@@ -1,35 +1,20 @@
-.coves-form__icon-input-container {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  -webkit-flex-direction: column;
-  position: relative;
-}
-
-.coves-form__icon-input-container--inline {
-  display: inline-block;
-  width: auto;
-}
-
-.coves-form__icon-input-container .icon {
+.icon {
   left: 7px;
   position: absolute;
   top: 3px;
 }
 
-.coves-form__icon-input-container .icon--lg {
+.icon--lg {
   left: 11px;
   position: absolute;
   top: 6px;
 }
 
-.coves-form__icon-input-container .coves-form__input {
+.icon ~ .coves-form__input {
   padding-left: 36px;
 }
 
-.coves-form__icon-input-container .coves-form__input--lg {
+.icon--lg ~ .coves-form__input--lg {
   padding-left: 50px;
 }
 
