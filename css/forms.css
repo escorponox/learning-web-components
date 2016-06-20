@@ -163,6 +163,10 @@
   border: 1px solid #FF2100;
 }
 
+.coves-form__input:disabled {
+  background-color: #DEDEDE;
+}
+
 .coves-form__input:invalid {
   background-color: #FFBFD1;
   border: 1px solid #FF2100;
@@ -305,7 +309,6 @@
   border-radius: 5px;
   box-sizing: border-box;
   cursor: pointer;
-  /*display: inline-block;*/
   line-height: 1.375em;
   margin-right: 0.5em;
   text-align: center;

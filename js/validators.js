@@ -173,11 +173,11 @@
       });
   };
 
-  validator.addValidation = function (selector, events, validation, msg) {
+  validator.addValidation = function (selector, events, showError, msg) {
     [].forEach.call(document.querySelectorAll(selector), function (input) {
       events.forEach(function (event) {
         input.addEventListener(event, function () {
-          if (validation(input)) {
+          if (showError(input)) {
             input.nextElementSibling.innerHTML = msg;
             input.setCustomValidity(msg);
           }
