@@ -48,7 +48,6 @@
     form.addEventListener('submit', function (event) {
       const inputs = document.querySelectorAll('.coves-form__input--required');
       [].forEach.call(inputs, function (input) {
-        console.log(validator.isEmpty(input.value));
         if (validator.isEmpty(input.value)) {
           input.nextElementSibling.innerHTML = 'Required field';
           input.setCustomValidity('Required field');

@@ -17,13 +17,14 @@
 </div>
 <div class="content">
   <div class="coves-form coves-form--center">
-    <form method="post" action="#" novalidate>
+    <form id="search-form" method="post" action="#" novalidate>
       <label for="search" class="coves-form__label coves-form__label--lg">Search</label>
       <div class="coves-form__input-container--column">
         <span class="icon--lg icon-search-lg"></span>
         <input id="search"
-               class="coves-form__input coves-form__input--lg coves-form__input--hover coves-form__input--focus"
+               class="coves-form__input coves-form__input--lg coves-form__input--hover coves-form__input--focus coves-form__input--required"
                type="text" name="search" placeholder="Search..." tabindex="1">
+        <span id="search__error" class="coves-form__error" aria-live="polite"></span>
       </div>
       <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
         <label for="categories" class="coves-form__label">Categories</label>
@@ -50,5 +51,7 @@
   </div>
 </div>
 <script src="../../js/coves-select.js"></script>
+<script src="../../js/validators.js"></script>
+<script src="../../js/search-form.js"></script>
 </body>
 </html>
