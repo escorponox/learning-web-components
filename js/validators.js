@@ -122,6 +122,12 @@
     return input >= floor && input <= ceil;
   };
 
+  validator.isTime = function (input) {
+    var split = input.split(':');
+    return input.length !== 5 || input.indexOf(':') !== 2 ? false :
+    split.length === 2 && validator.isBetween(split[0], 0, 23) && validator.isBetween(split[1], 0, 59);
+  };
+
   validator.isAlphanumeric = function (input) {
     return input.split('').every(validator.isAlphanumericChar);
   };

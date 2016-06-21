@@ -325,11 +325,8 @@
 }
 
 .coves-form__textarea {
-  border: 1px solid transparent;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font: 1em "Open Sans", sans-serif;
-  padding: 0.5em;
+  line-height: 16px;
+  padding: 10px;
 }
 
 .coves-form__textarea--no-resize {

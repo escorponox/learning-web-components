@@ -50,7 +50,7 @@
 
   [].forEach.call(document.querySelectorAll('#shipping-form'), function (form) {
     form.addEventListener('submit', function (event) {
-      var inputs = document.querySelectorAll('.coves-form__input--required');
+      const inputs = document.querySelectorAll('.coves-form__input--required');
       [].forEach.call(inputs, function (input) {
         if (validator.isEmpty(input.value)) {
           input.nextElementSibling.innerHTML = 'Required field';
