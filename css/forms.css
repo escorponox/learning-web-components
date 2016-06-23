@@ -177,6 +177,10 @@
   border-radius: 5px 0 0 5px;
 }
 
+.coves-form__input--inline--standalone:invalid {
+  border-radius: 5px;
+}
+
 .coves-form__input--inline:disabled {
   background-color: #DEDEDE;
 }
@@ -214,9 +218,19 @@
   width: auto;
 }
 
+.coves-form__error--inline--standalone {
+  border-left: 1px solid;
+  border-radius: 5px;
+  margin-left: 6px;
+}
+
 .coves-form__input:invalid + .coves-form__error,
 .coves-form__input:invalid + .coves-form__error--inline {
   visibility: visible;
+}
+
+.coves-form__input:invalid + .coves-form__error--inline--standalone {
+  visibility: hidden;
 }
 
 #coves-form__error-box {
@@ -342,6 +356,6 @@
   display: none;
 }
 
-.coves-form__hover-show-trigger:hover + .coves-form__hover-show {
+.coves-form__hover-show-trigger:hover ~ .coves-form__hover-show {
   display: inline-block;
 }

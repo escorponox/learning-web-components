@@ -3,6 +3,7 @@
 <head>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   <link rel="stylesheet" href="../../css/forms.css"/>
   <link rel="stylesheet" href="../../css/buttons.css"/>
   <link rel="stylesheet" href="../../css/home.css"/>
@@ -16,34 +17,35 @@
 </div>
 <div class="content">
   <div class="coves-form">
-    <form method="post" action="#" novalidate>
+    <form id="credit-card-form" method="post" action="#" novalidate>
       <h1 class="coves-form__heading">Credit Card</h1>
       <div class="coves-form__input-container--row">
         <label for="full-name" class="coves-form__label coves-form__label--right">Card Name</label>
         <input id="full-name"
-               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
-               type="text" name="full-name"
-               placeholder="Cardholder's Full Name" tabindex="1">
+               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover coves-form__input--required"
+               type="text" name="full-name" placeholder="Cardholder's Full Name" tabindex="1">
+        <span id="full-name__error" class="coves-form__error--inline" aria-live="polite"></span>
       </div>
       <div class="coves-form__input-container--row">
         <label for="card-number" class="coves-form__label coves-form__label--right">Card Number</label>
         <input id="card-number"
-               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover"
-               type="text" name="card-number"
-               placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" tabindex="2">
+               class="coves-form__input coves-form__input--inline coves-form__input--focus coves-form__input--hover coves-form__input--required"
+               type="text" name="card-number" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="19" tabindex="2">
+        <span id="card-number__error" class="coves-form__error--inline" aria-live="polite"></span>
       </div>
       <div class="coves-form__input-container--row">
         <label for="csv" class="coves-form__label coves-form__label--right">CSV</label>
         <input id="csv"
-               class="coves-form__input coves-form__input--inline-small
-               coves-form__input--focus coves-form__input--hover coves-form__hover-show-trigger"
+               class="coves-form__input coves-form__input--inline coves-form__input--inline-small
+               coves-form__input--focus coves-form__input--hover coves-form__hover-show-trigger coves-form__input--required"
                type="text" name="csv" maxlength="3" tabindex="3">
+        <span id="csv__error" class="coves-form__error--inline" aria-live="polite"></span>
         <span class="coves-form__label coves-form__label--normal coves-form__hover-show">Card Security Code</span>
       </div>
       <div class="coves-form__input-container--row">
         <label class="coves-form__label coves-form__label--right">Expiration Date</label>
         <select id="month"
-                class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus"
+                class="coves-form__input coves-form__input--inline coves-form__input--inline--standalone coves-form__select coves-form__input--hover coves-form__input--focus"
                 name="month" tabindex="4">
           <option class="select-default" selected value="">Month</option>
           <option value="1">01</option>
@@ -60,7 +62,7 @@
           <option value="12">12</option>
         </select>
         <select id="year"
-                class="coves-form__input coves-form__input--inline coves-form__select coves-form__input--hover coves-form__input--focus"
+                class="coves-form__input coves-form__input--inline coves-form__input--inline--standalone coves-form__select coves-form__input--hover coves-form__input--focus"
                 name="year" tabindex="5">
           <option class="select-default" selected value="">Year</option>
           <option value="2016">2016</option>
@@ -79,11 +81,15 @@
           <option value="2029">2029</option>
           <option value="2030">2030</option>
         </select>
+        <span id="date__error" class="coves-form__error--inline coves-form__error--inline--standalone"
+              aria-live="polite"></span>
       </div>
-      <input type="submit" class="button" value="Submit" tabindex="8">
+      <input type="submit" class="button" value="Submit" tabindex="6">
     </form>
   </div>
 </div>
 <script src="../../js/coves-select.js"></script>
+<script src="../../js/validators.js"></script>
+<script src="../../js/credit-card.js"></script>
 </body>
 </html>

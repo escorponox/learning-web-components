@@ -138,7 +138,10 @@
       splitInput.every(function (curr, index, arr) {
         return arr.length === 4 && curr.length === 4 && validator.isAlphanumeric(curr);
       });
+  };
 
+  validator.isCSV = function (input) {
+    return validator.isBetween(Number(input), 0, 999) && input.trim().length === 3;
   };
 
   validator.isHexChar = function (c) {
