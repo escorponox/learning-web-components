@@ -1,7 +1,16 @@
-(function (window) {
+(function (root, init) {
+  // Runtime environment check inspired by Jonathan Chan (cusxio)
+  console.log(root);
+  if (typeof exports === 'object' && typeof module === 'object') {
+    module.exports = init();
+  } else {
+    root.validator = init();
+  }
+})(this, function () {
   var validator = {};
 
   validator.isEmailAddress = function (input) {
+    input = input || '';
     var atIndex = input.indexOf('@');
     return atIndex > 0 && atIndex < input.length - 1;
   };
@@ -208,7 +217,5 @@
     });
   };
 
-
-  window.validator = validator;
-
-})(window);
+return validator;
+});
