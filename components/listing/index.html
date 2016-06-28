@@ -15,12 +15,7 @@
 <div class="menu">
   <a href="../../index.html" class="button button--green">Back to Home</a>
 </div>
-<input id="expand" class="expand-checkbox" type="checkbox">
-<label for="expand" class="coves-form__checkbox-container__fake-label">
-  <span class="fa fa-angle-double-up fa-lg fa--blue" aria-hidden="true"></span>
-  <span class="fa fa-angle-double-down fa-lg fa--blue" aria-hidden="true"></span>
-</label>
-<div class="listing-container">
+<div id="listing-container" class="cart--show cart--expand">
   <h1 class="listing-heading">Product Listing</h1>
   <div class="article-container">
     <h2 class="article-heading">Article 1</h2>
@@ -157,52 +152,59 @@
 </div>
 
 
-<div class="cart">
-  <form method="post" action="#">
-    <div class="cart-heading">
-      <span class="fa fa-shopping-cart fa-lg fa--blue" aria-hidden="true"> Total (3 items): </span>
-      <span class="fa fa-lg fa--blue">1077.63 $</span>
+<div id="cart-container" class="cart--show cart--expand">
+  <div id="show-cart-button" class="button">
+    <span class="fa fa-angle-double-up fa-lg" aria-hidden="true"></span>
+    <span class="fa fa-angle-double-down fa-lg" aria-hidden="true"></span>
+  </div>
+  <form id="cart-form" method="post" action="#">
+    <div id="cart-heading" class="row-container">
+      <div>
+        <span class="fa fa-shopping-cart fa-lg fa--blue" aria-hidden="true"></span>
+        <span class="fa--blue">3 Items</span>
+      </div>
+      <span id="cart-total" class="fa--blue">1077.63 $</span>
       <div id="chekout-button" class="button button--sm">Checkout</div>
     </div>
-    <div class="cart-list">
-      <div class="cart-item">
-        <span class="item-span item-left">Article 1</span>
-        <div class="button button--sm item-right">Remove Article</div>
-        <span class="item-span item-right item-total">999.9 $</span>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-minus" aria-hidden="true"></span>
+    <div id="cart-list">
+      <div class="cart-item row-container">
+        <span>Article 1</span>
+        <span>999.9 $</span>
+        <div class="unit-container row-container">
+          <label for="item-quantity-01">Units</label>
+          <input id="item-quantity-01" type="text" class="coves-form__input input-quantity" value="1">
+          <div class="button button--sm button-quantity"><span class="fa fa-minus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-plus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-times" aria-hidden="true"></span></div>
         </div>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-plus" aria-hidden="true"></span>
-        </div>
-        <input id="item-quantity-01" type="text" class="coves-form__input item-right input-quantity" value="1">
-        <label for="item-quantity-01" class="item-span item-right item-quantity">Units</label>
       </div>
-      <div class="cart-item">
-        <span class="item-span item-left">Article 7</span>
-        <div class="button button--sm item-right">Remove Article</div>
-        <span class="item-span item-right item-total">0.88 $</span>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-minus" aria-hidden="true"></span>
+      <div class="cart-item row-container">
+        <span>Article 2</span>
+        <span>0.88 $</span>
+        <div class="unit-container row-container">
+          <label for="item-quantity-02">Units</label>
+          <input id="item-quantity-02" type="text" class="coves-form__input input-quantity" value="1">
+          <div class="button button--sm button-quantity"><span class="fa fa-minus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-plus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-times" aria-hidden="true"></span></div>
         </div>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-plus" aria-hidden="true"></span>
-        </div>
-        <input id="item-quantity-02" type="text" class="coves-form__input item-right input-quantity" value="1">
-        <label for="item-quantity-02" class="item-span item-right item-quantity">Units</label>
       </div>
-      <div class="cart-item">
-        <span class="item-span item-left">Article 9</span>
-        <div class="button button--sm item-right">Remove Article</div>
-        <span class="item-span item-right item-total">76.76 $</span>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-minus" aria-hidden="true"></span>
+      <div class="cart-item row-container">
+        <span>Article 9</span>
+        <span>76.76 $</span>
+        <div class="unit-container row-container">
+          <label for="item-quantity-03">Units</label>
+          <input id="item-quantity-03" type="text" class="coves-form__input input-quantity" value="1">
+          <div class="button button--sm button-quantity"><span class="fa fa-minus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-plus" aria-hidden="true"></span></div>
+          <div class="button button--sm button-quantity"><span class="fa fa-times" aria-hidden="true"></span></div>
         </div>
-        <div class="button button--sm button-quantity item-right"><span class="fa fa-plus" aria-hidden="true"></span>
-        </div>
-        <input id="item-quantity-03" type="text" class="coves-form__input item-right input-quantity" value="1">
-        <label for="item-quantity-03" class="item-span item-right item-quantity">Units</label>
       </div>
     </div>
-    <div class="promo-code">
+    <div id="promo-code" class="row-container">
       <label for="promo" class="coves-form__label">Promotional Code</label>
       <input id="promo" type="text" class="coves-form__input coves-form__input--inline" name="promo">
-      <div class="button button--sm">Add Promotional Code</div>
+      <div class="button button--sm">Add Promo Code</div>
     </div>
   </form>
 </div>
