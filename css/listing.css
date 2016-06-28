@@ -1,5 +1,5 @@
 #listing-container {
-  background-color: #FFECCC;
+  background-color: #99FFF0;
   font: 16px "Open Sans", sans-serif;
   margin-bottom: 0;
   overflow: auto;
@@ -17,13 +17,13 @@
 }
 
 .listing-heading {
-  color: #FFA000;
+  color: #009983;
   font-size: 3em;
 }
 
 .article-container {
-  background-color: #FFE2B2;
-  border: 2px solid #FFA000;
+  background-color: #E299FF;
+  border: 2px solid #B500FF;
   border-radius: 5px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,7 +40,7 @@
 }
 
 .article-heading {
-  color: #FFA000;
+  color: #B500FF;
   height: 1.25em;
   margin: 0.5em 0;
   overflow: hidden;
@@ -59,7 +59,7 @@
 }
 
 .price {
-  color: #FFA000;
+  color: #B500FF;
   font-size: 1.5em;
   font-weight: bold;
   line-height: 1.5em;
