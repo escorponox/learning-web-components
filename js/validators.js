@@ -12,7 +12,7 @@
   validator.isEmailAddress = function (input) {
     input = input || '';
     var atIndex = input.indexOf('@');
-    return atIndex > 0 && atIndex < input.length - 1;
+    return atIndex > 0 && atIndex < input.length - 1 && atIndex ===  input.lastIndexOf('@');
   };
 
   validator.isPhoneNumber = function (input) {
