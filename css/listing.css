@@ -270,11 +270,21 @@ body {
 #promo-code {
   display: none;
   margin-top: 0.5em;
-  -webkit-justify-content: flex-end;
-  justify-content: flex-end;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 #promo-code .coves-form__input {
   border-color: #00A9FF;
   margin: 0 8px;
+}
+
+#promo-status,
+#promo-msg {
+  display: none;
+  margin: 0 8px;
+}
+
+#promo-msg {
+  color: #FF004A;
 }

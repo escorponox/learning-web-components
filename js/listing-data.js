@@ -2,7 +2,8 @@
   window.cart = {
     total: {
       amount: 0,
-      promo: 0
+      promo: 0,
+      virtualPromo: 0
     },
     lines: []
   };

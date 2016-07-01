@@ -5,6 +5,121 @@
   document.querySelector('#cart-list').addEventListener('click', removeFromCartButton);
   document.querySelector('#cart-list').addEventListener('click', minusButton);
   document.querySelector('#cart-list').addEventListener('click', plusButton);
+  document.querySelector('#promo-button').addEventListener('click', promoButton);
+
+  function promoButton(event) {
+    const promoCode = event.currentTarget.previousElementSibling.value;
+    var validPromo = false;
+    if (promoCode === 'MVP') {
+      mostExpensiveItemDiscount(); // 15% discount on most expensive item (only in one item)
+      validPromo = true;
+    }
+    if (promoCode === 'A03') {
+      a03ArticleDiscount(); // 20% discount on a03 items
+      validPromo = true;
+    }
+    if (promoCode === 'WOMBOCOMBO') {
+      totalDiscount(); // 10% total discount
+      validPromo = true;
+    }
+    if (!validPromo) {
+      notValidPromo();
+    }
+    else if (cart.total.virtualPromo > cart.total.promo) {
+      applyPromo(promoCode);
+    }
+    else {
+      dontApplyPromo();
+    }
+  }
+
+  function mostExpensiveItemDiscount() {
+    const mostExpensive = cart.lines.reduce(function (prev, curr) {
+      return prev.unitPrice < curr.unitPrice ? curr : prev;
+    }, {unitPrice: 0});
+    mostExpensive.virtualPromo = mostExpensive.unitPrice * 0.15;
+    refreshCartTotalVirtualPromo();
+  }
+
+  function a03ArticleDiscount() {
+    const a03Line = cart.lines.filter(function (line) {
+      return line.articleId === 'a03';
+    }).forEach(function (line) {
+      line.virtualPromo = line.unitPrice * line.quantity * 0.2;
+    });
+    refreshCartTotalVirtualPromo();
+  }
+
+  function totalDiscount() {
+    cart.total.virtualPromo = cart.total.amount * 0.1;
+  }
+
+  function refreshCartTotalVirtualPromo() {
+    cart.total.virtualPromo = cart.lines.reduce(function (prev, curr) {
+      prev += curr.virtualPromo;
+      return prev;
+    }, 0);
+  }
+
+  function notValidPromo() {
+    document.querySelector('#promo').value = '';
+    const promoMsg = document.querySelector('#promo-msg');
+    promoMsg.innerHTML = 'Not a valid code';
+    Velocity(promoMsg, 'fadeIn', {
+      duration: 1000,
+      complete: function () {
+        Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
+      }
+    })
+  }
+
+  function applyPromo(promoCode) {
+    cart.total.promo = cart.total.virtualPromo;
+    cart.total.promoCode = promoCode;
+    cart.lines.forEach(function (line) {
+      line.promo = line.virtualPromo;
+      line.virtualPromo = 0;
+    });
+    refreshCartLines();
+    refreshCartTotalAmount();
+    refreshCartHeading();
+    document.querySelector('#promo-status').innerHTML = promoCode + ': $' + cart.total.promo.toFixed(2) + ' total discount';
+    document.querySelector('#promo-status').style.display = 'block';
+  }
+
+  function dontApplyPromo() {
+    const promoMsg = document.querySelector('#promo-msg');
+    promoMsg.innerHTML = 'Actual Promo is better';
+    Velocity(promoMsg, 'fadeIn', {
+      duration: 1000,
+      complete: function () {
+        Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
+      }
+    })
+  }
+
+  function clearPromo() {
+    if (cart.total.promoCode) {
+      cart.total.promo = 0;
+      cart.total.virtualPromo = 0;
+      cart.total.promoCode = '';
+      cart.lines.forEach(function (line) {
+        line.promo = 0;
+        line.virtualPromo = 0;
+      });
+      document.querySelector('#promo').value = '';
+      document.querySelector('#promo-status').innerHTML = '';
+      document.querySelector('#promo-status').style.display = 'none';
+      const promoMsg = document.querySelector('#promo-msg');
+      promoMsg.innerHTML = 'ALL PROMOS CLEARED';
+      Velocity(promoMsg, 'fadeIn', {
+        duration: 1000,
+        complete: function () {
+          Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
+        }
+      })
+    }
+  }
 
   function plusButton(event) {
     const isButton = event.target.classList.contains('button-plus');
@@ -17,9 +132,7 @@
       }).forEach(function (line) {
         line.quantity++;
       });
-      refreshCartLines();
-      refreshCartTotalAmount();
-      refreshCartHeading();
+      refreshCart();
     }
   }
 
@@ -38,9 +151,7 @@
         return line.quantity > 0;
       });
       cleanRemovedCartLines();
-      refreshCartLines();
-      refreshCartTotalAmount();
-      refreshCartHeading();
+      refreshCart();
       document.querySelector('#listing-container').style.marginBottom = document.querySelector('#cart-container').offsetHeight - 5 + 'px';
     }
   }
@@ -54,8 +165,7 @@
       cart.lines = cart.lines.filter(function (line) {
         return line.articleId !== id;
       });
-      refreshCartTotalAmount();
-      refreshCartHeading();
+      refreshCart();
       cartLine.remove();
       document.querySelector('#listing-container').style.marginBottom = document.querySelector('#cart-container').offsetHeight - 5 + 'px';
     }
@@ -80,9 +190,7 @@
       else {
         refreshCartLines();
       }
-
-      refreshCartTotalAmount();
-      refreshCartHeading();
+      refreshCart();
 
       const cartContainer = document.querySelector('#cart-container');
       cartContainer.classList.add('cart--show');
@@ -96,7 +204,9 @@
       articleId: article.id,
       quantity: 1,
       unitPrice: article.price,
-      amount: article.price
+      amount: article.price,
+      promo: 0,
+      virtualPromo: 0
     });
     const newLine = document.createElement('div');
     newLine.classList.add('cart-item', 'row-container');
@@ -121,10 +231,18 @@
     });
   }
 
+  function refreshCart() {
+    clearPromo();
+    refreshCartLines();
+    refreshCartTotalAmount();
+    refreshCartHeading();
+  }
+
   function refreshCartLines() {
     const cartItems = document.querySelectorAll('.cart-item');
     cart.lines.forEach(function (line, index) {
-      line.amount = line.quantity * line.unitPrice;
+      line.amount = line.quantity * line.unitPrice - line.promo;
+      line.virtualPromo = 0;
       cartItems[index].children[3].children[1].value = line.quantity;
       cartItems[index].children[2].innerHTML = '$' + line.amount.toFixed(2);
     });
@@ -132,9 +250,9 @@
 
   function refreshCartTotalAmount() {
     cart.total.amount = cart.lines.reduce(function (prev, curr) {
-      prev += curr.quantity * curr.unitPrice;
-      return prev;
-    }, 0);
+        prev += curr.quantity * curr.unitPrice;
+        return prev;
+      }, 0) - cart.total.promo;
   }
 
   function refreshCartHeading() {
@@ -146,7 +264,7 @@
     const itemCounterString = itemCount === 1 ? ' Item' : ' Items';
     document.querySelector('#item-counter').innerHTML = itemCount + itemCounterString;
 
-    if(!itemCount) {
+    if (!itemCount) {
       const cartContainer = document.querySelector('#cart-container');
       const listingContainer = document.querySelector('#listing-container');
       cartContainer.classList.remove('cart--expand');
