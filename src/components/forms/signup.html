@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../styles/forms.css"/>
+  <link rel="stylesheet" href="../../styles/icons.css"/>
+  <link rel="stylesheet" href="../../styles/buttons.css"/>
+  <link rel="stylesheet" href="../../styles/home.css"/>
+  <meta charset="UTF-8">
+  <title>Signup Form</title>
+</head>
+<body>
+<div class="menu">
+  <a href="../../index.html" class="button button--green">Back to Home</a>
+  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
+</div>
+<div class="content">
+  <div class="coves-form">
+    <form id="signup-form" method="post" action="#" novalidate>
+      <label for="username" class="coves-form__label">Username</label>
+      <div class="coves-form__input-container--column">
+        <div class="icon icon-user"></div>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="username"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="text" name="username" placeholder="Your username" tabindex="1">
+        <span id="username__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="first-name" class="coves-form__label">First Name</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-name"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="first-name"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="text" name="firstname" maxlength="50" placeholder="Your first name" tabindex="2">
+        <span id="first-name__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="last-name" class="coves-form__label">Last Name</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-name"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="last-name"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="text" name="lastname" maxlength="50" placeholder="Your last name" tabindex="3">
+        <span id="last-name__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="email" class="coves-form__label">Email Address</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-email"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="email"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="text" name="email" placeholder="Your e-mail address" tabindex="4">
+        <span id="email__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="birth" class="coves-form__label">Date of Birth</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-date"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="birth"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="text" name="birth" placeholder="Your date of birth" tabindex="5">
+        <span id="birth__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="pass" class="coves-form__label">Password</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-pass"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="pass"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="password" name="pass" tabindex="6">
+        <span id="pass__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <label for="pass-repeat" class="coves-form__label">Repeat Password</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-pass"></span>
+        <span class="coves-form-ok fa fa-thumbs-o-up fa-lg" aria-hidden="true"></span>
+        <input id="pass-repeat"
+               class="coves-form__input coves-form__input--hover coves-form__input--focus coves-form__input--required"
+               type="password" name="pass-repeat" tabindex="7">
+        <span id="pass-repeat__error" class="coves-form__error" aria-live="polite"></span>
+      </div>
+      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
+        <input type="submit" class="button" value="Submit" tabindex="8">
+      </div>
+      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
+        <div id="coves-form__error-box">All inputs are required</div>
+      </div>
+    </form>
+  </div>
+</div>
+<script src="../../scripts/validators.js"></script>
+<script src="../../scripts/signup-form.js"></script>
+</body>
+</html>

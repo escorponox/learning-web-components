@@ -1,0 +1,25 @@
+{
+  "name": "learning-web-components",
+  "version": "1.0.0",
+  "description": "Web Components",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "tape ./test/**/*.test.js | tap-diff",
+    "test-summ": "tape ./test/**/*.test.js | tap-summary"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/escorponox/learning-web-components.git"
+  },
+  "author": "Carlos Coves Prieto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/escorponox/learning-web-components/issues"
+  },
+  "homepage": "https://github.com/escorponox/learning-web-components#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.0",
+    "gulp": "^3.9.1",
+    "tape": "^4.6.2"
+  }
+}

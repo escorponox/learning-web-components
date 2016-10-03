@@ -1,0 +1,51 @@
+.icon {
+  left: 7px;
+  position: absolute;
+  top: 3px;
+}
+
+.icon--lg {
+  left: 11px;
+  position: absolute;
+  top: 6px;
+}
+
+.icon ~ .coves-form__input {
+  padding-left: 36px;
+}
+
+.icon--lg ~ .coves-form__input--lg {
+  padding-left: 50px;
+}
+
+.icon-user, .icon-user::after {
+  content: url('../assets/icons/user-24.png');
+}
+
+.icon-name, .icon-name::after {
+  content: url('../assets/icons/compose-24.png');
+}
+
+.icon-email, .icon-email::after {
+  content: url('../assets/icons/mail-24.png');
+}
+
+.icon-date, .icon-date::after {
+  content: url('../assets/icons/calendar-24.png');
+}
+
+.icon-pass, .icon-pass::after {
+  content: url('../assets/icons/key-24.png');
+}
+
+.icon-search, .icon-search::after {
+  content: url('../assets/icons/magnifyingglass-24.png');
+}
+
+.icon-category, .icon-category::after {
+  content: url('../assets/icons/category.png');
+}
+
+.icon-search-lg, .icon-search-lg::after {
+  content: url('../assets/icons/magnifyingglass-32.png');
+}
