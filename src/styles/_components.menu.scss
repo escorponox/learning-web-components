@@ -1,0 +1,16 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+
+  @include mq($mq-landscape) {
+    flex-direction: row;
+  }
+}
+
+.menu__button {
+  margin: $base-radius 0;
+
+  @include mq($mq-landscape) {
+    margin: 0 $base-radius;
+  }
+}

@@ -70,16 +70,16 @@ body {
   text-align: center;
 }
 
-.listing-container .button {
+.listing-container .c-button {
   background-color: #FFA000;
   border-color: #FF8200;
 }
 
-.listing-container .button:hover {
+.listing-container .c-button:hover {
   background-color: #FF8200;
 }
 
-.listing-container .button:active {
+.listing-container .c-button:active {
   background-color: #FF6000;
   border-color: #FF6000;
 }

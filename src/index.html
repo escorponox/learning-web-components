@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="styles/buttons.css">
-  <link rel="stylesheet" href="styles/home.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/main.css">
   <title>Multi-Page Web Site</title>
 </head>
 <body>
-<div class="menu">
-  <a href="components/buttons/index.html" class="button button--green">Buttons</a>
-  <a href="components/sidebar/index.html" class="button button--green">Sidebar</a>
-  <a href="components/forms/index.html" class="button button--green">Forms Showcase</a>
-  <a href="components/calculator/index.html" class="button button--green">Calculator</a>
-  <a href="components/listing/index.html" class="button button--green">Product Listing</a>
-</div>
-<div class="coves">
-  <h1>Carlos Coves Prieto</h1>
-  <p>Career Path 3 - Modern FrontEnd Developer</p>
-</div>
-<div class="quote-container">
-  <p class="quote">"The only way to go</p>
-  <p class="quote">fast is to go well"</p>
-  <p class="author">Robert C. "Uncle Bob" Martin</p>
+<header>
+  <div class="menu">
+    <a href="components/buttons/index.html" class="button menu__button">Buttons</a>
+    <a href="components/sidebar/index.html" class="button menu__button">Sidebar</a>
+    <a href="components/forms/index.html" class="button menu__button">Forms Showcase</a>
+    <a href="components/calculator/index.html" class="button menu__button">Calculator</a>
+    <a href="components/listing/index.html" class="button menu__button">Product Listing</a>
+  </div>
+</header>
+<div class="content">
+  <section>
+    <div class="coves">
+      <h1>Carlos Coves Prieto</h1>
+      <p>Career Path 3 - Modern FrontEnd Developer</p>
+    </div>
+  </section>
+  <section>
+    <div class="quote-container">
+      <div class="quote-text">
+        <blockquote class="quote-text__text">"The only way to go fast is to go well"</blockquote>
+        <p class="quote-text__author">Robert C. "Uncle Bob" Martin</p>
+      </div>
+      <div class="quote__img">
+        <img src="assets/images/uncle-bob.png">
+      </div>
+    </div>
+  </section>
 </div>
 </body>
 </html>

@@ -1,0 +1,29 @@
+.quote-container {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+
+  @include mq($mq-tablet) {
+    flex-direction: column;
+  }
+}
+
+.quote-text__text {
+  @include font-size(24px, 30px);
+  font-weight: 700;
+
+  @include mq($mq-landscape) {
+    @include font-size(40px)
+  }
+}
+
+.quote-text__author {
+  @include font-size(18px);
+
+  @include mq($mq-tablet) {
+    @include font-size(20px)
+  }
+
+  @include mq($mq-landscape) {
+    @include font-size(24px)
+  }
+}
