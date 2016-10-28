@@ -1,0 +1,25 @@
+.showcase-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.showcase__form {
+  border: 2px solid $color-blue;
+  border-radius: $base-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 11rem;
+  margin: $base-spacing-unit-small;
+  padding: $base-spacing-unit;
+  flex-grow: 1;
+}
+
+.showcase__form__photo {
+  border-radius: $base-radius;
+}
+
+.showcase__form__button {
+  margin-top: $base-spacing-unit;
+}

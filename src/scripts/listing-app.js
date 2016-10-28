@@ -1,13 +1,26 @@
 (function (document) {
 
-  document.querySelector('#show-cart-button').addEventListener('click', manageCartButton);
-  document.querySelector('#listing-container').addEventListener('click', addToCart);
-  document.querySelector('#cart-list').addEventListener('click', removeFromCartButton);
-  document.querySelector('#cart-list').addEventListener('click', minusButton);
-  document.querySelector('#cart-list').addEventListener('click', plusButton);
-  document.querySelector('#promo-button').addEventListener('click', promoButton);
+  window.listingContainer = document.querySelector('#listing-container');
+  window.cartContainer = document.querySelector('#cart-container');
+  window.showCartButton = document.querySelector('#show-cart-button');
+  window.cartCount = document.querySelector('#item-counter');
+  window.cartList = document.querySelector('#cart-list');
+  window.promoButton = document.querySelector('#promo-button');
+  window.promoCode = document.querySelector('#promo-code');
+  window.promoMsg = document.querySelector('#promo-msg');
+  window.promoStatus = document.querySelector('#promo-status');
+  window.cartTotal = document.querySelector('#cart-total');
+  window.expandContainer = document.querySelector('#cart-expand-container');
 
-  function promoButton(event) {
+
+  showCartButton.addEventListener('click', manageCartButton);
+  listingContainer.addEventListener('click', addToCart);
+  cartList.addEventListener('click', removeFromCartButton);
+  cartList.addEventListener('click', minusButton);
+  cartList.addEventListener('click', plusButton);
+  promoButton.addEventListener('click', promoButtonClick);
+
+  function promoButtonClick(event) {
     const promoCode = event.currentTarget.previousElementSibling.value;
     var validPromo = false;
     if (promoCode === 'MVP') {
@@ -62,8 +75,7 @@
   }
 
   function notValidPromo() {
-    document.querySelector('#promo').value = '';
-    const promoMsg = document.querySelector('#promo-msg');
+    promoCode.value = '';
     promoMsg.innerHTML = 'Not a valid code';
     Velocity(promoMsg, 'fadeIn', {
       duration: 1000,
@@ -83,12 +95,11 @@
     refreshCartLines();
     refreshCartTotalAmount();
     refreshCartHeading();
-    document.querySelector('#promo-status').innerHTML = promoCode + ': $' + cart.total.promo.toFixed(2) + ' total discount';
-    document.querySelector('#promo-status').style.display = 'block';
+    promoStatus.innerHTML = promoCode + ': $' + cart.total.promo.toFixed(2) + ' total discount';
+    promoStatus.style.display = 'block';
   }
 
   function dontApplyPromo() {
-    const promoMsg = document.querySelector('#promo-msg');
     promoMsg.innerHTML = 'Actual Promo is better';
     Velocity(promoMsg, 'fadeIn', {
       duration: 1000,
@@ -107,10 +118,9 @@
         line.promo = 0;
         line.virtualPromo = 0;
       });
-      document.querySelector('#promo').value = '';
-      document.querySelector('#promo-status').innerHTML = '';
-      document.querySelector('#promo-status').style.display = 'none';
-      const promoMsg = document.querySelector('#promo-msg');
+      promoCode.value = '';
+      promoStatus.innerHTML = '';
+      promoStatus.style.display = 'none';
       promoMsg.innerHTML = 'ALL PROMOS CLEARED';
       Velocity(promoMsg, 'fadeIn', {
         duration: 1000,
@@ -125,7 +135,7 @@
     const isButton = event.target.classList.contains('button-plus');
     const isInnerSpan = event.target.classList.contains('fa-plus');
     if (isButton || isInnerSpan) {
-      const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
+      const cartLine = isButton ? event.target.parentNode : event.target.parentNode.parentNode;
       const id = cartLine.id.slice(5);
       cart.lines.filter(function (line) {
         return line.articleId === id;
@@ -140,7 +150,7 @@
     const isButton = event.target.classList.contains('button-minus');
     const isInnerSpan = event.target.classList.contains('fa-minus');
     if (isButton || isInnerSpan) {
-      const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
+      const cartLine = isButton ? event.target.parentNode : event.target.parentNode.parentNode;
       const id = cartLine.id.slice(5);
       cart.lines.filter(function (line) {
         return line.articleId === id;
@@ -152,7 +162,7 @@
       });
       cleanRemovedCartLines();
       refreshCart();
-      document.querySelector('#listing-container').style.marginBottom = document.querySelector('#cart-container').offsetHeight - 5 + 'px';
+      listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
     }
   }
 
@@ -167,7 +177,7 @@
       });
       refreshCart();
       cartLine.remove();
-      document.querySelector('#listing-container').style.marginBottom = document.querySelector('#cart-container').offsetHeight - 5 + 'px';
+      listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
     }
   }
 
@@ -191,11 +201,7 @@
         refreshCartLines();
       }
       refreshCart();
-
-      const cartContainer = document.querySelector('#cart-container');
-      cartContainer.classList.add('cart--show');
-      event.currentTarget.classList.add('cart--show');
-      event.currentTarget.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
+      showCart();
     }
   }
 
@@ -209,19 +215,18 @@
       virtualPromo: 0
     });
     const newLine = document.createElement('div');
-    newLine.classList.add('cart-item', 'row-container');
+    newLine.classList.add('cart-list__item');
     newLine.id = 'line-' + article.id;
-    newLine.innerHTML = '<div class="button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
-      + '<span class="cart-item__article-name">' + article.name + '</span><span class="line-price">$' + article.price + '</span>'
-      + '<div class="item-quantity row-container">'
-      + '<div class="button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
-      + '<input class="coves-form__input input-quantity" value="1">'
-      + '<div class="button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div></div>';
-    document.querySelector('#cart-list').appendChild(newLine);
+    newLine.innerHTML = '<div class="cart-list__item__element button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
+      + '<span class="cart-list__item__element cart-list__item__name">' + article.name + '</span><span class="cart-list__item__element line-price">$' + article.price + '</span>'
+      + '<div class="cart-list__item__element button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
+      + '<input class="cart-list__item__element coves-form__input input-quantity" value="1">'
+      + '<div class="cart-list__item__element button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div>';
+    cartList.appendChild(newLine);
   }
 
   function cleanRemovedCartLines() {
-    const cartItems = document.querySelectorAll('.cart-item');
+    const cartItems = document.querySelectorAll('.cart-list__item');
     [].forEach.call(cartItems, function (cartItem) {
       const isInCart = cart.lines.some(function (line) {
         return line.articleId === cartItem.id.slice(5);
@@ -239,11 +244,11 @@
   }
 
   function refreshCartLines() {
-    const cartItems = document.querySelectorAll('.cart-item');
+    const cartItems = document.querySelectorAll('.cart-list__item');
     cart.lines.forEach(function (line, index) {
       line.amount = line.quantity * line.unitPrice - line.promo;
       line.virtualPromo = 0;
-      cartItems[index].children[3].children[1].value = line.quantity;
+      cartItems[index].children[4].value = line.quantity;
       cartItems[index].children[2].innerHTML = '$' + line.amount.toFixed(2);
     });
   }
@@ -256,22 +261,15 @@
   }
 
   function refreshCartHeading() {
-    document.querySelector('#cart-total').innerHTML = '$' + cart.total.amount.toFixed(2);
+    cartTotal.innerHTML = '$' + cart.total.amount.toFixed(2);
     const itemCount = cart.lines.reduce(function (prev, curr) {
       prev += curr.quantity;
       return prev;
     }, 0);
-    const itemCounterString = itemCount === 1 ? ' Item' : ' Items';
-    document.querySelector('#item-counter').innerHTML = itemCount + itemCounterString;
+    cartCount.innerHTML = itemCount;
 
     if (!itemCount) {
-      const cartContainer = document.querySelector('#cart-container');
-      const listingContainer = document.querySelector('#listing-container');
-      cartContainer.classList.remove('cart--expand');
-      cartContainer.classList.remove('cart--show');
-      listingContainer.classList.remove('cart--show');
-      listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
-      document.querySelector('#show-cart-button').classList.remove('cart-button--maximized');
+      hideCart();
     }
   }
 
@@ -285,35 +283,65 @@
     }
   }
 
-  function minimizeCart(button) {
-    const expandContainer = document.querySelector('#cart-expand-container');
-    const cartContainer = expandContainer.parentNode.parentNode;
+  function showCart() {
+    if (!cartContainer.classList.contains('cart--show')) {
+      Velocity(cartContainer, "slideDown", {
+        duration: 400,
+        begin: function () {
+          cartContainer.classList.add('cart--show');
+        },
+        complete: function () {
+          listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
+        }
+      });
+    }
+  }
+
+  function hideCart() {
     Velocity(expandContainer, "slideUp", {
       duration: 400,
       begin: function () {
-        document.querySelector('#listing-container').style.marginBottom = '50px';
+        listingContainer.style.marginBottom = '0';
+        Velocity(cartContainer, "slideUp", {
+          duration: 400,
+          complete: function () {
+            showCartButton.classList.remove('cart-button--maximized');
+            cartContainer.classList.remove('cart--show');
+          }
+        });
+      },
+      complete: function () {
+        cartContainer.classList.remove('cart--expanded');
+        expandContainer.classList.remove('cart__expand--expanded');
+
+      }
+    });
+  }
+
+  function minimizeCart(button) {
+    Velocity(expandContainer, "slideUp", {
+      duration: 400,
+      begin: function () {
+        listingContainer.style.marginBottom = '72px';
       },
       complete: function () {
         button.classList.remove('cart-button--maximized');
-        cartContainer.classList.remove('cart--expand');
-        expandContainer.style = '';
+        cartContainer.classList.remove('cart--expanded');
+        expandContainer.classList.remove('cart__expand--expanded');
       }
     });
   }
 
   function maximizeCart(button) {
-    const expandContainer = document.querySelector('#cart-expand-container');
-    const cartContainer = expandContainer.parentNode.parentNode;
-    const promoCode = document.querySelector('#promo-code');
     Velocity(expandContainer, "slideDown", {
       duration: 400,
       begin: function () {
-        cartContainer.classList.add('cart--expand');
+        cartContainer.classList.add('cart--expanded');
+        expandContainer.classList.add('cart__expand--expanded');
       },
       complete: function () {
         button.classList.add('cart-button--maximized');
-        expandContainer.style = '';
-        document.querySelector('#listing-container').style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
+        listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
       }
     });
   }

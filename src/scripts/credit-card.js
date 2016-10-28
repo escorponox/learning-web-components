@@ -41,7 +41,7 @@
       const dateInputs = document.querySelectorAll('#month, #year');
       [].forEach.call(dateInputs, function (input) {
         if (validator.isEmpty(input.value)) {
-          document.querySelector('#date__error').innerHTML = 'Required fields';
+          document.querySelector('#date__error').innerHTML = 'Required';
           document.querySelector('#date__error').style.visibility = 'visible';
           input.setCustomValidity('Required fields');
         }

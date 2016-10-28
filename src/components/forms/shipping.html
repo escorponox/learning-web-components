@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../styles/forms.css"/>
-  <link rel="stylesheet" href="../../styles/buttons.css"/>
-  <link rel="stylesheet" href="../../styles/home.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
   <title>Shipping Form</title>
 </head>
 <body>
-<div class="menu">
-  <a href="../../index.html" class="button button--green">Back to Home</a>
-  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
-</div>
+<header>
+  <div class="menu">
+    <a href="../../index.html" class="button menu__button">Back to Home</a>
+    <a href="index.html" class="button menu__button">Back to Forms Showcase</a>
+  </div>
+</header>
 <div class="content">
   <div class="coves-form">
     <form id="shipping-form" method="post" action="#" novalidate>
-      <section id="shipping" class="coves-form__section">
+      <section id="shipping">
         <h2 class="coves-form__heading">Shipping Address</h2>
         <label for="first-name" class="coves-form__label">First Name</label>
         <div class="coves-form__input-container--column">
@@ -312,7 +310,7 @@
         </div>
       </section>
 
-      <section id="billing" class="coves-form__section">
+      <section id="billing">
         <h2 class="coves-form__heading">Billing Address</h2>
         <div class="coves-form__input-container--column">
           <div class="coves-form__checkbox-container">

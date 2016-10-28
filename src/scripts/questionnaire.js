@@ -18,7 +18,7 @@
   [].forEach.call(document.querySelectorAll('#questionnaire-form'), function (form) {
     form.addEventListener('submit', function (event) {
       const radios = form.elements['find'];
-      const errorBox = document.querySelector('#coves-form__error-box');
+      const errorBox = document.querySelector('#questionnaire__error-box');
       const textInput = document.querySelector('#other-text');
       const selectOptions = [].reduce.call(radios, function (prev, curr) {
         prev.push(curr.value);

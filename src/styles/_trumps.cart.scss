@@ -1,0 +1,44 @@
+#show-cart-button {
+  height: 40px;
+  width: 40px;
+  margin-right: $base-spacing-unit;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+#show-cart-button.cart-button--maximized .fa-angle-double-down,
+#show-cart-button .fa-angle-double-up {
+  display: inline-block;
+}
+
+#show-cart-button .fa-angle-double-down,
+#show-cart-button.cart-button--maximized .fa-angle-double-up {
+  display: none;
+}
+
+#chekout-button {
+  font-weight: 700;
+  align-self: flex-end;
+}
+
+#show-cart-button,
+.button-quantity {
+  padding: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.input-quantity {
+  border-color: $color-blue;
+  text-align: center !important;
+  width: 40px !important;
+}
+
+.button-remove {
+  border-style: solid !important;
+}

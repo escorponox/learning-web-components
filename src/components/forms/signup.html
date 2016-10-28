@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-  <link rel="stylesheet" href="../../styles/forms.css"/>
-  <link rel="stylesheet" href="../../styles/icons.css"/>
-  <link rel="stylesheet" href="../../styles/buttons.css"/>
-  <link rel="stylesheet" href="../../styles/home.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
+  <script src="../../scripts/validators.js"></script>
+  <script src="../../scripts/signup-form.js"></script>
   <title>Signup Form</title>
 </head>
 <body>
-<div class="menu">
-  <a href="../../index.html" class="button button--green">Back to Home</a>
-  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
-</div>
+<header>
+  <div class="menu">
+    <a href="../../index.html" class="button menu__button">Back to Home</a>
+    <a href="index.html" class="button menu__button">Back to Forms Showcase</a>
+  </div>
+</header>
 <div class="content">
   <div class="coves-form">
     <form id="signup-form" method="post" action="#" novalidate>
@@ -86,12 +85,10 @@
         <input type="submit" class="button" value="Submit" tabindex="8">
       </div>
       <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
-        <div id="coves-form__error-box">All inputs are required</div>
+        <div id="signup__error-box" class="coves-form__error-box">All inputs are required</div
       </div>
     </form>
   </div>
 </div>
-<script src="../../scripts/validators.js"></script>
-<script src="../../scripts/signup-form.js"></script>
 </body>
 </html>

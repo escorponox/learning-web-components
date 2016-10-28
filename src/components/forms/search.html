@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link rel="stylesheet" href="../../styles/forms.css"/>
-  <link rel="stylesheet" href="../../styles/icons.css"/>
-  <link rel="stylesheet" href="../../styles/buttons.css"/>
-  <link rel="stylesheet" href="../../styles/home.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
   <title>Search Form</title>
 </head>
 <body>
-<div class="menu">
-  <a href="../../index.html" class="button button--green">Back to Home</a>
-  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
-</div>
+<header>
+  <div class="menu">
+    <a href="../../index.html" class="button menu__button">Back to Home</a>
+    <a href="index.html" class="button menu__button">Back to Forms Showcase</a>
+  </div>
+</header>
 <div class="content">
-  <div class="coves-form coves-form--center">
+  <div class="coves-form">
     <form id="search-form" method="post" action="#" novalidate>
       <label for="search" class="coves-form__label coves-form__label--lg">Search</label>
       <div class="coves-form__input-container--column">
@@ -26,23 +24,21 @@
                type="text" name="search" placeholder="Search..." tabindex="1">
         <span id="search__error" class="coves-form__error" aria-live="polite"></span>
       </div>
-      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
-        <label for="categories" class="coves-form__label">Categories</label>
-        <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
-          <span class="icon icon-category"></span>
-          <select id="categories"
-                  class="coves-form__input coves-form__input--inline
+      <label for="categories" class="coves-form__label">Categories</label>
+      <div class="coves-form__input-container--column">
+        <span class="icon icon-category"></span>
+        <select id="categories"
+                class="coves-form__input coves-form__input--inline
                   coves-form__select coves-form__input--hover coves-form__input--focus"
-                  name="category" tabindex="2">
-            <option selected value="">Select a Category</option>
-            <option value="movie">Movies</option>
-            <option value="game">Games</option>
-            <option value="sport">Sports</option>
-            <option value="health">Health</option>
-            <option value="financial">Financial</option>
-            <option value="computer">Computers</option>
-          </select>
-        </div>
+                name="category" tabindex="2">
+          <option selected value="">Select a Category</option>
+          <option value="movie">Movies</option>
+          <option value="game">Games</option>
+          <option value="sport">Sports</option>
+          <option value="health">Health</option>
+          <option value="financial">Financial</option>
+          <option value="computer">Computers</option>
+        </select>
       </div>
       <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
         <input type="submit" class="button" value="Search" tabindex="3">
