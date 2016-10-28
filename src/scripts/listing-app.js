@@ -175,8 +175,8 @@
       cart.lines = cart.lines.filter(function (line) {
         return line.articleId !== id;
       });
-      refreshCart();
       cartLine.remove();
+      refreshCart();
       listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
     }
   }

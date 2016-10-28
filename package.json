@@ -31,7 +31,13 @@
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.0",
     "gulp-uglify": "^2.0.0",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-svgo": "^5.2.0",
     "jshint": "^2.9.3",
     "tape": "^4.6.2"
+  },
+  "dependencies": {
   }
 }
