@@ -2,18 +2,18 @@
 
   window.listingContainer = document.querySelector('#listing-container');
   window.cartContainer = document.querySelector('#cart-container');
-  window.showCartButton = document.querySelector('#show-cart-button');
   window.cartCount = document.querySelector('#item-counter');
+  window.cartCountModal = document.querySelector('#item-counter-modal');
   window.cartList = document.querySelector('#cart-list');
+  window.cartTotal = document.querySelector('#cart-total');
+  window.cartTotalModal = document.querySelector('#cart-total-modal');
+  window.cartModalToggle = document.querySelector('#cart-modal-toggle');
   window.promoButton = document.querySelector('#promo-button');
   window.promoCode = document.querySelector('#promo-code');
   window.promoMsg = document.querySelector('#promo-msg');
   window.promoStatus = document.querySelector('#promo-status');
-  window.cartTotal = document.querySelector('#cart-total');
-  window.expandContainer = document.querySelector('#cart-expand-container');
 
 
-  showCartButton.addEventListener('click', manageCartButton);
   listingContainer.addEventListener('click', addToCart);
   cartList.addEventListener('click', removeFromCartButton);
   cartList.addEventListener('click', minusButton);
@@ -201,7 +201,8 @@
         refreshCartLines();
       }
       refreshCart();
-      showCart();
+      cartContainer.classList.add('cart--show');
+      listingContainer.classList.add('listing-container--cart-show');
     }
   }
 
@@ -217,11 +218,11 @@
     const newLine = document.createElement('div');
     newLine.classList.add('cart-list__item');
     newLine.id = 'line-' + article.id;
-    newLine.innerHTML = '<div class="cart-list__item__element button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
-      + '<span class="cart-list__item__element cart-list__item__name">' + article.name + '</span><span class="cart-list__item__element line-price">$' + article.price + '</span>'
-      + '<div class="cart-list__item__element button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
+    newLine.innerHTML = '<div class="cart-list__item__section"><div class="cart-list__item__element button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
+      + '<span class="cart-list__item__element cart-list__item__name">' + article.name + '</span><span class="cart-list__item__element line-price">$' + article.price + '</span></div>'
+      + '<div class="cart-list__item__section"><div class="cart-list__item__element button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
       + '<input class="cart-list__item__element coves-form__input input-quantity" value="1">'
-      + '<div class="cart-list__item__element button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div>';
+      + '<div class="cart-list__item__element button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div></div>';
     cartList.appendChild(newLine);
   }
 
@@ -248,8 +249,8 @@
     cart.lines.forEach(function (line, index) {
       line.amount = line.quantity * line.unitPrice - line.promo;
       line.virtualPromo = 0;
-      cartItems[index].children[4].value = line.quantity;
-      cartItems[index].children[2].innerHTML = '$' + line.amount.toFixed(2);
+      cartItems[index].children[1].children[1].value = line.quantity;
+      cartItems[index].children[0].children[2].innerHTML = '$' + line.amount.toFixed(2);
     });
   }
 
@@ -261,89 +262,21 @@
   }
 
   function refreshCartHeading() {
-    cartTotal.innerHTML = '$' + cart.total.amount.toFixed(2);
+    const cartTotalString = '$' + cart.total.amount.toFixed(2);
+    cartTotal.innerHTML = cartTotalString;
+    cartTotalModal.innerHTML = cartTotalString;
+
     const itemCount = cart.lines.reduce(function (prev, curr) {
       prev += curr.quantity;
       return prev;
     }, 0);
     cartCount.innerHTML = itemCount;
+    cartCountModal.innerHTML = itemCount;
 
     if (!itemCount) {
-      hideCart();
+      cartContainer.classList.remove('cart--show');
+      cartModalToggle.checked = false;
     }
-  }
-
-  function manageCartButton(event) {
-    const button = event.currentTarget;
-    if (button.classList.contains('cart-button--maximized')) {
-      minimizeCart(button);
-    }
-    else {
-      maximizeCart(button);
-    }
-  }
-
-  function showCart() {
-    if (!cartContainer.classList.contains('cart--show')) {
-      Velocity(cartContainer, "slideDown", {
-        duration: 400,
-        begin: function () {
-          cartContainer.classList.add('cart--show');
-        },
-        complete: function () {
-          listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
-        }
-      });
-    }
-  }
-
-  function hideCart() {
-    Velocity(expandContainer, "slideUp", {
-      duration: 400,
-      begin: function () {
-        listingContainer.style.marginBottom = '0';
-        Velocity(cartContainer, "slideUp", {
-          duration: 400,
-          complete: function () {
-            showCartButton.classList.remove('cart-button--maximized');
-            cartContainer.classList.remove('cart--show');
-          }
-        });
-      },
-      complete: function () {
-        cartContainer.classList.remove('cart--expanded');
-        expandContainer.classList.remove('cart__expand--expanded');
-
-      }
-    });
-  }
-
-  function minimizeCart(button) {
-    Velocity(expandContainer, "slideUp", {
-      duration: 400,
-      begin: function () {
-        listingContainer.style.marginBottom = '72px';
-      },
-      complete: function () {
-        button.classList.remove('cart-button--maximized');
-        cartContainer.classList.remove('cart--expanded');
-        expandContainer.classList.remove('cart__expand--expanded');
-      }
-    });
-  }
-
-  function maximizeCart(button) {
-    Velocity(expandContainer, "slideDown", {
-      duration: 400,
-      begin: function () {
-        cartContainer.classList.add('cart--expanded');
-        expandContainer.classList.add('cart__expand--expanded');
-      },
-      complete: function () {
-        button.classList.add('cart-button--maximized');
-        listingContainer.style.marginBottom = cartContainer.offsetHeight - 5 + 'px';
-      }
-    });
   }
 
 })(document);

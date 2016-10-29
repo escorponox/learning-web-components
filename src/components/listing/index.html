@@ -103,32 +103,46 @@
   </script>
 </div>
 <div id="cart-container" class="cart">
-  <div id="cart-header" class="cart__header o-center-margin">
-    <div id="show-cart-button" class="button">
-      <span class="fa fa-angle-double-up fa-lg" aria-hidden="true"></span>
-      <span class="fa fa-angle-double-down fa-lg" aria-hidden="true"></span>
-    </div>
-    <div id="item-counter-container" class="cart__header__counter">
-      <span class="fa fa-shopping-cart fa-lg o-blue" aria-hidden="true"></span>
+  <div class="cart__header o-center-margin">
+    <div class="cart__header__counter">
+      <span class="fa fa-shopping-cart fa-lg" aria-hidden="true"></span>
       <span id="item-counter">0</span>
     </div>
+    <label for="cart-modal-toggle" class="button cart-modal-toggle-button">
+      <span class="fa fa-angle-double-up fa-lg" aria-hidden="true"></span>
+    </label>
     <span id="cart-total" class="cart__header__total">$0</span>
   </div>
-  <div id="cart-expand-container" class="cart__expand o-center-margin">
-    <form id="cart-form" method="post" action="#">
-      <div id="cart-list" class="cart-list"></div>
-      <div id="promo" class="promo">
-        <span>
-          <input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE">
-          <div id="promo-button" class="button button--sm">Apply Code</div>
-        </span>
-        <span id="promo-status" class="promo-status"></span>
-        <span id="promo-msg" class="promo-msg"></span>
-        <div id="chekout-button" class="button button--sm">Checkout</div>
-      </div>
-    </form>
-  </div>
 </div>
+<input id="cart-modal-toggle" type="checkbox" class="cart-modal-toggle o-display-none">
+<form id="cart-form" method="post" action="#" class="cart-modal-container">
+  <label for="cart-modal-toggle" class="cart-modal__background"></label>
+  <div class="cart-modal__box o-center-margin">
+    <div class="cart__header cart__header--modal">
+      <div class="cart__header__counter">
+        <span class="fa fa-shopping-cart fa-lg o-blue" aria-hidden="true"></span>
+        <span id="item-counter-modal">0</span>
+      </div>
+      <span id="cart-total-modal" class="cart__header__total">$0</span>
+    </div>
+    <div id="cart-list" class="cart-list"></div>
+    <div id="promo" class="promo">
+      <span>
+        <input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE">
+        <div id="promo-button" class="button button--sm">Apply Code</div>
+      </span>
+      <span id="promo-status" class="promo-status"></span>
+      <span id="promo-msg" class="promo-msg"></span>
+    </div>
+    <div class="cart-modal__box__footer">
+      <label for="cart-modal-toggle" class="button cart-modal-toggle-button">
+        <span class="fa fa-angle-double-down fa-lg" aria-hidden="true"></span>
+      </label>
+      <div id="chekout-button" class="button button--sm">Checkout</div>
+    </div>
+  </div>
+</form>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="../../scripts/listing-data.js"></script>

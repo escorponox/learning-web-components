@@ -1,5 +1,10 @@
 .listing-container {
   padding: $base-spacing-unit;
+  transition: all 400ms ease-in;
+}
+
+.listing-container--cart-show {
+  margin-bottom: 67px;
 }
 
 .article-container {
