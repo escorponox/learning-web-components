@@ -1,5 +1,5 @@
 const test = require('tape');
-const calculator = require('../../src/scripts/calculatorUtils');
+const calculator = require('../../src/scripts/calculator-utils');
 
 test('operands', t => {
   t.deepEqual(calculator.appendChar([], '1'), ['1'], '1 adds 1 to empty operand');
