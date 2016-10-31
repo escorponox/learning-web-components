@@ -42,7 +42,7 @@
       applyPromo(promoCode);
     }
     else {
-      dontApplyPromo();
+      promoWarning('Better promo already applied');
     }
   }
 
@@ -76,13 +76,7 @@
 
   function notValidPromo() {
     promoCode.value = '';
-    promoMsg.innerHTML = 'Not a valid code';
-    Velocity(promoMsg, 'fadeIn', {
-      duration: 1000,
-      complete: function () {
-        Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
-      }
-    })
+    promoWarning('Not a valid code');
   }
 
   function applyPromo(promoCode) {
@@ -95,18 +89,16 @@
     refreshCartLines();
     refreshCartTotalAmount();
     refreshCartHeading();
-    promoStatus.innerHTML = promoCode + ': $' + cart.total.promo.toFixed(2) + ' total discount';
-    promoStatus.style.display = 'block';
+    promoStatus.innerHTML = '$' + cart.total.promo.toFixed(2) + ' discount';
+    promoStatus.classList.add('promo--show');
   }
 
-  function dontApplyPromo() {
-    promoMsg.innerHTML = 'Actual Promo is better';
-    Velocity(promoMsg, 'fadeIn', {
-      duration: 1000,
-      complete: function () {
-        Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
-      }
-    })
+  function promoWarning(message) {
+    promoMsg.innerHTML = message;
+    promoMsg.classList.add('promo--show');
+    setTimeout(function () {
+      promoMsg.classList.remove('promo--show');
+    }, 5000)
   }
 
   function clearPromo() {
@@ -118,16 +110,10 @@
         line.promo = 0;
         line.virtualPromo = 0;
       });
+      promoStatus.classList.remove('promo--show');
       promoCode.value = '';
       promoStatus.innerHTML = '';
-      promoStatus.style.display = 'none';
-      promoMsg.innerHTML = 'ALL PROMOS CLEARED';
-      Velocity(promoMsg, 'fadeIn', {
-        duration: 1000,
-        complete: function () {
-          Velocity(promoMsg, 'fadeOut', {duration: 1000, delay: 5000});
-        }
-      })
+      promoWarning('ALL PROMOS CLEARED');
     }
   }
 
@@ -135,7 +121,7 @@
     const isButton = event.target.classList.contains('button-plus');
     const isInnerSpan = event.target.classList.contains('fa-plus');
     if (isButton || isInnerSpan) {
-      const cartLine = isButton ? event.target.parentNode : event.target.parentNode.parentNode;
+      const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
       const id = cartLine.id.slice(5);
       cart.lines.filter(function (line) {
         return line.articleId === id;
@@ -150,7 +136,7 @@
     const isButton = event.target.classList.contains('button-minus');
     const isInnerSpan = event.target.classList.contains('fa-minus');
     if (isButton || isInnerSpan) {
-      const cartLine = isButton ? event.target.parentNode : event.target.parentNode.parentNode;
+      const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
       const id = cartLine.id.slice(5);
       cart.lines.filter(function (line) {
         return line.articleId === id;
@@ -170,7 +156,7 @@
     const isButton = event.target.classList.contains('button-remove');
     const isInnerSpan = event.target.classList.contains('fa-times');
     if (isButton || isInnerSpan) {
-      const cartLine = isButton ? event.target.parentNode : event.target.parentNode.parentNode;
+      const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
       const id = cartLine.id.slice(5);
       cart.lines = cart.lines.filter(function (line) {
         return line.articleId !== id;
@@ -218,11 +204,11 @@
     const newLine = document.createElement('div');
     newLine.classList.add('cart-list__item');
     newLine.id = 'line-' + article.id;
-    newLine.innerHTML = '<div class="cart-list__item__section"><div class="cart-list__item__element button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
-      + '<span class="cart-list__item__element cart-list__item__name">' + article.name + '</span><span class="cart-list__item__element line-price">$' + article.price + '</span></div>'
-      + '<div class="cart-list__item__section"><div class="cart-list__item__element button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
-      + '<input class="cart-list__item__element coves-form__input input-quantity" value="1">'
-      + '<div class="cart-list__item__element button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div></div>';
+    newLine.innerHTML = '<div class="cart-list__item__info"><div class="button button--sm button-quantity button-remove"><span class="fa fa-times" aria-hidden="true"></span></div>'
+      + '<div class="cart-list__item__name">' + article.name + '</div><span class="line-price">$' + article.price + '</span></div>'
+      + '<div class="cart-list__item__quantity"><div class="button button--sm button-quantity button-minus"><span class="fa fa-minus" aria-hidden="true"></span></div>'
+      + '<input class="coves-form__input input-quantity" value="1">'
+      + '<div class="button button--sm button-quantity button-plus"><span class="fa fa-plus" aria-hidden="true"></span></div></div>';
     cartList.appendChild(newLine);
   }
 

@@ -15,90 +15,15 @@
 <div id="listing-container" class="listing-container">
   <script id="listing-template" type="text/x-handlebars-template">
     <div class="article-container o-center-margin">
+      {{#each articles}}
       <div class="article">
-        <h2>{{articles.0.name}}</h2>
-        <img class="article-photo" src="{{articles.0.image}}">
-        <p class="description">{{articles.0.description}}</p>
-        <p class="price">${{articles.0.price}}</p>
-        <div id="{{articles.0.id}}" class="button add-button">{{addButtonText}}</div>
+        <h2 class="article-title">{{this.name}}</h2>
+        <img class="article-photo" src="{{this.image}}">
+        <p class="description">{{this.description}}</p>
+        <p class="price">${{this.price}}</p>
+        <div id="{{this.id}}" class="button add-button">{{../addButtonText}}</div>
       </div>
-      <div class="article">
-        <h2>{{articles.1.name}}</h2>
-        <img class="article-photo" src="{{articles.1.image}}">
-        <p class="description">{{articles.1.description}}</p>
-        <p class="price">${{articles.1.price}}</p>
-        <div id="{{articles.1.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.2.name}}</h2>
-        <img class="article-photo" src="{{articles.2.image}}">
-        <p class="description">{{articles.2.description}}</p>
-        <p class="price">${{articles.2.price}}</p>
-        <div id="{{articles.2.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.3.name}}</h2>
-        <img class="article-photo" src="{{articles.3.image}}">
-        <p class="description">{{articles.3.description}}</p>
-        <p class="price">${{articles.3.price}}</p>
-        <div id="{{articles.3.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.4.name}}</h2>
-        <img class="article-photo" src="{{articles.4.image}}">
-        <p class="description">{{articles.4.description}}</p>
-        <p class="price">${{articles.4.price}}</p>
-        <div id="{{articles.4.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.5.name}}</h2>
-        <img class="article-photo" src="{{articles.5.image}}">
-        <p class="description">{{articles.5.description}}</p>
-        <p class="price">${{articles.5.price}}</p>
-        <div id="{{articles.5.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.6.name}}</h2>
-        <img class="article-photo" src="{{articles.6.image}}">
-        <p class="description">{{articles.6.description}}</p>
-        <p class="price">${{articles.6.price}}</p>
-        <div id="{{articles.6.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.7.name}}</h2>
-        <img class="article-photo" src="{{articles.7.image}}">
-        <p class="description">{{articles.7.description}}</p>
-        <p class="price">${{articles.7.price}}</p>
-        <div id="{{articles.7.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.8.name}}</h2>
-        <img class="article-photo" src="{{articles.8.image}}">
-        <p class="description">{{articles.8.description}}</p>
-        <p class="price">${{articles.8.price}}</p>
-        <div id="{{articles.8.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.9.name}}</h2>
-        <img class="article-photo" src="{{articles.9.image}}">
-        <p class="description">{{articles.9.description}}</p>
-        <p class="price">${{articles.9.price}}</p>
-        <div id="{{articles.9.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.10.name}}</h2>
-        <img class="article-photo" src="{{articles.10.image}}">
-        <p class="description">{{articles.10.description}}</p>
-        <p class="price">${{articles.10.price}}</p>
-        <div id="{{articles.10.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
-      <div class="article">
-        <h2>{{articles.11.name}}</h2>
-        <img class="article-photo" src="{{articles.11.image}}">
-        <p class="description">{{articles.11.description}}</p>
-        <p class="price">${{articles.11.price}}</p>
-        <div id="{{articles.11.id}}" class="button add-button">{{addButtonText}}</div>
-      </div>
+      {{/each}}
     </div>
   </script>
 </div>
@@ -124,15 +49,13 @@
         <span id="item-counter-modal">0</span>
       </div>
       <span id="cart-total-modal" class="cart__header__total">$0</span>
+      <div id="promo-status" class="promo-status"></div>
+      <div id="promo-msg" class="promo-msg"></div>
     </div>
     <div id="cart-list" class="cart-list"></div>
     <div id="promo" class="promo">
-      <span>
-        <input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE">
-        <div id="promo-button" class="button button--sm">Apply Code</div>
-      </span>
-      <span id="promo-status" class="promo-status"></span>
-      <span id="promo-msg" class="promo-msg"></span>
+      <input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE">
+      <div id="promo-button" class="button button--sm">Apply</div>
     </div>
     <div class="cart-modal__box__footer">
       <label for="cart-modal-toggle" class="button cart-modal-toggle-button">
@@ -143,7 +66,6 @@
   </div>
 </form>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 <script src="../../scripts/listing-data.js"></script>
 <script src="../../scripts/listing-app.js"></script>

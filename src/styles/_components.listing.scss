@@ -23,7 +23,7 @@
     width: 1000px;
   }
   @include mq(1298px) {
-    width: auto;
+    width: 1250px;
   }
 }
 
@@ -33,8 +33,7 @@
   color: $color-blue-dark;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-basis: 15rem;
   margin: $base-spacing-unit-small;
   padding: $base-spacing-unit;
@@ -42,6 +41,13 @@
   &:hover {
     box-shadow: 0 0 3px 2px rgba(0, 169, 255, 0.5);
   }
+}
+
+.article-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 206px;
 }
 
 .article-photo {
@@ -58,4 +64,10 @@
 .price {
   @include font-size(24px);
   font-weight: 700;
+  text-align: right;
+  align-self: flex-end;
+}
+
+.add-button {
+  align-self: flex-end;
 }
