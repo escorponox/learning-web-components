@@ -1048,6 +1048,8 @@ section {
   display: -ms-flexbox;
   display: flex;
   position: relative;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .cart-list {
@@ -1144,6 +1146,8 @@ section {
       justify-content: flex-end;
   position: relative;
   margin-bottom: 16px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 .promo-code {
@@ -1202,6 +1206,8 @@ section {
       justify-content: space-between;
   -ms-flex-align: center;
       align-items: center;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 
 #color {
