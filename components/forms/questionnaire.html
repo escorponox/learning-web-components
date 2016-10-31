@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link rel="stylesheet" href="../../css/forms.css"/>
-  <link rel="stylesheet" href="../../css/buttons.css"/>
-  <link rel="stylesheet" href="../../css/home.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
   <title>Questionnaire</title>
 </head>
 <body>
-<div class="menu">
-  <a href="../../index.html" class="button button--green">Back to Home</a>
-  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
-</div>
+<header>
+  <div class="menu">
+    <a href="../../index.html" class="button menu__button">Back to Home</a>
+    <a href="index.html" class="button menu__button">Back to Forms Showcase</a>
+  </div>
+</header>
 <div class="content">
   <div class="coves-form">
     <form id="questionnaire-form" method="post" action="#" novalidate>
@@ -46,22 +45,23 @@
           <label for="other"
                  class="coves-form__label coves-form__label--normal coves-form__label--pointer coves-form__input--hover">Other</label>
         </div>
-        <div class="coves-form__input-container--row">
-          <input id="other-text" class="coves-form__input coves-form__input--inline coves-form__radio-container__text"
-                 type="text" name="other-text" disabled placeholder="Other media" tabindex="2">
-          <span id="other-text__error" class="coves-form__error--inline" aria-live="polite"></span>
+        <div class="coves-form__input-container--column">
+          <input id="other-text" class="coves-form__input coves-form__radio-container__text" type="text"
+                 name="other-text" disabled placeholder="Other media" tabindex="2">
+          <span id="other-text__error" class="coves-form__error coves-form__radio-container__text__error"
+                aria-live="polite"></span>
         </div>
       </div>
       <div class="coves-form__input-container--row">
         <input type="submit" class="button" value="Submit" tabindex="3">
       </div>
       <div class="coves-form__input-container--row">
-        <div id="coves-form__error-box">All inputs are required</div>
+        <div id="questionnaire__error-box" class="coves-form__error-box">All inputs are required</div>
       </div>
     </form>
   </div>
 </div>
-<script src="../../js/validators.js"></script>
-<script src="../../js/questionnaire.js"></script>
+<script src="../../scripts/validators.js"></script>
+<script src="../../scripts/questionnaire.js"></script>
 </body>
 </html>

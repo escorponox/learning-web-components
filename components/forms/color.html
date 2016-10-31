@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
-  <link rel="stylesheet" href="../../css/buttons.css"/>
-  <link rel="stylesheet" href="../../css/home.css"/>
-  <link rel="stylesheet" href="../../css/forms.css"/>
-  <link rel="stylesheet" href="../../css/range.css"/>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../styles/main.css">
   <title>Color Builder</title>
 </head>
 <body>
-<div class="menu">
-  <a href="../../index.html" class="button button--green">Back to Home</a>
-  <a href="index.html" class="button button--green">Back to Forms Showcase</a>
-</div>
+<header>
+  <div class="menu">
+    <a href="../../index.html" class="button menu__button">Back to Home</a>
+    <a href="index.html" class="button menu__button">Back to Forms Showcase</a>
+  </div>
+</header>
 <div class="content">
-  <div class="coves-form">
+  <div class="coves-form coves-form--center">
     <form method="post" action="#" novalidate>
       <div class="coves-form__input-container--row">
         <label for="red" class="coves-form__label label-range">Red</label>
-        <input id="red" type="range" class="input-range-coves" min="0" max="255" step="5">
-        <label for="red" class="coves-form__label"></label>
+        <input id="red" type="range" class="input-range-coves" min="0" max="255" step="5" value="130">
+        <label for="red" class="coves-form__label label-range"></label>
       </div>
       <div class="coves-form__input-container--row">
         <label for="green" class="coves-form__label label-range">Green</label>
-        <input id="green" type="range" class="input-range-coves" min="0" max="255" step="5">
-        <label for="green" class="coves-form__label"></label>
+        <input id="green" type="range" class="input-range-coves" min="0" max="255" step="5" value="130">
+        <label for="green" class="coves-form__label label-range"></label>
       </div>
       <div class="coves-form__input-container--row">
         <label for="blue" class="coves-form__label label-range">Blue</label>
-        <input id="blue" type="range" class="input-range-coves" min="0" max="255" step="5">
-        <label for="blue" class="coves-form__label"></label>
+        <input id="blue" type="range" class="input-range-coves" min="0" max="255" step="5" value="130">
+        <label for="blue" class="coves-form__label label-range"></label>
       </div>
       <div class="coves-form__input-container--row">
         <label for="alpha" class="coves-form__label label-range">Alpha</label>
-        <input id="alpha" type="range" class="input-range-coves" min="0" max="1" step="0.01">
-        <label for="alpha" class="coves-form__label"></label>
+        <input id="alpha" type="range" class="input-range-coves" min="0" max="1" step="0.01" value="0.5">
+        <label for="alpha" class="coves-form__label label-range"></label>
       </div>
       <div class="coves-form__input-container--row">
-        <label for="color" class="coves-form__label label-range">Color</label>
         <textarea id="color" name="color"
-                  class="coves-form__input coves-form__textarea coves-form__textarea--no-resize coves-form__input--hover"
-                  rows="1" cols="18" placeholder="Output" readonly></textarea>
+                  class="coves-form__input coves-form__textarea coves-form__textarea--no-resize coves-form__input--hover align-center"
+                  rows="1" cols="21" placeholder="Output" readonly></textarea>
       </div>
     </form>
   </div>
 </div>
-<script src="../../js/color.js"></script>
+<script src="../../scripts/color.js"></script>
 </body>
 </html>
