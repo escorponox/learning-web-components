@@ -175,6 +175,7 @@ section {
   border: 2px outset #00a9ff;
   border-radius: 5px;
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   padding: 0.5em;
   text-align: center;
