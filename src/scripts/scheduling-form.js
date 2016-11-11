@@ -46,6 +46,7 @@
 
   [].forEach.call(document.querySelectorAll('#scheduling-form'), function (form) {
     form.addEventListener('submit', function (event) {
+      event.preventDefault(); //this is just a demo, we don't want any submit
       const inputs = document.querySelectorAll('.coves-form__input--required');
       [].forEach.call(inputs, function (input) {
         if (validator.isEmpty(input.value)) {

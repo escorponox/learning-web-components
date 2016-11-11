@@ -12,3 +12,10 @@
     }
   }
 }
+
+@mixin flex-container($direction: row, $align: center, $spacing: flex-start, $display: flex) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $spacing;
+  align-items: $align;
+}

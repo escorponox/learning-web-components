@@ -50,7 +50,6 @@
   &:checked + .cart-modal-container {
     opacity: 1;
     transition: opacity 0.5s;
-    -webkit-transition: opacity 0.5s;
     visibility: visible;
 
     & .cart-modal__box {
@@ -89,15 +88,13 @@
 }
 
 .cart-list__item__info {
-  display: flex;
-  align-items: center;
+  @include flex-container();
   flex-grow: 1;
   min-width: 200px;
 }
 
 .cart-list__item__quantity {
-  display: flex;
-  align-items: center;
+  @include flex-container();
   flex-shrink: 0;
   align-self: flex-end;
 
@@ -136,8 +133,7 @@
 }
 
 .promo {
-  display: flex;
-  justify-content: flex-end;
+  @include flex-container($spacing: flex-end);
   position: relative;
   margin-bottom: $base-spacing-unit;
   flex-shrink: 0;
@@ -197,8 +193,6 @@
 }
 
 .cart-modal__box__footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex-container($spacing: space-between);
   flex-shrink: 0;
 }

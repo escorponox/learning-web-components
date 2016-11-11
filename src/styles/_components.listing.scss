@@ -31,9 +31,7 @@
   border: 1px solid $color-blue;
   border-radius: $base-radius;
   color: $color-blue-dark;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  @include flex-container(column, flex-start);
   flex-basis: 15rem;
   margin: $base-spacing-unit-small;
   padding: $base-spacing-unit;

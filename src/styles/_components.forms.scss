@@ -12,14 +12,15 @@
   max-width: 700px;
   min-width: 300px;
   padding: $base-spacing-unit-large;
+  @include flex-container(column, stretch);
+
+  section {
+    @include flex-container(column, stretch);
+  }
 }
 
-.coves-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.coves-form--center form {
+.coves-form--center {
+  @extend .coves-form;
   align-items: center;
 }
 
@@ -28,131 +29,94 @@
 }
 
 .coves-form__input-container--column {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4px;
-  flex-basis: 100%;
+  @include flex-container(column, stretch);
+  margin-bottom: $base-spacing-unit-small;
   position: relative;
 }
 
 .coves-form__input-container--row {
-  display: flex;
-  margin: 0.25em 0;
-  justify-content: flex-start;
-  align-items: center;
-  position: relative;
-}
-
-.coves-form__input-container--row select:not(:nth-of-type(1)) {
-  margin-left: 6px;
-}
-
-.coves-form__input-container--center {
-  align-items: center;
-}
-
-.coves-form__input-container--center-flex-direction {
-  justify-content: center
+  @extend .coves-form__input-container--column;
+  @include flex-container();
 }
 
 .coves-form__label {
   border: 1px solid transparent;
-  border-radius: 5px;
+  border-radius: $base-radius;
   color: $color-blue-dark;
   font-weight: 600;
-  line-height: 20px;
-  padding: 2px 6px;
-}
-
-.coves-form__label--normal {
-  font-weight: 400;
+  padding: 4px 6px;
 }
 
 .coves-form__label--lg {
-  font-size: 2em;
-  line-height: 2em;
-}
-
-.coves-form__label--pointer {
-  cursor: pointer;
+  @extend .coves-form__label;
+  @include font-size(32px)
 }
 
 .coves-form__input {
   background-color: $color-white;
   border: 1px solid transparent;
-  border-radius: 5px;
-  padding: 0.125em 0.625em;
+  border-radius: $base-radius;
+  padding: 2px 10px;
 
+  &:hover,
+  &:focus {
+    border-color: $color-blue;
+  }
+
+  &:invalid {
+    background-color: $color-red-light;
+    border-color: $color-red;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    &:focus {
+      background-color: $color-white;
+    }
+  }
+
+  &:disabled {
+    background-color: $color-grey-light;
+    border-color: transparent;
+  }
+}
+
+.coves-form__input-container--column .coves-form__input:last-child {
+  margin-bottom: $base-spacing-unit;
+}
+
+.coves-form__input--inline {
+  @extend .coves-form__input;
+  margin-right: 6px;
+  padding-right: 2px;
+
+  &:invalid {
+    border-radius: 5px;
+  }
 }
 
 .coves-form__input--lg {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-
-.coves-form__input--hover:hover {
-  border: 1px solid #00A9FF;
-}
-
-.coves-form__input--focus:focus {
-  border: 1px solid $color-blue-dark;
-}
-
-.coves-form__input:focus:invalid {
-  background-color: $color-white;
-  border: 1px solid $color-red;
-}
-
-.coves-form__input:disabled {
-  background-color: #DEDEDE;
-}
-
-.coves-form__input:invalid {
-  background-color: $color-red-light;
-  border: 1px solid $color-red;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0
-}
-
-.coves-form__input--inline:invalid,
-.coves-form__input--inline--standalone:invalid {
-  border-radius: 5px;
-}
-
-.coves-form__input--inline:disabled {
-  background-color: $color-grey-light;
+  @include font-size(24px)
 }
 
 .coves-form__error {
   background-color: $color-red-light;
   border: 1px solid $color-red;
-  border-radius: 0 0 5px 5px;
-  border-top-color: transparent;
-  color: $color-red;
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  height: 16px;
-  line-height: 14px;
-  overflow: hidden;
-  padding: 0 10px;
-  visibility: hidden;
-  white-space: nowrap;
-}
-
-.coves-form__input-container--column .coves-form__input:last-child {
-  margin-bottom: 16px;
-}
-
-.coves-form__error--inline {
-  background-color: $color-red-light;
-  border: 1px solid $color-red;
   border-radius: 5px;
   color: $color-red;
-  margin-left: 6px;
-  display: inline-block;
   padding: 2px;
   visibility: hidden;
+}
+
+.coves-form__error--attached {
+  @extend .coves-form__error;
+  border-radius: 0 0 5px 5px;
+  border-top-color: transparent;
+  @include font-size(12px, 14px);
+  font-weight: 600;
+  height: 16px;
+  overflow: hidden;
+  padding: 0 10px;
+  white-space: nowrap;
 }
 
 .coves-form__input:invalid + .coves-form__error {
@@ -160,16 +124,12 @@
 }
 
 .coves-form__error-box {
-  background-color: $color-red-light;
-  border: 1px solid $color-red;
-  border-radius: 5px;
-  color: $color-red;
+  @extend .coves-form__error;
   display: none;
   font-weight: 600;
-  line-height: 20px;
   padding: 10px;
   text-align: center;
-  width: auto;
+  visibility: visible;
 }
 
 .coves-form-ok {
@@ -177,37 +137,30 @@
   display: none;
   position: absolute;
   right: 7px;
-  top: 7px
-}
+  top: 7px;
 
-.coves-form-ok ~ .coves-form__input {
-  padding-right: 30px;
+  & ~ .coves-form__input {
+    padding-right: 30px;
+  }
 }
 
 .coves-form__select {
   cursor: pointer;
   height: 30px;
-  -moz-appearance: none;
 }
 
 .coves-form__select option {
   background-color: $color-white;
-  color: #000000;
+  color: $color-black;
 }
 
-.coves-form__select option[value=""] {
-  color: $color-blue-light;
-}
 
 .coves-form__radio-set {
-  display: flex;
-  flex-direction: column;
+  @include flex-container(column, stretch);
 }
 
 .coves-form__radio-container {
-  display: flex;
-  align-items: center;
-  flex-basis: 32px;
+  @include flex-container();
 }
 
 .coves-form__radio-container__input {
@@ -215,38 +168,33 @@
   flex-basis: 20px;
 }
 
-.coves-form__radio-container__text {
-  margin-left: 20px;
-  padding: 2px 6px;
-  width: 170px
+.coves-form__radio-container__label {
+  @extend .coves-form__label;
+  font-weight: 400;
 }
 
-.coves-form__radio-container__text__error {
-  display: inline-block;
-  margin-left: 20px;
+.coves-form__radio-container__text {
+  margin-left: 27px;
   width: 170px
 }
 
 .coves-form__checkbox-container {
-  display: flex;
-  line-height: 2em;
-  margin: 0.5em 0;
-  align-items: center;
-}
-
-.coves-form__checkbox-container input[type=checkbox] {
-  display: none;
+  @include flex-container();
 }
 
 .coves-form__checkbox-container__fake-label {
+  @include flex-container($spacing: center);
   background: $color-white;
   border: 1px solid transparent;
-  border-radius: 5px;
-  cursor: pointer;
-  line-height: 1.375em;
-  margin-right: 0.5em;
-  text-align: center;
-  width: 1.5em;
+  border-radius: $base-radius;
+  height: $base-spacing-unit-large;
+  margin-right: $base-spacing-unit-small;
+  width: $base-spacing-unit-large;
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue;
+  }
 }
 
 .coves-form__checkbox-container__fake-label .fa-check {
@@ -259,18 +207,14 @@
 }
 
 .coves-form__textarea {
-  line-height: 16px;
+  line-height: $base-font-size;
   padding: 10px;
+  resize: vertical;
 }
 
 .coves-form__textarea--no-resize {
+  @extend .coves-form__textarea;
   resize: none;
-}
-
-.coves-form__textarea--block {
-  display: block;
-  resize: vertical;
-  width: 100%;
 }
 
 .coves-form__hover-show-trigger {

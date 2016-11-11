@@ -6,6 +6,7 @@
 
   [].forEach.call(document.querySelectorAll('#login-form'), function (form) {
     form.addEventListener('submit', function (event) {
+      event.preventDefault(); //this is just a demo, we don't want any submit
       var inputs = document.querySelectorAll('#username, #pass');
       var someInputEmpty = [].some.call(inputs, function (input) {
         return validator.isEmpty(input.value);

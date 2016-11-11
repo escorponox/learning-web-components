@@ -76,12 +76,13 @@
 
     [].forEach.call(document.querySelectorAll('#signup-form'), function (form) {
       form.addEventListener('submit', function (event) {
-        event.preventDefault();
+        event.preventDefault(); //this is just a demo, we don't want any submit
         var inputs = document.querySelectorAll('.coves-form__input--required');
         var someInputEmpty = [].some.call(inputs, function (input) {
           return validator.isEmpty(input.value);
         });
         if (!form.checkValidity() || someInputEmpty) {
+          event.preventDefault();
           if (someInputEmpty) {
             document.querySelector('#signup__error-box').style.display = 'inline-block';
           }

@@ -1,0 +1,15 @@
+#csv {
+  position: relative;
+
+  &:hover ~ #csv-tooltip {
+    display: inline-block;
+  }
+}
+
+#csv-tooltip {
+  color: $color-blue-dark;
+  position: absolute;
+  top: -29px;
+  right: 0;
+  display: none;
+}

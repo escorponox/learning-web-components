@@ -14,37 +14,34 @@
   </div>
 </header>
 <div class="content">
-  <div class="coves-form">
-    <form id="login-form" method="post" action="#" novalidate>
-      <label for="username" class="coves-form__label">Username</label>
-      <div class="coves-form__input-container--column">
-        <div class="icon icon-user"></div>
-        <input id="username" class="coves-form__input coves-form__input--hover coves-form__input--focus icon-user"
-               type="text" name="username" maxlength="20" tabindex="1">
-        <span id="username__error" class="coves-form__error" aria-live="polite"></span>
+  <form id="login-form" class="coves-form" method="post" action="#" novalidate>
+    <label for="username" class="coves-form__label">Username</label>
+    <div class="coves-form__input-container--column">
+      <div class="icon icon-user"></div>
+      <input id="username" class="coves-form__input icon-user"
+             type="text" name="username" maxlength="20" tabindex="1">
+      <div id="username__error" class="coves-form__error--attached"></div>
+    </div>
+    <label for="pass" class="coves-form__label">Password</label>
+    <div class="coves-form__input-container--column">
+      <div class="icon icon-pass"></div>
+      <input id="pass" class="coves-form__input icon-pass"
+             type="password" name="pass" tabindex="2">
+      <div id="pass__error" class="coves-form__error--attached"></div>
+    </div>
+    <div class="coves-form__input-container--row t-center-main">
+      <div class="coves-form__checkbox-container">
+        <input id="remember" type="checkbox" class="o-display-none" name="remember" value="1" tabindex="3">
+        <label for="remember" class="coves-form__checkbox-container__fake-label o-cursor-pointer">
+          <span class="fa fa-check fa-lg" aria-hidden="true"></span>
+        </label>
+        <label for="remember" class="coves-form__label o-cursor-pointer">Remember me</label>
       </div>
-      <label for="pass" class="coves-form__label">Password</label>
-      <div class="coves-form__input-container--column">
-        <div class="icon icon-pass"></div>
-        <input id="pass" class="coves-form__input coves-form__input--hover coves-form__input--focus icon-pass"
-               type="password" name="pass" tabindex="2">
-        <span id="pass__error" class="coves-form__error" aria-live="polite"></span>
-      </div>
-      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
-        <div class="coves-form__checkbox-container">
-          <input id="remember" type="checkbox" name="remember" value="1" tabindex="3">
-          <label for="remember" class="coves-form__checkbox-container__fake-label coves-form__input--hover"><span
-              class="fa fa-check fa-lg"
-              aria-hidden="true"></span></label>
-          <label for="remember" class="coves-form__label coves-form__label--pointer coves-form__input--hover">Remember
-            me</label>
-        </div>
-      </div>
-      <div class="coves-form__input-container--row coves-form__input-container--center-flex-direction">
-        <input type="submit" class="button button--md" value="Login" tabindex="4">
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="coves-form__input-container--row t-center-main">
+      <input type="submit" class="button button--md" value="Login" tabindex="4">
+    </div>
+  </form>
 </div>
 <script src="../../scripts/coves-select.js"></script>
 <script src="../../scripts/validators.js"></script>

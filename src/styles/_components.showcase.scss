@@ -6,14 +6,12 @@
 .showcase__form {
   border: 2px solid $color-blue;
   border-radius: $base-radius;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+@include flex-container(column);
   align-items: center;
+  flex-shrink: 0;
   min-width: 11rem;
   margin: $base-spacing-unit-small;
   padding: $base-spacing-unit;
-  flex-grow: 1;
 }
 
 .showcase__form__photo {

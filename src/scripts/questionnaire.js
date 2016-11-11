@@ -17,6 +17,7 @@
 
   [].forEach.call(document.querySelectorAll('#questionnaire-form'), function (form) {
     form.addEventListener('submit', function (event) {
+      event.preventDefault(); //this is just a demo, we don't want any submit
       const radios = form.elements['find'];
       const errorBox = document.querySelector('#questionnaire__error-box');
       const textInput = document.querySelector('#other-text');
