@@ -1,11 +1,3 @@
-.coves-form ::-moz-placeholder {
-  color: $color-blue-light;
-}
-
-.coves-form ::-webkit-input-placeholder {
-  color: $color-blue-light;
-}
-
 .coves-form {
   background-color: $color-blue-lighter;
   border-radius: $base-radius;
@@ -13,6 +5,11 @@
   min-width: 300px;
   padding: $base-spacing-unit-large;
   @include flex-container(column, stretch);
+
+  ::-webkit-input-placeholder,
+  ::-moz-placeholder {
+    color: $color-blue-light;
+  }
 
   section {
     @include flex-container(column, stretch);
@@ -215,19 +212,4 @@
 .coves-form__textarea--no-resize {
   @extend .coves-form__textarea;
   resize: none;
-}
-
-.coves-form__hover-show-trigger {
-  position: relative;
-}
-
-.coves-form__hover-show {
-  position: absolute;
-  top: -25px;
-  left: 40px;
-  display: none;
-}
-
-.coves-form__hover-show-trigger:hover ~ .coves-form__hover-show {
-  display: inline-block;
 }
