@@ -295,14 +295,6 @@ section {
   margin-top: 16px;
 }
 
-.coves-form ::-moz-placeholder, .coves-form--center ::-moz-placeholder {
-  color: #00c7ff;
-}
-
-.coves-form ::-webkit-input-placeholder, .coves-form--center ::-webkit-input-placeholder {
-  color: #00c7ff;
-}
-
 .coves-form, .coves-form--center {
   background-color: #bff1ff;
   border-radius: 5px;
@@ -317,6 +309,11 @@ section {
       justify-content: flex-start;
   -ms-flex-align: stretch;
       align-items: stretch;
+}
+.coves-form ::-webkit-input-placeholder, .coves-form--center ::-webkit-input-placeholder,
+.coves-form ::-moz-placeholder,
+.coves-form--center ::-moz-placeholder {
+  color: #00c7ff;
 }
 .coves-form section, .coves-form--center section {
   display: -ms-flexbox;
@@ -554,21 +551,6 @@ section {
 
 .coves-form__textarea--no-resize {
   resize: none;
-}
-
-.coves-form__hover-show-trigger {
-  position: relative;
-}
-
-.coves-form__hover-show {
-  position: absolute;
-  top: -25px;
-  left: 40px;
-  display: none;
-}
-
-.coves-form__hover-show-trigger:hover ~ .coves-form__hover-show {
-  display: inline-block;
 }
 
 .icon {
