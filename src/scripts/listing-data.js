@@ -13,87 +13,87 @@
     articles: [
       {
         id: 'a01',
-        name: 'Article 111111111111111111111',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 999.99
+        name: 'Aceitunas',
+        image: '../../assets/images/aceitunas.jpg',
+        description: 'Aceitunas aliñadas.',
+        price: 2.50
       },
       {
         id: 'a02',
-        name: 'Article 2',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 99.99
+        name: 'Cocido',
+        image: '../../assets/images/cocido.jpg',
+        description: 'Cocido madrileño.',
+        price: 18.00
       },
       {
         id: 'a03',
-        name: 'Article 3',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 9.99
+        name: 'Fabada',
+        image: '../../assets/images/fabada.jpg',
+        description: 'Fabada asturiana.',
+        price: 17.00
       },
       {
         id: 'a04',
-        name: 'Article 4',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 888.88
+        name: 'Gazpacho',
+        image: '../../assets/images/gazpacho.jpg',
+        description: 'Gazpacho andaluz.',
+        price: 8.00
       },
       {
         id: 'a05',
-        name: 'Article 5',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 88.88
+        name: 'Arroz',
+        image: '../../assets/images/horno.jpg',
+        description: 'Arroz al horno',
+        price: 15
       },
       {
         id: 'a06',
-        name: 'Article 6',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 8.88
+        name: 'Jamón',
+        image: '../../assets/images/jamon.jpg',
+        description: 'Jamón ibérico',
+        price: 20
       },
       {
         id: 'a07',
-        name: 'Article 7',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 0.88
+        name: 'Lentejas',
+        image: '../../assets/images/lentejas.jpg',
+        description: 'Lentejas a la riojana',
+        price: 12
       },
       {
         id: 'a08',
-        name: 'Article 8',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 77.77
+        name: 'Paella',
+        image: '../../assets/images/paella.jpg',
+        description: 'Paella valenciana',
+        price: 25
       },
       {
         id: 'a09',
-        name: 'Article 9',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 76.76
+        name: 'Pil Pil',
+        image: '../../assets/images/pilpil.jpg',
+        description: 'Bacalao al pil pil',
+        price: 24
       },
       {
         id: 'a10',
-        name: 'Article 10',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 45.45
+        name: 'Pulpo',
+        image: '../../assets/images/pulpo.jpg',
+        description: 'Pulpo a feira',
+        price: 20
       },
       {
         id: 'a11',
-        name: 'Article 11',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description or maybe longer description',
-        price: 16.16
+        name: 'Tortilla',
+        image: '../../assets/images/tortilla.jpg',
+        description: 'Tortilla de patata',
+        price: 15
       },
       {
         id: 'a12',
-        name: 'Article 12',
-        image: 'http://placehold.it/206x206',
-        description: 'Short description',
-        price: 78.25
+        name: 'Zamburiñas',
+        image: '../../assets/images/zambu.jpg',
+        description: 'Zamburiñas a la plancha',
+        price: 17
       }
     ]
   };
