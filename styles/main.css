@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Oswald:700,300");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css");
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css");
 html {
   box-sizing: border-box;
@@ -293,11 +293,6 @@ section {
 
 .showcase__form__button {
   margin-top: 16px;
-}
-
-::-webkit-input-placeholder,
-::-moz-placeholder {
-  color: #00c7ff;
 }
 
 .coves-form, .coves-form--center {
