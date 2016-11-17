@@ -295,6 +295,11 @@ section {
   margin-top: 16px;
 }
 
+::-webkit-input-placeholder,
+::-moz-placeholder {
+  color: #00c7ff;
+}
+
 .coves-form, .coves-form--center {
   background-color: #bff1ff;
   border-radius: 5px;
@@ -309,11 +314,6 @@ section {
       justify-content: flex-start;
   -ms-flex-align: stretch;
       align-items: stretch;
-}
-.coves-form ::-webkit-input-placeholder, .coves-form--center ::-webkit-input-placeholder,
-.coves-form ::-moz-placeholder,
-.coves-form--center ::-moz-placeholder {
-  color: #00c7ff;
 }
 .coves-form section, .coves-form--center section {
   display: -ms-flexbox;
