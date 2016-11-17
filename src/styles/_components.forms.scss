@@ -1,3 +1,8 @@
+::-webkit-input-placeholder,
+::-moz-placeholder {
+  color: $color-blue-light;
+}
+
 .coves-form {
   background-color: $color-blue-lighter;
   border-radius: $base-radius;
@@ -5,11 +10,6 @@
   min-width: 300px;
   padding: $base-spacing-unit-large;
   @include flex-container(column, stretch);
-
-  ::-webkit-input-placeholder,
-  ::-moz-placeholder {
-    color: $color-blue-light;
-  }
 
   section {
     @include flex-container(column, stretch);
