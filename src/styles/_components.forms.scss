@@ -49,6 +49,7 @@
   border: 1px solid transparent;
   border-radius: $base-radius;
   padding: 2px 10px;
+  @include font-size($base-font-size);
 
   &:hover,
   &:focus {
