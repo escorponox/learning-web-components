@@ -372,6 +372,8 @@ section {
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 2px 10px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 .coves-form__input:hover, .coves-form__input--inline:hover, .coves-form__input:focus, .coves-form__input--inline:focus {
   border-color: #00a9ff;
