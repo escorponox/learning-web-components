@@ -1217,6 +1217,10 @@ section {
       justify-content: center !important;
 }
 
+.t-display-none {
+  display: none !important;
+}
+
 #csv {
   position: relative;
 }
