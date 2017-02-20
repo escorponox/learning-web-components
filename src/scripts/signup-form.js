@@ -6,6 +6,63 @@
 
   documentReady(function () {
 
+    const inputs = document.querySelectorAll('.coves-form__input');
+    const errorBox = document.getElementById('signup__error-box');
+    const signUpForm = document.getElementById('signup-form');
+    const greeting = document.getElementById('greeting');
+
+    const cookies = extractCookies();
+
+    if (cookies.firstname) {
+      greeting.innerHTML = 'Welcome '.concat(cookies.firstname)
+    }
+    else {
+      greeting.classList.add('t-display-none');
+      signUpForm.classList.remove('t-display-none');
+    }
+
+    function extractCookies() {
+      return document.cookie.split('; ').reduce(function (acc, curr) {
+        const equalIndex = curr.indexOf('=');
+        acc[curr.slice(0, equalIndex)] = curr.slice(equalIndex + 1);
+        return acc;
+      }, {})
+    }
+
+    function serialize() {
+      return [].reduce.call(inputs, function (acc, input) {
+        acc[input.name] = input.value;
+        return acc;
+      }, {})
+    }
+
+    function sendForm() {
+      const xhr = new XMLHttpRequest();
+
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          signUpForm.classList.add('t-display-none');
+          console.log(xhr.response);
+          greeting.innerHTML = 'Welcome ' + JSON.parse(xhr.response).firstname;
+          greeting.classList.remove('t-display-none');
+
+          const now = new Date();
+          now.setTime(now.getTime() + (604800)); // One week
+          document.cookie = 'firstname='.concat(JSON.parse(xhr.response).firstname).concat(';expires=').concat(now.toUTCString());
+        } else {
+          errorBox.innerHTML = 'Something is wrong with the server';
+          errorBox.style.display = 'inline-block';
+        }
+      };
+
+      xhr.onerror = function () {
+        errorBox.innerHTML = 'Something is wrong with the server';
+        errorBox.style.display = 'inline-block';
+      };
+
+      xhr.open('GET', 'http://localhost:8000/create_account');
+      xhr.send(serialize());
+    }
 
     validator.addValidation('#username', ['blur'], function (input) {
       return !validator.isEmpty(input.value) && !validator.isBetween(input.value.length, 6, 20);
@@ -74,23 +131,24 @@
       return input.value !== document.querySelector('#pass').value;
     }, 'Passwords must match');
 
-    [].forEach.call(document.querySelectorAll('#signup-form'), function (form) {
-      form.addEventListener('submit', function (event) {
-        event.preventDefault(); //this is just a demo, we don't want any submit
-        var inputs = document.querySelectorAll('.coves-form__input--required');
-        var someInputEmpty = [].some.call(inputs, function (input) {
-          return validator.isEmpty(input.value);
-        });
-        if (!form.checkValidity() || someInputEmpty) {
-          event.preventDefault();
-          if (someInputEmpty) {
-            document.querySelector('#signup__error-box').style.display = 'inline-block';
-          }
-          else {
-            document.querySelector('#signup__error-box').style.display = 'none';
-          }
-        }
+    signUpForm.addEventListener('submit', function (event) {
+      event.preventDefault(); //this is just a demo, we only make an AJAX call to local dev env
+      const inputs = document.querySelectorAll('.coves-form__input--required');
+      const someInputEmpty = [].some.call(inputs, function (input) {
+        return validator.isEmpty(input.value);
       });
+      if (!signUpForm.checkValidity() || someInputEmpty) {
+        if (someInputEmpty) {
+          errorBox.innerHTML = 'All inputs are required';
+          errorBox.style.display = 'inline-block';
+        }
+        else {
+          errorBox.style.display = 'none';
+        }
+      }
+      else {
+        sendForm();
+      }
     });
 
   });
