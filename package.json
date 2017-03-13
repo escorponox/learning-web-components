@@ -4,6 +4,8 @@
   "description": "Web Components",
   "main": "src/index.html",
   "scripts": {
+    "start": "gulp dev",
+    "build:prod": "gulp build --env=prod",
     "test": "tape ./test/**/*.test.js | tap-diff",
     "test-summ": "tape ./test/**/*.test.js | tap-summary"
   },
@@ -20,24 +22,31 @@
   "devDependencies": {
     "browser-sync": "^2.16.0",
     "del": "^2.2.2",
+    "eslint": "^3.17.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-bump": "^2.7.0",
     "gulp-cache": "^0.4.5",
-    "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
+    "gulp-eslint": "^3.0.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.0.3",
-    "gulp-jshint": "^2.0.1",
+    "gulp-load-plugins": "^1.5.0",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.0",
+    "gulp-sequence": "^0.4.6",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-tape": "0.0.9",
     "gulp-uglify": "^2.0.0",
     "imagemin-gifsicle": "^5.1.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-optipng": "^5.2.1",
     "imagemin-svgo": "^5.2.0",
-    "jshint": "^2.9.3",
+    "minimist": "^1.2.0",
+    "tap-diff": "^0.1.1",
     "tape": "^4.6.2"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

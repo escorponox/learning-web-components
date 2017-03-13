@@ -1,17 +1,17 @@
 (function (document) {
 
-  window.listingContainer = document.querySelector('#listing-container');
-  window.cartContainer = document.querySelector('#cart-container');
-  window.cartCount = document.querySelector('#item-counter');
-  window.cartCountModal = document.querySelector('#item-counter-modal');
-  window.cartList = document.querySelector('#cart-list');
-  window.cartTotal = document.querySelector('#cart-total');
-  window.cartTotalModal = document.querySelector('#cart-total-modal');
-  window.cartModalToggle = document.querySelector('#cart-modal-toggle');
-  window.promoButton = document.querySelector('#promo-button');
-  window.promoCode = document.querySelector('#promo-code');
-  window.promoMsg = document.querySelector('#promo-msg');
-  window.promoStatus = document.querySelector('#promo-status');
+  const listingContainer = document.querySelector('#listing-container');
+  const cartContainer = document.querySelector('#cart-container');
+  const cartCount = document.querySelector('#item-counter');
+  const cartCountModal = document.querySelector('#item-counter-modal');
+  const cartList = document.querySelector('#cart-list');
+  const cartTotal = document.querySelector('#cart-total');
+  const cartTotalModal = document.querySelector('#cart-total-modal');
+  const cartModalToggle = document.querySelector('#cart-modal-toggle');
+  const promoButton = document.querySelector('#promo-button');
+  const promoCode = document.querySelector('#promo-code');
+  const promoMsg = document.querySelector('#promo-msg');
+  const promoStatus = document.querySelector('#promo-status');
 
 
   listingContainer.addEventListener('click', addToCart);
@@ -47,7 +47,7 @@
   }
 
   function mostExpensiveItemDiscount() {
-    const mostExpensive = cart.lines.reduce(function (prev, curr) {
+    var mostExpensive = cart.lines.reduce(function (prev, curr) {
       return prev.unitPrice < curr.unitPrice ? curr : prev;
     }, {unitPrice: 0});
     mostExpensive.virtualPromo = mostExpensive.unitPrice * 0.15;
@@ -55,7 +55,7 @@
   }
 
   function a03ArticleDiscount() {
-    const a03Line = cart.lines.filter(function (line) {
+    cart.lines.filter(function (line) {
       return line.articleId === 'a03';
     }).forEach(function (line) {
       line.virtualPromo = line.unitPrice * line.quantity * 0.2;
@@ -118,8 +118,8 @@
   }
 
   function plusButton(event) {
-    const isButton = event.target.classList.contains('button-plus');
-    const isInnerSpan = event.target.classList.contains('fa-plus');
+    var isButton = event.target.classList.contains('button-plus');
+    var isInnerSpan = event.target.classList.contains('fa-plus');
     if (isButton || isInnerSpan) {
       const cartLine = isButton ? event.target.parentNode.parentNode : event.target.parentNode.parentNode.parentNode;
       const id = cartLine.id.slice(5);

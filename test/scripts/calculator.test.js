@@ -21,3 +21,8 @@ test('operators', t => {
   t.deepEqual(calculator.appendChar(['1', '*'], '*'), ['1', '*'], 'don\'t add operator after an operator');
   t.end();
 });
+
+test('fail', t => {
+  t.equal(1, 0, 'fail test');
+  t.end();
+})

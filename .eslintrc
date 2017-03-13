@@ -1,0 +1,22 @@
+{
+  "extends": ["eslint:recommended"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "script"
+  },
+  "rules": {
+    // Additional, per-project rules...
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "globals": {
+    "validator": true,
+    "calculator": true,
+    "cart": true,
+    "listing": true,
+    "Handlebars": true
+  }
+}

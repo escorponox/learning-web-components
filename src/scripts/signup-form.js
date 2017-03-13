@@ -42,7 +42,6 @@
       xhr.onload = function () {
         if (xhr.status === 200) {
           signUpForm.classList.add('t-display-none');
-          console.log(xhr.response);
           greeting.innerHTML = 'Welcome ' + JSON.parse(xhr.response).firstname;
           greeting.classList.remove('t-display-none');
 

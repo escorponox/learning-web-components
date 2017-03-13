@@ -2,6 +2,7 @@
   if (typeof exports === 'object' && typeof module === 'object') {
     module.exports = init();
   } else {
+    //noinspection JSAnnotator
     root.calculator = init();
   }
 })(this, function () {
