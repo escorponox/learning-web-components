@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../styles/main.css">
-  <title>Product Listing</title>
-</head>
-<body>
-<header>
-  <div class="menu">
-    <a href="../../index.html" class="button menu__button">Back to Home</a>
-  </div>
-</header>
-<div id="listing-container" class="listing-container">
-  <script id="listing-template" type="text/x-handlebars-template">
-    <div class="article-container o-center-margin">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Oswald:700,300"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"><link rel="stylesheet" href="../../styles/main-0c782da0f3.css"><title>Product Listing</title></head><body><header><div class="menu"><a href="../../index.html" class="button menu__button">Back to Home</a></div></header><div id="listing-container" class="listing-container"><script id="listing-template" type="text/x-handlebars-template"><div class="article-container o-center-margin">
       {{#each articles}}
       <div class="article">
         <h2 class="article-title">{{this.name}}</h2>
@@ -24,50 +8,4 @@
         <div id="{{this.id}}" class="button add-button">{{../addButtonText}}</div>
       </div>
       {{/each}}
-    </div>
-  </script>
-</div>
-<div id="cart-container" class="cart">
-  <div class="cart__header">
-    <div class="cart__header__counter">
-      <span class="fa fa-shopping-cart fa-lg" aria-hidden="true"></span>
-      <span id="item-counter">0</span>
-    </div>
-    <label for="cart-modal-toggle" class="button cart-modal-toggle-button">
-      <span class="fa fa-angle-double-up fa-lg" aria-hidden="true"></span>
-    </label>
-    <span id="cart-total" class="cart__header__total">$0</span>
-  </div>
-</div>
-<input id="cart-modal-toggle" type="checkbox" class="cart-modal-toggle o-display-none">
-<form id="cart-form" method="post" action="#" class="cart-modal-container">
-  <label for="cart-modal-toggle" class="cart-modal__background"></label>
-  <div class="cart-modal__box o-center-margin">
-    <div class="cart__header cart__header--modal">
-      <div class="cart__header__counter">
-        <span class="fa fa-shopping-cart fa-lg o-blue" aria-hidden="true"></span>
-        <span id="item-counter-modal">0</span>
-      </div>
-      <span id="cart-total-modal" class="cart__header__total">$0</span>
-      <div id="promo-status" class="promo-status"></div>
-      <div id="promo-msg" class="promo-msg"></div>
-    </div>
-    <div id="cart-list" class="cart-list"></div>
-    <div id="promo" class="promo">
-      <input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE">
-      <div id="promo-button" class="button button--sm">Apply</div>
-    </div>
-    <div class="cart-modal__box__footer">
-      <label for="cart-modal-toggle" class="button cart-modal-toggle-button">
-        <span class="fa fa-angle-double-down fa-lg" aria-hidden="true"></span>
-      </label>
-      <div id="chekout-button" class="button button--sm">Checkout</div>
-    </div>
-  </div>
-</form>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-<script src="../../scripts/listing-data.js"></script>
-<script src="../../scripts/listing-app.js"></script>
-</body>
-</html>
+    </div></script></div><div id="cart-container" class="cart"><div class="cart__header"><div class="cart__header__counter"><span class="fa fa-shopping-cart fa-lg" aria-hidden="true"></span> <span id="item-counter">0</span></div><label for="cart-modal-toggle" class="button cart-modal-toggle-button"><span class="fa fa-angle-double-up fa-lg" aria-hidden="true"></span></label><span id="cart-total" class="cart__header__total">$0</span></div></div><input id="cart-modal-toggle" type="checkbox" class="cart-modal-toggle o-display-none"><form id="cart-form" method="post" action="#" class="cart-modal-container"><label for="cart-modal-toggle" class="cart-modal__background"></label><div class="cart-modal__box o-center-margin"><div class="cart__header cart__header--modal"><div class="cart__header__counter"><span class="fa fa-shopping-cart fa-lg o-blue" aria-hidden="true"></span> <span id="item-counter-modal">0</span></div><span id="cart-total-modal" class="cart__header__total">$0</span><div id="promo-status" class="promo-status"></div><div id="promo-msg" class="promo-msg"></div></div><div id="cart-list" class="cart-list"></div><div id="promo" class="promo"><input id="promo-code" type="text" class="coves-form__input promo-code" name="promo" placeholder="PROMO CODE"><div id="promo-button" class="button button--sm">Apply</div></div><div class="cart-modal__box__footer"><label for="cart-modal-toggle" class="button cart-modal-toggle-button"><span class="fa fa-angle-double-down fa-lg" aria-hidden="true"></span></label><div id="chekout-button" class="button button--sm">Checkout</div></div></div></form><script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script><script src="../../scripts/listing-data-822cc36132.js"></script><script src="../../scripts/listing-app-ad25b7aaa5.js"></script></body></html>
