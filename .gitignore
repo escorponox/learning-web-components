@@ -5,3 +5,4 @@ dist/
 public/
 src/styles/main.css
 .sass-cache/
+.publish/

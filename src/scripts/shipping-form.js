@@ -39,8 +39,6 @@
           billingInput.setCustomValidity('');
           if (billingInput.previousElementSibling)
             billingInput.previousElementSibling.style.display = 'none';
-          if (billingInput.tagName === 'SELECT')
-            billingInput.style.color = '#40D5FF';
         }
         else
           billingInput.classList.add('coves-form__input--required');

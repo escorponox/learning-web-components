@@ -25,18 +25,16 @@ var browsers = development ? 'last 1 chrome version' :
       'not ie < 9'],
   outputPath = development ? 'public' : 'dist';
 
-gulp.task('bump', function(){
-  gulp.src('./package.json')
-    .pipe(plugins.bump({type: options.bump}))
-    .pipe(gulp.dest('./'));
-});
-
 gulp.task('styles', function () {
-  return plugins.rubySass('src/styles/main.scss', {style: 'expanded'})
+  return plugins.rubySass('src/styles/main.scss', {
+    style: 'expanded',
+    sourcemap: true,
+    emitCompileError: !development,
+    stopOnError: !development
+  })
     .pipe(plugins.autoprefixer(browsers))
-    .pipe(gulp.dest(outputPath + '/styles'))
-    .pipe(plugins.if(!development, plugins.rename({suffix: '.min'})))
     .pipe(plugins.if(!development, plugins.cssnano()))
+    .pipe(plugins.if(development, plugins.sourcemaps.write()))
     .pipe(gulp.dest(outputPath + '/styles'))
     .pipe(plugins.notify({message: 'Styles task complete'}));
 });
@@ -46,21 +44,18 @@ gulp.task('eslint', function () {
     .pipe(plugins.eslint())
     .pipe(plugins.eslint.format())
     .pipe(plugins.eslint.failAfterError())
-    .pipe(plugins.notify({message: 'ESLint task complete'}));
 });
 
 gulp.task('scripts', function () {
   return gulp.src('src/scripts/**/*.js')
     .pipe(plugins.if(!development, plugins.uglify()))
     .pipe(gulp.dest(outputPath + '/scripts'))
-    .pipe(plugins.notify({message: 'Scripts task complete'}));
 });
 
 gulp.task('html', function () {
   return gulp.src('src/**/*.html')
     .pipe(plugins.if(!development, plugins.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest(outputPath))
-    .pipe(plugins.notify({message: 'HTML task complete'}));
 });
 
 gulp.task('images', function () {
@@ -71,7 +66,6 @@ gulp.task('images', function () {
       interlaced: true
     }))))
     .pipe(gulp.dest(outputPath + '/assets'))
-    .pipe(plugins.if(!development, plugins.notify({message: 'Images task complete'})));
 });
 
 gulp.task('clean', function () {
@@ -88,13 +82,19 @@ gulp.task('test', function () {
 });
 
 
-function init(cb) {
+function devInit(cb) {
   plugins.sequence('clean', ['images', 'scripts'], ['html', 'styles'], cb);
 }
 
-gulp.task('dev-init', init);
+function buildInit(cb) {
+  plugins.sequence('clean', 'eslint', 'test', ['images', 'scripts'], ['html', 'styles'], cb);
+}
 
-gulp.task('dev', ['dev-init'], function () {
+gulp.task('dev-init', devInit);
+
+gulp.task('build-init', buildInit);
+
+function devel() {
 
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/styles/**/*.scss', ['styles']);
@@ -107,8 +107,41 @@ gulp.task('dev', ['dev-init'], function () {
   });
 
   gulp.watch(['public/**/*.html', 'public/styles/**/*.css', 'public/scripts/**/*.js', 'public/assets/**/*'], reload);
+}
+
+gulp.task('dev', ['dev-init'], devel);
+
+gulp.task('rev', ['build-init'], function () {
+  return gulp.src(['dist/**/*', '!dist/**/*.html'])
+    .pipe(plugins.rev())
+    .pipe(plugins.revDeleteOriginal())
+    .pipe(gulp.dest('dist'))
+    .pipe(plugins.rev.manifest())
+    .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', function () {
-  console.log(plugins);
+gulp.task('rev-replace', ['rev'], function () {
+  var manifest = gulp.src('./dist/rev-manifest.json');
+
+  return gulp.src('dist/**/*+(html|css|js)')
+    .pipe(plugins.revReplace({manifest: manifest}))
+    .pipe(gulp.dest('dist'));
 });
+
+gulp.task('build', ['rev-replace'], function () {
+  bs({
+    server: 'dist',
+    browser: 'google-chrome-stable'
+  });
+});
+
+gulp.task('deploy', ['rev-replace'], function () {
+  gulp.src('./package.json')
+    .pipe(plugins.bump({type: options.bump}))
+    .pipe(gulp.dest('./'));
+
+  return gulp.src(['./dist/**/*', '!./dist/rev-manifest.json'])
+    .pipe(plugins.ghPages());
+});
+
+gulp.task('default', devel);
